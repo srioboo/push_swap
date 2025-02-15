@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/15 11:26:21 by srioboo-         ###   ########.fr       */
+/*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/02/15 11:25:16 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
-
-int	main(void)
+int	test_utils(void)
 {
-	printf("hello world %d", test_utils());
-	return (0);
+	return (12);
 }

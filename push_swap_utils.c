@@ -6,11 +6,17 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/15 11:25:16 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/02/24 09:25:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	test_utils(void)
+#include "push_swap.h"
+
+int	process_parameters(char **params)
 {
-	return (12);
+	int	test;
+
+	test = 0;
+	printf("test_utils %d %s", test, *params);
+	return (test);
 }

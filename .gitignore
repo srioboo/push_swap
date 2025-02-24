@@ -51,8 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# ingore vscode
+# ignore vscode
 !.vscode
 
-# exec file
+# ignore exec
 push_swap

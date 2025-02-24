@@ -6,19 +6,18 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/02/15 11:19:49 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/02/24 09:04:41 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # library name
-NAME = pushswap.a
+NAME = push_swap
 
 # compliler and compiler flags
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror
 
 # auxiliary commands
-AR = @ar rcs
 RM = @rm -f
 
 # source files
@@ -29,8 +28,8 @@ OBJECTS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	$(AR) $(NAME) $(OBJECTS)
+$(NAME):
+	$(CC) $(SRCS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

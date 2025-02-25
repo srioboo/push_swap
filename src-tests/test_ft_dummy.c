@@ -1,7 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                                            */
-/*   test_ft_dummy.c                                                        */
+/*                                                        :::      ::::::::   */
+/*   test_ft_dummy.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/25 10:30:39 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/02/25 10:30:58 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +23,6 @@ int	test_ft_dummy(int active)
 	{
 		fun_start(method_name);
 		fun_test_header(1);
-		// add here the functions to test
 		fun_assert_int(1, 1);
 		fun_assert_int(1, 2);
 		fun_end(method_name);

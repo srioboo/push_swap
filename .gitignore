@@ -56,3 +56,5 @@ dkms.conf
 
 # ignore exec
 push_swap
+!lib/libft.a
+!src-tests/lib/libfuntest.a

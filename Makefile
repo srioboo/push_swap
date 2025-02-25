@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/02/24 09:04:41 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/02/25 18:38:42 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJECTS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(SRCS) -o $(NAME)
+	$(CC) $(SRCS) -Llib -l:libft.a -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

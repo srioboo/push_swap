@@ -2,7 +2,7 @@
 LIB_TEST_NAME = libfuntest.a
 
 # Library to test, add here your libs to test
-LIB_TESTED =
+LIB_TESTED = lib/libft.a
 
 # Compiler and flags for compilation
 CC = cc

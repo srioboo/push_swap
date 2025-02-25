@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:31:43 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/25 10:31:45 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:36:32 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdarg.h>
 // add libraries of the tested project
 # include "../../push_swap.h"
+# include "../../include/libft.h"
 
 /** Constants **/
 # define COLOR_RED "\033[0;31m"

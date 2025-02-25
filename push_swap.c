@@ -6,16 +6,26 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/25 10:30:01 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/02/25 21:56:05 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// retrieve parameters and test if are numbers
-void	validate_parameters(char **argv)
+void	ft_show_error()
 {
-	printf("parameter validation %s\n", *argv);
+	write(1, "Error\n", 7);
+}
+
+void ft_extract_numbers(char *str)
+{
+	printf("extract numbers from %s\n", str);
+}
+
+// retrieve parameters and test if are numbers
+int	validate_parameters(char *argv)
+{
+	return (ft_atoi((const char *)argv));
 }
 
 // process the parameters
@@ -32,18 +42,22 @@ void	process(char const *s, ...)
 int	main(int argc, char **argv)
 {
 	int	c;
+	int is_number;
 
-	if (argc > 1 && argv[0])
+	if (argc > 2)
 	{
 		c = 1;
 		while (argv[c] != NULL)
 		{
-			validate_parameters(&argv[c]);
-			process(argv[1]);
+			is_number = validate_parameters(argv[c]);
+			// TODO - add to list and process
+			// process(is_number);
 			c++;
 		}
 	}
-	else
-		return (1);
+	if (argc == 2)
+		ft_extract_numbers(argv[c]);
+	else 
+		ft_show_error();
 	return (0);
 }

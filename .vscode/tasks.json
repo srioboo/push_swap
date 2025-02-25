@@ -9,8 +9,10 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"*.c",
+				"-Llib",
+				"-l:libft.a",
 				"-o",
-				"${fileDirname}/pushswap"
+				"${fileDirname}/push_swap"
 			],
 			//"options": {
 			//	"cwd": "${fileDirname}"

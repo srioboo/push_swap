@@ -6,58 +6,40 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/25 21:56:05 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:25:44 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_show_error()
+// TODO - convert to operations
+void	*do_something(t_list new_list)
 {
-	write(1, "Error\n", 7);
-}
-
-void ft_extract_numbers(char *str)
-{
-	printf("extract numbers from %s\n", str);
-}
-
-// retrieve parameters and test if are numbers
-int	validate_parameters(char *argv)
-{
-	return (ft_atoi((const char *)argv));
+	printf("list size %d", ft_lstsize(&new_list));
 }
 
 // process the parameters
-void	process(char const *s, ...)
+void	process(t_list ls_numbers)
 {
-	va_list	numbers;
+	t_list new_list;
 
-	va_start(numbers, s);
-	printf("number: %d\n", va_arg(numbers, int));
-	printf("number: %d\n", va_arg(numbers, int));
-	va_end(numbers);
+	ft_lstiter(&ls_numbers, do_something(new_list));
 }
 
 int	main(int argc, char **argv)
 {
-	int	c;
 	int is_number;
+	t_list ls_numbers;
 
-	if (argc > 2)
+	if (argc <= 1)
+		return (ft_show_error_msg());
+	else
 	{
-		c = 1;
-		while (argv[c] != NULL)
-		{
-			is_number = validate_parameters(argv[c]);
-			// TODO - add to list and process
-			// process(is_number);
-			c++;
-		}
-	}
-	if (argc == 2)
-		ft_extract_numbers(argv[c]);
-	else 
-		ft_show_error();
+		is_number = validate_parameters(argc, argv);
+		if (is_number == 1)
+			return (ft_show_error_msg());
+		else
+			process(ls_numbers);
+	}		
 	return (0);
 }

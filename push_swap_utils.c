@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/26 22:48:25 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/02/27 09:02:53 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ int	process_parameters(char **params)
 	return (test);
 }
 
-int ft_show_error_msg(void)
+int	ft_show_error_msg(void)
 {
 	write(1, "Error\n", 7);
 	return (0);
 }
 
-int ft_is_str_a_number(char *s)
+int	ft_is_str_a_number(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != 0)
@@ -43,8 +43,8 @@ int ft_is_str_a_number(char *s)
 
 int	validate_parameters(int argc, char **argv)
 {
-	int i;
-	t_list *ls_num;
+	int		i;
+	t_list	*ls_num;
 
 	ls_num = ft_lstnew(0);
 	i = 1;

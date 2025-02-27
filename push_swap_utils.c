@@ -6,20 +6,11 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/27 09:02:53 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/02/28 11:10:23 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	process_parameters(char **params)
-{
-	int	test;
-
-	test = 0;
-	printf("test_utils %d %s", test, *params);
-	return (test);
-}
 
 int	ft_show_error_msg(void)
 {
@@ -44,9 +35,7 @@ int	ft_is_str_a_number(char *s)
 int	validate_parameters(int argc, char **argv)
 {
 	int		i;
-	t_list	*ls_num;
 
-	ls_num = ft_lstnew(0);
 	i = 1;
 	if (argc == 2)
 		return (ft_is_str_a_number(argv[i]));
@@ -56,10 +45,29 @@ int	validate_parameters(int argc, char **argv)
 		{
 			if (ft_is_str_a_number(argv[i]) == 1)
 				return (1);
-			else
-				ft_lstadd_back(&ls_num, ft_lstnew(argv[i]));
 			i++;
 		}
 	}
+	return (0);
+}
+
+int	process_parameters(char **params)
+{
+	int		i;
+	t_list	*ls_num;
+
+	i = 1;
+	while (params[i] != NULL)
+	{
+		ft_lstadd_back(&ls_num, ft_lstnew(params[i]));
+		i++;
+	}
+	// TODO - this is a test
+	while (ls_num)
+	{
+		printf("%s\n", (char *)ls_num->content);
+		ls_num = ls_num->next;
+	}
+	// TODO - this is the end of tests
 	return (0);
 }

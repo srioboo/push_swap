@@ -19,9 +19,18 @@ LIB = $(TEST_DIR)/lib
 TEST_SRCS = $(wildcard $(TEST_DIR)/*.c)
 TEST_OBJS = $(TEST_SRCS:.c=.o)
 
+# source files
+SRCS = push_swap_operation_rev_rotate.c \
+		push_swap_operations_main.c \
+		push_swap_utils.c \
+		push_swap_operation_push.c \
+		push_swap_operation_rotate.c \
+		push_swap_operation_swap.c \
+		push_swap_validate.c
+
 # Test: generate test binary
 test:
-	$(CC) $(CFLAGS) -I$(INCLUDE) $(TEST_SRCS) $(LIB_TESTED) -L$(LIB) -l:$(LIB_TEST_NAME) -o $(TEST_BIN)
+	$(CC) $(CFLAGS) -I$(INCLUDE) $(SRCS) $(TEST_SRCS) $(LIB_TESTED) -L$(LIB) -l:$(LIB_TEST_NAME) -o $(TEST_BIN)
 	./$(TEST_BIN)
 
 # clean test directories

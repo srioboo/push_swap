@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_validate.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/03 10:11:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/03 10:09:37 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_utils_show_op_msg(char *op)
+int	ft_validate_isnumber(char *s)
 {
-	int	len;
+	int	i;
 
-	len = ft_strlen(op);
-	write(1, op, len);
-	write(1, "\n", 2);
+	i = 0;
+	while (s[i] != 0)
+	{
+		if (ft_isalpha((int)s[i]) == 1)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
-int	ft_utils_show_error_msg(void)
+int	ft_validate_parameters(int argc, char **argv)
 {
-	write(1, "Error\n", 7);
+	int		i;
+
+	i = 1;
+	if (argc == 2)
+		return (ft_validate_isnumber(argv[i]));
+	else if (argc > 2)
+	{
+		while (argv[i] != NULL)
+		{
+			if (ft_validate_isnumber(argv[i]) == 1)
+				return (1);
+			i++;
+		}
+	}
 	return (0);
 }

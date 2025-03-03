@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_operation_rotate.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/03 10:11:32 by srioboo-         ###   ########.fr       */
+/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/03/03 15:41:58 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_utils_show_op_msg(char *op)
+void	ft_rotate(t_list lst)
 {
-	int	len;
-
-	len = ft_strlen(op);
-	write(1, op, len);
-	write(1, "\n", 2);
+	printf("Swap: list size %d", ft_lstsize(&lst));
 }
 
-int	ft_utils_show_error_msg(void)
-{
-	write(1, "Error\n", 7);
-	return (0);
-}

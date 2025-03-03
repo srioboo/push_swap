@@ -30,3 +30,23 @@ $>./push_swap 0 one 2 3
 Error
 $>
 ```
+
+## Operations
+
+Operations description and text write in the output once the operation is done
+
+1. **swap**: swap the first 2 elements at the top of the stack a 
+   - sa: swap a
+   - sb: swap b
+   - ss: swap a and b
+2. **push**: takes the first element on top on list_b and puts in on list_a
+   - pa: push a
+   - pb: pusb b, same as previos opertation for b
+3. **rotate**: swift elements one position, first element become last.
+   - ra: rotate a, shift all the elements up ope position, firs element become last
+   - rb: rotate b, same as previos for b
+   - rr: rotate a and b
+4. **rotate reverse**: swift elements one position, last element become first.
+   - rra: reverse rotate, as rotate but in the other direction
+   - rrb: reverse robate for b
+   - rrr: reverse rotate all

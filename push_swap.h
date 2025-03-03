@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/02/28 11:10:55 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/03 16:15:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,62 @@
 # include <stdio.h>
 
 /**
- * 
+ * @brief Process the parameters
  */
 int		process_parameters(char **params);
 
-/**
- * @brief retrieve parameters and test if are numbers
- */
-int		validate_parameters(int argc, char **argv);
+/* ************************************************************************** */
+/* Validate                                                                   */
+/* ************************************************************************** */
 
 /**
- * @brief test if a string is a number
+ * @brief Retrieve parameters and test if are numbers
  */
-int		ft_is_str_a_number(char *s);
+int		ft_validate_parameters(int argc, char **argv);
 
 /**
- * @brief show error message
+ * @brief Test if a string is a number
  */
-int		ft_show_error_msg(void);
+int		ft_validate_isnumber(char *s);
+
+/* ************************************************************************** */
+/* Utils                                                                      */
+/* ************************************************************************** */
 
 /**
- * @brief process list sortening
+ * @brief Show error message
  */
-void	*ft_sort(t_list new_list);
+int		ft_utils_show_error_msg(void);
+
+/**
+ * @brief Show operation message in result
+ */
+void	ft_utils_show_op_msg(char *op);
+
+/* ************************************************************************** */
+/* Operations Main                                                            */
+/* ************************************************************************** */
+
+/**
+ * @brief Process list sortening
+ */
+void	ft_sort(t_list new_list);
+
+/* ************************************************************************** */
+/* Operations Push                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/* Operations Rotate                                                          */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/* Operations Rev rotate                                                      */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/* Operations Swap                                                            */
+/* ************************************************************************** */
+void	ft_swap(t_list *lst);
 
 #endif

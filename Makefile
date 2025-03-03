@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/02/25 18:38:42 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/03/03 15:37:07 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,14 @@ RM = @rm -f
 
 # source files
 SRCS = push_swap.c \
-		push_swap_utils.c
+		push_swap_operation_rev_rotate.c \
+		push_swap_operations_main.c \
+		push_swap_utils.c \
+		push_swap_operation_push.c \
+		push_swap_operation_rotate.c \
+		push_swap_operation_swap.c \
+		push_swap_validate.c
+
 # objects
 OBJECTS = $(SRCS:.c=.o)
 

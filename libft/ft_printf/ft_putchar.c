@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/05 12:25:47 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/09 18:03:13 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/01/13 16:01:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	ft_swap(t_list *lst)
+size_t	ft_putchar(char *str, va_list args)
 {
-	t_list	*aux;
-	void	*test;
+	char	arg_char;
 
-	// aux = ft_lstnew(0);
-	printf("Swap: list size %d %p", ft_lstsize(lst), lst->content);
-	ft_lstadd_back(&aux, lst);
-	// ft_lstadd_back(&aux, lst->content);
-	// int i = 0;
-	while (lst)
-	{
-	//	ft_lstadd_back(&aux, lst->content);
-		test = lst->content;
-		printf("%s\n", (char *)test);
-		lst = lst->next;
-	}
-	ft_utils_show_op_msg("sa");
+	arg_char = va_arg(args, int);
+	write(1, &arg_char, 1);
+	str++;
+	return (1);
 }

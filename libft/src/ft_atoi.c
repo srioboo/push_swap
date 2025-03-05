@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/05 12:25:47 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/04 09:15:30 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/14 09:10:36 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_list *lst)
+int	ft_atoi(const char *cton)
 {
-	t_list	*aux;
-	void	*test;
+	int	result;
+	int	sign;
+	int	i;
 
-	// aux = ft_lstnew(0);
-	printf("Swap: list size %d %p", ft_lstsize(lst), lst->content);
-	ft_lstadd_back(&aux, lst);
-	// ft_lstadd_back(&aux, lst->content);
-	// int i = 0;
-	while (lst)
+	result = 0;
+	sign = 1;
+	i = 0;
+	while (cton[i] == ' ' || (cton[i] >= 9 && cton[i] <= 13))
+		i++;
+	if (cton[i] == '-' || cton[i] == '+')
 	{
-	//	ft_lstadd_back(&aux, lst->content);
-		test = lst->content;
-		printf("%s\n", (char *)test);
-		lst = lst->next;
+		if (cton[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	ft_utils_show_op_msg("sa");
+	while (cton[i] >= '0' && cton[i] <= '9')
+	{
+		result = result * 10 + (cton[i] - '0');
+		i++;
+	}
+	return (sign * result);
 }

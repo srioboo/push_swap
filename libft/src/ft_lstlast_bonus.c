@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/05 12:25:47 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/19 00:17:39 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/19 00:19:06 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*aux;
-	void	*test;
-
-	// aux = ft_lstnew(0);
-	printf("Swap: list size %d %p", ft_lstsize(lst), lst->content);
-	ft_lstadd_back(&aux, lst);
-	// ft_lstadd_back(&aux, lst->content);
-	// int i = 0;
-	while (lst)
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next)
 	{
-	//	ft_lstadd_back(&aux, lst->content);
-		test = lst->content;
-		printf("%s\n", (char *)test);
+		if (lst->next == NULL)
+			return (lst);
 		lst = lst->next;
 	}
-	ft_utils_show_op_msg("sa");
+	return (lst);
 }

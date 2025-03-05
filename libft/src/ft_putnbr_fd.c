@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/05 12:25:47 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/09 18:04:34 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/19 12:14:59 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_list *lst)
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_list	*aux;
-	void	*test;
+	char	aux;
 
-	// aux = ft_lstnew(0);
-	printf("Swap: list size %d %p", ft_lstsize(lst), lst->content);
-	ft_lstadd_back(&aux, lst);
-	// ft_lstadd_back(&aux, lst->content);
-	// int i = 0;
-	while (lst)
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
 	{
-	//	ft_lstadd_back(&aux, lst->content);
-		test = lst->content;
-		printf("%s\n", (char *)test);
-		lst = lst->next;
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n = -n;
+		}
+		if (n == 0)
+			write(fd, "0", 1);
+		if (n > 0 && n <= 9)
+		{
+			aux = n + '0';
+			write(fd, &aux, 1);
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
+		}
 	}
-	ft_utils_show_op_msg("sa");
 }

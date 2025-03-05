@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/05 12:25:47 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/04 09:22:20 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/30 18:46:28 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_list *lst)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	t_list	*aux;
-	void	*test;
+	unsigned int	i;
 
-	// aux = ft_lstnew(0);
-	printf("Swap: list size %d %p", ft_lstsize(lst), lst->content);
-	ft_lstadd_back(&aux, lst);
-	// ft_lstadd_back(&aux, lst->content);
-	// int i = 0;
-	while (lst)
+	if (!dest && !src)
+		return (0);
+	if (src > dest)
 	{
-	//	ft_lstadd_back(&aux, lst->content);
-		test = lst->content;
-		printf("%s\n", (char *)test);
-		lst = lst->next;
+		i = 0;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
-	ft_utils_show_op_msg("sa");
+	else
+	{
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		}
+	}
+	return (dest);
 }

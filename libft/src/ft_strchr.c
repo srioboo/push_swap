@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/05 12:25:47 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/04 09:18:01 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/14 09:13:27 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_list *lst)
+char	*ft_strchr(const char *s, int c)
 {
-	t_list	*aux;
-	void	*test;
+	unsigned char	chr;
+	int				count;
 
-	// aux = ft_lstnew(0);
-	printf("Swap: list size %d %p", ft_lstsize(lst), lst->content);
-	ft_lstadd_back(&aux, lst);
-	// ft_lstadd_back(&aux, lst->content);
-	// int i = 0;
-	while (lst)
+	chr = c;
+	count = 0;
+	while (*s != '\0')
 	{
-	//	ft_lstadd_back(&aux, lst->content);
-		test = lst->content;
-		printf("%s\n", (char *)test);
-		lst = lst->next;
+		if (*s == chr)
+		{
+			count++;
+			return ((char *)s);
+		}
+		s++;
 	}
-	ft_utils_show_op_msg("sa");
+	if (chr == '\0')
+		return ((char *)s);
+	if (count == 0)
+		return (NULL);
+	return ((char *)s);
 }

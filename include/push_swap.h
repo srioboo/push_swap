@@ -6,14 +6,14 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/03 16:15:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/04 23:17:03 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "include/libft.h"
+# include "../libft/src/libft.h"
 
 // TODO - delete - for testing only
 # include <stdio.h>

@@ -6,45 +6,38 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/03/05 12:32:07 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/02/28 12:29:29 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # library name
-NAME = push_swap
-
+NAME = libftprintf.a
 # compliler and compiler flags
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror
-
 # auxiliary commands
+AR = @ar rcs
 RM = @rm -f
 
-# directories
-INCLUDE = -Iinclude
-LIB_FLAG = -Llibft -l:libft.a
-
 # source files
-SRCS = push_swap.c \
-		push_swap_operation_rev_rotate.c \
-		push_swap_operations_main.c \
-		push_swap_utils.c \
-		push_swap_operation_push.c \
-		push_swap_operation_rotate.c \
-		push_swap_operation_swap.c \
-		push_swap_validate.c
-
+SRCS = ft_printf.c \
+		ft_type.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_puthex.c \
+		ft_putnumber.c \
+		ft_putpointer.c \
+		ft_putpercent.c
 # objects
 OBJECTS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
-	@make -C libft full
-	$(CC) $(INCLUDE) $(SRCS) $(LIB_FLAG) -o $(NAME)
+$(NAME): $(OBJECTS)
+	$(AR) $(NAME) $(OBJECTS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJECTS)

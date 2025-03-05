@@ -2,7 +2,7 @@
 LIB_TEST_NAME = libfuntest.a
 
 # Library to test, add here your libs to test
-LIB_TESTED = lib/libft.a
+LIB_TESTED = libft/libft.a
 
 # Compiler and flags for compilation
 CC = cc
@@ -12,8 +12,8 @@ CFLAGS = -Wall -Werror -Wextra
 TEST_DIR = src-tests
 TEST_BIN = test.out
 # Directories
-INCLUDE = $(TEST_DIR)/include
-LIB = $(TEST_DIR)/lib
+INCLUDE = -I$(TEST_DIR)/include -Iinclude -Ilibft/src
+LIB_FLAG = -L$(TEST_DIR)/lib -l:$(LIB_TEST_NAME)
 
 ## Library Test source and objects
 TEST_SRCS = $(wildcard $(TEST_DIR)/*.c)
@@ -30,7 +30,7 @@ SRCS = push_swap_operation_rev_rotate.c \
 
 # Test: generate test binary
 test:
-	$(CC) $(CFLAGS) -I$(INCLUDE) $(SRCS) $(TEST_SRCS) $(LIB_TESTED) -L$(LIB) -l:$(LIB_TEST_NAME) -o $(TEST_BIN)
+	$(CC) $(CFLAGS) $(INCLUDE) $(SRCS) $(TEST_SRCS) $(LIB_TESTED) $(LIB_FLAG) -o $(TEST_BIN)
 	./$(TEST_BIN)
 
 # clean test directories

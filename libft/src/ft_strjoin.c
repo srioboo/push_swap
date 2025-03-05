@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/05 12:25:47 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/09 17:59:49 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/14 23:09:31 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_swap(t_list *lst)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_list	*aux;
-	void	*test;
+	char	*result;
+	int		i;
+	int		j;
 
-	// aux = ft_lstnew(0);
-	printf("Swap: list size %d %p", ft_lstsize(lst), lst->content);
-	ft_lstadd_back(&aux, lst);
-	// ft_lstadd_back(&aux, lst->content);
-	// int i = 0;
-	while (lst)
+	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
-	//	ft_lstadd_back(&aux, lst->content);
-		test = lst->content;
-		printf("%s\n", (char *)test);
-		lst = lst->next;
+		result[i] = s1[i];
+		i++;
 	}
-	ft_utils_show_op_msg("sa");
+	j = 0;
+	while (s2[j])
+	{
+		result[i] = s2[j];
+		i++;
+		j++;
+	}
+	result[i] = '\0';
+	return (result);
 }

@@ -9,7 +9,8 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"*.c",
-				"-Llib",
+				"-Iinclude",
+				"-Llibft",
 				"-l:libft.a",
 				"-o",
 				"${fileDirname}/push_swap"

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/03 10:11:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 10:48:40 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_utils_show_op_msg(char *op)
 
 	len = ft_strlen(op);
 	write(1, op, len);
-	write(1, "\n", 2);
+	write(1, "\n", 1);
 }
 
 int	ft_utils_show_error_msg(void)

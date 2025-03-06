@@ -6,13 +6,14 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/04 23:17:03 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 11:13:32 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "operations.h"
 # include "../libft/src/libft.h"
 
 // TODO - delete - for testing only
@@ -58,7 +59,7 @@ void	ft_utils_show_op_msg(char *op);
 /**
  * @brief Process list sortening
  */
-void	ft_sort(t_list new_list);
+void	ft_sort(t_list *new_list);
 
 /* ************************************************************************** */
 /* Operations Push                                                            */
@@ -75,6 +76,21 @@ void	ft_sort(t_list new_list);
 /* ************************************************************************** */
 /* Operations Swap                                                            */
 /* ************************************************************************** */
-void	ft_swap(t_list *lst);
+
+/**
+ * @brief swap the first 2 elements at the top of the stack a
+ * 
+ * @param list to apply the change
+ * @return nothing
+ */
+t_list	*ft_swap_a(t_list *lst);
+
+/**
+ * @brief swap the first 2 elements at the top of the stack b
+ * 
+ * @param list to apply the change
+ * @return nothing
+ */
+t_list	*ft_swap_b(t_list *lst);
 
 #endif

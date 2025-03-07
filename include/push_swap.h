@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 13:17:30 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:00:32 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	ft_utils_show_op_msg(char *op);
 
 /**
  * @brief Process list sortening
+ * 
+ * @param new_list list
  */
 void	ft_sort(t_list *new_list);
 
@@ -68,8 +70,8 @@ void	ft_sort(t_list *new_list);
 /**
  * @brief takes the first element on top on list a and puts in on list b
  * 
- * @param origin list
- * @param destination list
+ * @param orig list
+ * @param dest list
  * @return modify destination list
  */
 t_list	*ft_push(t_list *orig, t_list *dest, char *op);
@@ -81,7 +83,7 @@ t_list	*ft_push(t_list *orig, t_list *dest, char *op);
 /**
  * @brief swift elements one position, first element become last.
  * 
- * @param list to rotate
+ * @param lst to rotate
  * @return the result list
  */
 t_list	*ft_rotate(t_list *lst, char *op);
@@ -93,7 +95,7 @@ t_list	*ft_rotate(t_list *lst, char *op);
 /**
  * @brief swift elements one position, last element become first.
  * 
- * @param list to rotate
+ * @param lst to rotate
  * @return the result list
  */
 t_list	*ft_rev_rotate(t_list *lst, char *op);
@@ -103,19 +105,12 @@ t_list	*ft_rev_rotate(t_list *lst, char *op);
 /* ************************************************************************** */
 
 /**
- * @brief swap the first 2 elements at the top of the stack a
+ * @brief swap the first 2 elements at the top of the stack
  * 
- * @param list to apply the change
+ * @param lst to apply the change
+ * @param op operation to realice OP_SWAP_A or OP_SWAP_B
  * @return the new list
  */
-t_list	*ft_swap_a(t_list *lst);
-
-/**
- * @brief swap the first 2 elements at the top of the stack b
- * 
- * @param list to apply the change
- * @return the new list
- */
-t_list	*ft_swap_b(t_list *lst);
+t_list	*ft_swap(t_list *lst, char *op);
 
 #endif

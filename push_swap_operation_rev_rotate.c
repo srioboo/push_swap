@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 13:28:51 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 21:51:36 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ t_list	*ft_rev_rotate(t_list *lst, char *op)
 	ft_lstadd_back(&aux, first);
 	ft_utils_show_op_msg(op);
 	return (aux);
+}
+
+void	ft_rev_rotate_both(t_list *lsta, t_list *lstb)
+{
+	ft_rev_rotate(lsta, OP_REV_ROTATE_A);
+	ft_rev_rotate(lstb, OP_REV_ROTATE_B);
+	ft_utils_show_op_msg(OP_REV_ROTATE_BOTH);
 }

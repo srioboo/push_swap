@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 13:23:15 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 21:58:57 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	test_swap(int active)
 	{
 		fun_test_header_label(1, "--- test_swap");
 		lstest = build_test_list(1);
-		lstest = ft_swap_a(lstest);
+		lstest = ft_swap(lstest, OP_SWAP_A);
 		while (lstest)
 		{
 			if (lstest->content)
@@ -117,8 +117,8 @@ int	main(int argc, char **argv)
 	if (!argv)
 		printf("%s", argv[0]);
 	test_ft_dummy(1);
-	test_swap(0);
+	test_swap(1);
 	test_push(0);
 	test_rotate(0);
-	test_rev_rotate(1);
+	test_rev_rotate(0);
 }

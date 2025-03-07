@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 12:20:20 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:58:51 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,14 @@ t_list	*ft_push(t_list *orig, t_list *dest, char *op);
 /* ************************************************************************** */
 /* Operations Rotate                                                          */
 /* ************************************************************************** */
+
+/**
+ * @brief swift elements one position, first element become last.
+ * 
+ * @param list to rotate
+ * @return the result list
+ */
+t_list	*ft_rotate(t_list *lst, char *op);
 
 /* ************************************************************************** */
 /* Operations Rev rotate                                                      */

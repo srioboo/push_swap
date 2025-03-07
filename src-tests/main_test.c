@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 12:31:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:59:09 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,25 @@ void	test_push(int active)
 	}
 }
 
+void	test_rotate(int active)
+{
+	t_list	*lstest;
+
+	lstest = NULL;
+	if (active > 0)
+	{
+		fun_test_header_label(1, "--- test_push");
+		lstest = build_test_list(1);
+		lstest = ft_rotate(lstest, OP_ROTATE_A);
+		while (lstest)
+		{
+			if (lstest->content)
+				printf("%s\n", (char *)(lstest->content));
+			lstest = lstest->next;
+		}
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	if (!argc)
@@ -79,5 +98,6 @@ int	main(int argc, char **argv)
 		printf("%s", argv[0]);
 	test_ft_dummy(1);
 	test_swap(0);
-	test_push(1);
+	test_push(0);
+	test_rotate(1);
 }

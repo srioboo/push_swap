@@ -6,13 +6,30 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 11:14:20 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 13:00:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_list lst)
+t_list	*ft_rotate(t_list *lst, char *op)
 {
-	printf("Swap: list size %d", ft_lstsize(&lst));
+	int		counter;
+	t_list	*last;
+	t_list	*aux;
+
+	last = NULL;
+	aux = NULL;
+	last = ft_lstlast(lst);
+	ft_lstadd_back(&aux, last);
+	counter = 0;
+	while (lst && counter < (ft_lstsize(lst) - 1))
+	{
+		if (lst->content)
+			ft_lstadd_back(&aux, ft_lstnew(lst->content)); 
+		counter++;
+		lst = lst->next;
+	}
+	ft_utils_show_op_msg(op);
+	return (aux);
 }

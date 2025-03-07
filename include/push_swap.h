@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 11:13:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/07 12:20:20 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,15 @@ void	ft_sort(t_list *new_list);
 /* Operations Push                                                            */
 /* ************************************************************************** */
 
+/**
+ * @brief takes the first element on top on list a and puts in on list b
+ * 
+ * @param origin list
+ * @param destination list
+ * @return modify destination list
+ */
+t_list	*ft_push(t_list *orig, t_list *dest, char *op);
+
 /* ************************************************************************** */
 /* Operations Rotate                                                          */
 /* ************************************************************************** */
@@ -81,7 +90,7 @@ void	ft_sort(t_list *new_list);
  * @brief swap the first 2 elements at the top of the stack a
  * 
  * @param list to apply the change
- * @return nothing
+ * @return the new list
  */
 t_list	*ft_swap_a(t_list *lst);
 
@@ -89,7 +98,7 @@ t_list	*ft_swap_a(t_list *lst);
  * @brief swap the first 2 elements at the top of the stack b
  * 
  * @param list to apply the change
- * @return nothing
+ * @return the new list
  */
 t_list	*ft_swap_b(t_list *lst);
 

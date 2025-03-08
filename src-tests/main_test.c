@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/08 10:57:01 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/08 19:48:17 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 void	show_lst_data(t_list *lstest)
 {
-	printf("\n\n==== lst content ===\n");
+	printf("\n\n" COLOR_YELLOW "==== lst content ===" COLOR_RESET " \n");
 	while (lstest)
 	{
 		if (lstest->content)
 			printf("%s\t", (char *)(lstest->content));
 		lstest = lstest->next;
 	}
-	printf("\n==== lst content end ===\n");
+	printf("\n" COLOR_YELLOW "==== lst content end ===" COLOR_RESET "\n\n");
 }
 
 t_list *build_test_list(int active_log, int n_elem_lst, ...)

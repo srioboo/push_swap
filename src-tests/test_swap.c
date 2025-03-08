@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   test_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 10:31:27 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/08 10:55:42 by srioboo-         ###   ########.fr       */
+/*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/03/08 10:55:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
+#include "test.h"
 
-# include "funtestlib.h"
+void	test_swap(int active)
+{
+	t_list	*lstest;
 
-// add here funcions prototipe
-int		test_ft_dummy(int active);
-t_list	*build_test_list(int active_log, int n_elem_lst, ...);
-void	test_push(int active);
-void	test_rotate(int active);
-void	test_rev_rotate(int active);
-void	test_swap(int active);
-void	show_lst_data(t_list *lstest);
-
-#endif
+	lstest = NULL;
+	if (active > 0)
+	{
+		fun_test_header_label(1, "--- test_swap");
+		lstest = build_test_list(1, 3, 1, 2, 3);
+		lstest = ft_swap(lstest, OP_SWAP_A);
+		show_lst_data(lstest);
+		// while (lstest)
+		// {
+		// 	if (lstest->content)
+		// 		printf("%s\n", (char *)(lstest->content));
+		// 	lstest = lstest->next;
+		// }
+	}
+}

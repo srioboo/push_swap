@@ -6,108 +6,46 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 21:58:57 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/08 10:57:01 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
+#include <stdarg.h>
 
-static t_list	*build_test_list(int active_log)
+void	show_lst_data(t_list *lstest)
+{
+	printf("\n\n==== lst content ===\n");
+	while (lstest)
+	{
+		if (lstest->content)
+			printf("%s\t", (char *)(lstest->content));
+		lstest = lstest->next;
+	}
+	printf("\n==== lst content end ===\n");
+}
+
+t_list *build_test_list(int active_log, int n_elem_lst, ...)
 {
 	t_list	*lstest;
+	va_list	args;
+	int		aux;
 
+	va_start(args, n_elem_lst);
 	lstest = NULL;
-	ft_lstadd_back(&lstest, ft_lstnew("contenido1"));
-	ft_lstadd_back(&lstest, ft_lstnew("contenido2"));
-	ft_lstadd_back(&lstest, ft_lstnew("contenido3"));
+	aux = 0;
+	while (n_elem_lst > 0)
+	{
+		aux = va_arg(args, int);
+		if(active_log > 0)
+			printf("%d\t", aux);
+		ft_lstadd_back(&lstest, ft_lstnew(ft_itoa(aux)));
+		n_elem_lst--;
+	}
 	if (active_log > 0)
-	{
-		printf("list size %d\n", ft_lstsize(lstest));
-		printf("contenido1\n");
-		printf("contenido2\n");
-		printf("contenido3\n\n");
-	}
+		printf("list size: %d\n\n", ft_lstsize(lstest));
+	va_end(args);
 	return (lstest);
-}
-
-void	test_swap(int active)
-{
-	t_list	*lstest;
-
-	lstest = NULL;
-	if (active > 0)
-	{
-		fun_test_header_label(1, "--- test_swap");
-		lstest = build_test_list(1);
-		lstest = ft_swap(lstest, OP_SWAP_A);
-		while (lstest)
-		{
-			if (lstest->content)
-				printf("%s\n", (char *)(lstest->content));
-			lstest = lstest->next;
-		}
-	}
-}
-
-void	test_push(int active)
-{
-	t_list	*lstest_a;
-	t_list	*lstest_b;
-
-	lstest_a = NULL;
-	lstest_b = NULL;
-	if (active > 0)
-	{
-		fun_test_header_label(1, "--- test_push");
-		lstest_a = build_test_list(1);
-		lstest_b = build_test_list(1);
-		lstest_b = ft_push(lstest_a, lstest_b, OP_PUSH_A);
-		printf("result size: %d\n", ft_lstsize(lstest_a));
-		while (lstest_b)
-		{
-			if (lstest_b->content)
-				printf("%s\n", (char *)(lstest_b->content));
-			lstest_b = lstest_b->next;
-		}
-	}
-}
-
-void	test_rotate(int active)
-{
-	t_list	*lstest;
-
-	lstest = NULL;
-	if (active > 0)
-	{
-		fun_test_header_label(1, "--- test_rotate");
-		lstest = build_test_list(1);
-		lstest = ft_rotate(lstest, OP_ROTATE_A);
-		while (lstest)
-		{
-			if (lstest->content)
-				printf("%s\n", (char *)(lstest->content));
-			lstest = lstest->next;
-		}
-	}
-}
-
-void	test_rev_rotate(int active)
-{
-	t_list	*lstest;
-
-	lstest = NULL;
-	if (active > 0)
-	{
-		fun_test_header_label(1, "--- test_rotate");
-		lstest = build_test_list(1);
-		lstest = ft_rev_rotate(lstest, OP_REV_ROTATE_A);
-		while (lstest)
-		{
-			if (lstest->content)
-				printf("%s\n", (char *)(lstest->content));
-			lstest = lstest->next;
-		}
-	}
 }
 
 int	main(int argc, char **argv)

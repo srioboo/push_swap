@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/03 10:09:37 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/09 17:13:34 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,27 @@ int	ft_validate_isnumber(char *s)
 	while (s[i] != 0)
 	{
 		if (ft_isalpha((int)s[i]) == 1)
-			return (1);
+			return (FALSE);
 		i++;
 	}
-	return (0);
+	return (TRUE);
 }
 
-int	ft_validate_parameters(int argc, char **argv)
+int	ft_validate_isrepeated(char *s, t_list *lst)
 {
-	int		i;
+	int	num_a;
+	int num_b;
 
-	i = 1;
-	if (argc == 2)
-		return (ft_validate_isnumber(argv[i]));
-	else if (argc > 2)
+	num_a = ft_atoi(s);
+	if (lst != NULL)
 	{
-		while (argv[i] != NULL)
+		while (lst)
 		{
-			if (ft_validate_isnumber(argv[i]) == 1)
-				return (1);
-			i++;
+			num_b = ft_atoi((char *)(lst->content));
+			if (num_a == num_b)
+				return (TRUE);
+			lst = lst->next;
 		}
 	}
-	return (0);
+	return (FALSE);
 }

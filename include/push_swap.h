@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 22:00:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/09 16:58:42 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,27 @@
 // TODO - delete - for testing only
 # include <stdio.h>
 
+# define FALSE 0
+# define TRUE 1
+
 /**
- * @brief Process the parameters
+ * @brief Retrieve parameters, test if valid and return list
  */
-int		process_parameters(char **params);
+t_list *ft_process_parameters(int argc, char **argv);
 
 /* ************************************************************************** */
 /* Validate                                                                   */
 /* ************************************************************************** */
 
 /**
- * @brief Retrieve parameters and test if are numbers
- */
-int		ft_validate_parameters(int argc, char **argv);
-
-/**
  * @brief Test if a string is a number
  */
 int		ft_validate_isnumber(char *s);
+
+/**
+ * @brief Test if the number already exists
+ */
+int		ft_validate_isrepeated(char *s, t_list *lst);
 
 /* ************************************************************************** */
 /* Utils                                                                      */

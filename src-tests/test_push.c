@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/08 10:54:41 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/09 10:43:13 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,5 @@ void	test_push(int active)
 		lstest_b = ft_push(lstest_a, lstest_b, OP_PUSH_A);
 		printf("result size: %d\n", ft_lstsize(lstest_a));
 		show_lst_data(lstest_b);
-		// while (lstest_b)
-		// {
-		// 	if (lstest_b->content)
-		// 		printf("%s\n", (char *)(lstest_b->content));
-		// 	lstest_b = lstest_b->next;
-		// }
 	}
 }

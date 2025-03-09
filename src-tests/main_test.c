@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/08 19:48:17 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/09 10:47:29 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,11 @@ int	main(int argc, char **argv)
 	if (!argv)
 		printf("%s", argv[0]);
 	test_ft_dummy(1);
+	fun_group_start("GROUP SWAP");
 	test_swap(1);
-	test_push(0);
-	test_rotate(0);
-	test_rev_rotate(0);
+	fun_group_start("PUSH");
+	test_push(1);
+	fun_group_start("ROTATE");
+	test_rotate(1);
+	test_rev_rotate(1);
 }

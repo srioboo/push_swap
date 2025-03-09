@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/08 10:55:05 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/09 10:43:06 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ void	test_rotate(int active)
 		lstest = build_test_list(1, 3, 1, 2, 3);
 		lstest = ft_rotate(lstest, OP_ROTATE_A);
 		show_lst_data(lstest);
-		// while (lstest)
-		// {
-		// 	if (lstest->content)
-		// 		printf("%s\n", (char *)(lstest->content));
-		// 	lstest = lstest->next;
-		// }
 	}
 }
 

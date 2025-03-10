@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/10 15:13:35 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:33:12 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_list	*process_parameters(int argc, char **argv)
 	ls_num = NULL;
 	if (argc >= 2)
 	{
+		if (argc == 2)
+			argv = ft_split(argv[1], ' ');
 		while (argv[i] != NULL)
 		{
 			if (validate_isnumber(argv[i]) == FALSE
@@ -30,7 +32,7 @@ t_list	*process_parameters(int argc, char **argv)
 				return (NULL);
 			}
 			else
-				link_lstadd_back(&ls_num, link_lstnew(argv[i]));
+				ft_lstadd_back(&ls_num, ft_lstnew(argv[i]));
 			i++;
 		}
 	}

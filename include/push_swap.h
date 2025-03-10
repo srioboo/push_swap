@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/10 15:15:35 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:37:23 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	show_op_msg(char *op);
  * @param new_list list
  */
 void	op_sort(t_list *new_list, t_list *aux_list);
+
+void tiny_short(t_list *lst);
 
 /* ************************************************************************** */
 /* Operations Push                                                            */

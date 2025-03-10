@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/03/05 12:32:07 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/03/10 09:52:45 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,13 @@ LIB_FLAG = -Llibft -l:libft.a
 
 # source files
 SRCS = push_swap.c \
-		push_swap_operation_rev_rotate.c \
-		push_swap_operations_main.c \
 		push_swap_utils.c \
-		push_swap_operation_push.c \
-		push_swap_operation_rotate.c \
-		push_swap_operation_swap.c \
-		push_swap_validate.c
+		push_swap_validate.c \
+		operation_rev_rotate.c \
+		operation_main.c \
+		operation_push.c \
+		operation_rotate.c \
+		operation_swap.c
 
 # objects
 OBJECTS = $(SRCS:.c=.o)

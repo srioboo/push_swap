@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/08 23:08:06 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:01:14 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	test_swap(int active)
 	{
 		fun_test_header_label(1, "--- test_swap");
 		lstest = build_test_list(1, 3, 1, 2, 3);
-		lstest = ft_swap(lstest, OP_SWAP_A);
+		lstest = op_swap(lstest, OP_SWAP_A);
 		show_lst_data(lstest);
 	}
 }

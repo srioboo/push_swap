@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operation_swap.c                         :+:      :+:    :+:   */
+/*   operation_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/07 21:56:55 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:17:29 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_swap(t_list *lst, char *op)
+void	op_sort(t_list *new_list, t_list *aux_list)
 {
-	t_list	*aux;
-	void	*temp;
-	int		i;
-
-	if (!lst || !lst->next)
-		return (NULL);
-	aux = NULL;
-	i = 0;
-	while (lst)
-	{
-		if (lst->content && i == 0)
-		{
-			temp = lst->content;
-			ft_lstadd_back(&aux, ft_lstnew(lst->next->content));
-		}
-		else if (lst->content && i == 1)
-			ft_lstadd_back(&aux, ft_lstnew(temp));
-		else
-			ft_lstadd_back(&aux, ft_lstnew(lst->content));
-		lst = lst->next;
-		i++;
-	}
-	ft_utils_show_op_msg(op);
-	return (aux);
+	printf("START SORTENING: list size %d %p", ft_lstsize(new_list), aux_list);
+	// TODO - do ordering
 }

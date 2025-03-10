@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/09 16:58:42 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:15:35 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,22 @@
 // TODO - delete - for testing only
 # include <stdio.h>
 
+typedef struct s_link_list
+{
+	int					index;
+	int					index_last;
+	int 				content;
+	struct s_link_list	*prev;
+	struct s_link_list	*next;
+} t_link_list;
+
 # define FALSE 0
 # define TRUE 1
 
 /**
  * @brief Retrieve parameters, test if valid and return list
  */
-t_list *ft_process_parameters(int argc, char **argv);
+t_list *process_parameters(int argc, char **argv);
 
 /* ************************************************************************** */
 /* Validate                                                                   */
@@ -34,12 +43,12 @@ t_list *ft_process_parameters(int argc, char **argv);
 /**
  * @brief Test if a string is a number
  */
-int		ft_validate_isnumber(char *s);
+int		validate_isnumber(char *s);
 
 /**
  * @brief Test if the number already exists
  */
-int		ft_validate_isrepeated(char *s, t_list *lst);
+int		validate_isrepeated(char *s, t_list *lst);
 
 /* ************************************************************************** */
 /* Utils                                                                      */
@@ -48,12 +57,12 @@ int		ft_validate_isrepeated(char *s, t_list *lst);
 /**
  * @brief Show error message
  */
-int		ft_utils_show_error_msg(void);
+int		show_error_msg(void);
 
 /**
  * @brief Show operation message in result
  */
-void	ft_utils_show_op_msg(char *op);
+void	show_op_msg(char *op);
 
 /* ************************************************************************** */
 /* Operations Main                                                            */
@@ -64,7 +73,7 @@ void	ft_utils_show_op_msg(char *op);
  * 
  * @param new_list list
  */
-void	ft_sort(t_list *new_list);
+void	op_sort(t_list *new_list, t_list *aux_list);
 
 /* ************************************************************************** */
 /* Operations Push                                                            */
@@ -77,7 +86,7 @@ void	ft_sort(t_list *new_list);
  * @param dest list
  * @return modify destination list
  */
-t_list	*ft_push(t_list *orig, t_list *dest, char *op);
+t_list *op_push(t_list *orig, t_list *dest, char *op);
 
 /* ************************************************************************** */
 /* Operations Rotate                                                          */
@@ -89,7 +98,7 @@ t_list	*ft_push(t_list *orig, t_list *dest, char *op);
  * @param lst to rotate
  * @return the result list
  */
-t_list	*ft_rotate(t_list *lst, char *op);
+t_list *op_rotate(t_list *lst, char *op);
 
 /* ************************************************************************** */
 /* Operations Rev rotate                                                      */
@@ -101,7 +110,7 @@ t_list	*ft_rotate(t_list *lst, char *op);
  * @param lst to rotate
  * @return the result list
  */
-t_list	*ft_rev_rotate(t_list *lst, char *op);
+t_list *op_rev_rotate(t_list *lst, char *op);
 
 /* ************************************************************************** */
 /* Operations Swap                                                            */
@@ -114,6 +123,6 @@ t_list	*ft_rev_rotate(t_list *lst, char *op);
  * @param op operation to realice OP_SWAP_A or OP_SWAP_B
  * @return the new list
  */
-t_list	*ft_swap(t_list *lst, char *op);
+t_list *op_swap(t_list *lst, char *op);
 
 #endif

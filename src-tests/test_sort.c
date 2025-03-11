@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 15:06:01 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:16:45 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	test_sort(int active)
 {
-	t_list *lstest;
-	t_list *lstaux;
+	t_link_list *lstest;
+	t_link_list *lstaux;
 
 	lstest = NULL;
 	lstaux = NULL;
@@ -32,8 +32,8 @@ void	test_sort(int active)
 
 void	test_sort_three(int active)
 {
-	t_list	*lstest;
-	t_list *lstaux;
+	t_link_list	*lstest;
+	t_link_list *lstaux;
 
 	lstest = NULL;
 	lstaux = NULL;
@@ -53,7 +53,7 @@ void	test_sort_three(int active)
 
 void	test_find_max(int active)
 {
-	t_list *lstest;
+	t_link_list *lstest;
 
 	lstest = NULL;
 	if (active > 0)

@@ -26,7 +26,11 @@ SRCS = push_swap_utils.c \
 		operation_main.c \
 		operation_push.c \
 		operation_rotate.c \
-		operation_swap.c
+		operation_swap.c \
+		link_lstnew.c \
+		link_lstlast.c \
+		link_lstadd_back.c \
+		link_lstsize.c
 
 # Test: generate test binary
 test:

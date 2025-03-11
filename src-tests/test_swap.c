@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/10 15:01:14 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:16:45 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_swap(int active)
 {
-	t_list	*lstest;
+	t_link_list	*lstest;
 
 	lstest = NULL;
 	if (active > 0)

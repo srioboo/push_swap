@@ -6,16 +6,16 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 09:01:56 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:52:42 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*process_parameters(int argc, char **argv)
+t_link_list	*process_parameters(int argc, char **argv)
 {
 	int			i;
-	t_list		*ls_num;
+	t_link_list		*ls_num;
 
 	i = 1;
 	ls_num = NULL;
@@ -35,7 +35,7 @@ t_list	*process_parameters(int argc, char **argv)
 				return (NULL);
 			}
 			else
-				ft_lstadd_back(&ls_num, ft_lstnew(argv[i]));
+				link_lstadd_back(&ls_num, link_lstnew(ft_atoi(argv[i])));
 			i++;
 		}
 	}
@@ -46,8 +46,8 @@ t_list	*process_parameters(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_list	*ls_num;
-	t_list	*ls_aux;
+	t_link_list	*ls_num;
+	t_link_list	*ls_aux;
 
 	if (argc <= 1)
 		return (show_error_msg());

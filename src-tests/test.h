@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:31:27 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 13:13:58 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:16:45 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 // add here funcions prototipe
 int		test_ft_dummy(int active);
-t_list	*build_test_list(int active_log, int n_elem_lst, ...);
+t_link_list	*build_test_list(int active_log, int n_elem_lst, ...);
 void	test_push(int active);
 void	test_rotate(int active);
 void	test_rev_rotate(int active);
@@ -25,6 +25,6 @@ void	test_swap(int active);
 void	test_sort(int active);
 void	test_sort_three(int active);
 void	test_find_max(int active);
-void	show_lst_data(t_list *lstest);
+void	show_lst_data(t_link_list *lstest);
 
 #endif

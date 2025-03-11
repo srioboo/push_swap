@@ -6,17 +6,17 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/10 15:12:27 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:28:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *op_rev_rotate(t_list *lst, char *op)
+t_link_list *op_rev_rotate(t_link_list *lst, char *op)
 {
 	int		counter;
-	t_list	*first;
-	t_list	*aux;
+	t_link_list	*first;
+	t_link_list	*aux;
 
 	first = NULL;
 	aux = NULL;
@@ -24,18 +24,18 @@ t_list *op_rev_rotate(t_list *lst, char *op)
 	while (lst)
 	{
 		if (lst->content && counter == 0)
-			first = ft_lstnew(lst->content);
+			first = link_lstnew(lst->content);
 		else if (lst->content)
-			ft_lstadd_back(&aux, ft_lstnew(lst->content));
+			link_lstadd_back(&aux, link_lstnew(lst->content));
 		counter++;
 		lst = lst->next;
 	}
-	ft_lstadd_back(&aux, first);
+	link_lstadd_back(&aux, first);
 	show_op_msg(op);
 	return (aux);
 }
 
-void	ft_rev_rotate_both(t_list *lsta, t_list *lstb)
+void	ft_rev_rotate_both(t_link_list *lsta, t_link_list *lstb)
 {
 	op_rev_rotate(lsta, OP_REV_ROTATE_A);
 	op_rev_rotate(lstb, OP_REV_ROTATE_B);

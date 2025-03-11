@@ -6,29 +6,29 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 15:08:40 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 23:29:53 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 #include <stdarg.h>
 
-void	show_lst_data(t_list *lstest)
+void	show_lst_data(t_link_list *lstest)
 {
 	printf("\n\n" COLOR_YELLOW "==== list content ===" COLOR_RESET " \n");
-	printf("size: %d\nelements: ", ft_lstsize(lstest));
+	printf("size: %d\nelements: ", link_lstsize(lstest));
 	while (lstest)
 	{
 		if (lstest->content)
-			printf("%s\t", (char *)(lstest->content));
+			printf("%d\t", lstest->content);
 		lstest = lstest->next;
 	}
 	printf("\n" COLOR_YELLOW "==== list content end ===" COLOR_RESET "\n\n");
 }
 
-t_list *build_test_list(int active_log, int n_elem_lst, ...)
+t_link_list *build_test_list(int active_log, int n_elem_lst, ...)
 {
-	t_list	*lstest;
+	t_link_list	*lstest;
 	va_list	args;
 	int		aux;
 
@@ -40,11 +40,11 @@ t_list *build_test_list(int active_log, int n_elem_lst, ...)
 		aux = va_arg(args, int);
 		if(active_log > 0)
 			printf("%d\t", aux);
-		ft_lstadd_back(&lstest, ft_lstnew(ft_itoa(aux)));
+		link_lstadd_back(&lstest, link_lstnew(aux));
 		n_elem_lst--;
 	}
 	if (active_log > 0)
-		printf("list size: %d\n\n", ft_lstsize(lstest));
+		printf("list size: %d\n\n", link_lstsize(lstest));
 	va_end(args);
 	return (lstest);
 }

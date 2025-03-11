@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 00:37:23 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 10:14:54 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 // TODO - delete - for testing only
 # include <stdio.h>
 
+#define FALSE 0
+#define TRUE 1
+
 typedef struct s_link_list
 {
 	int					index;
@@ -28,8 +31,11 @@ typedef struct s_link_list
 	struct s_link_list	*next;
 } t_link_list;
 
-# define FALSE 0
-# define TRUE 1
+/* ************************************************************************** */
+/* link list                                                                  */
+/* ************************************************************************** */
+
+t_link_list *link_lstlast(t_link_list *lst);
 
 /**
  * @brief Retrieve parameters, test if valid and return list

@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/03/10 09:52:45 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/03/11 09:53:54 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,10 @@ SRCS = push_swap.c \
 		operation_main.c \
 		operation_push.c \
 		operation_rotate.c \
+		link_lstnew.c \
+		link_lstlast.c \
+		link_lstadd_back.c \
+		link_lstsize.c \
 		operation_swap.c
 
 # objects

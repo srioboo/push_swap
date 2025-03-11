@@ -6,13 +6,13 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 00:18:33 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/10 16:38:58 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 09:53:00 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_llstsize(t_link_list *lst)
+int	link_lstsize(t_link_list *lst)
 {
 	int	lstsize;
 

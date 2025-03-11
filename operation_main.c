@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 00:39:08 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 09:09:52 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,22 @@ void	op_sort(t_list *new_list, t_list *aux_list)
 
 void tiny_short(t_list *lst)
 {
+	int nb_current;
+	int nb_next;
+
+	nb_current = 0;
+	nb_next = 0;
 	while (lst)
 	{
-		if ((lst->content > lst->next->content) 
-			&& (lst->content > lst->next->next->content))
+		if (lst->content)
+			nb_current = ft_atoi(lst->content);
+		if (lst->next)
+			nb_next = ft_atoi(lst->next->content);
+
+		if (nb_current > nb_next)
 		{
 			lst = op_rotate(lst, OP_ROTATE_A);
 		}
+		lst = lst->next;
 	}
 }

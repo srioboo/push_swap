@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:31:27 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 09:16:13 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 13:13:58 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	test_rev_rotate(int active);
 void	test_swap(int active);
 void	test_sort(int active);
 void	test_sort_three(int active);
+void	test_find_max(int active);
 void	show_lst_data(t_list *lstest);
 
 #endif

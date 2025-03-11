@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 10:14:54 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 22:57:37 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,15 @@ void	show_op_msg(char *op);
  */
 void	op_sort(t_list *new_list, t_list *aux_list);
 
-void tiny_short(t_list *lst);
+/**
+ * @brief do sorting of a list of 3 elements
+ */
+void	tiny_short(t_list *lst);
+
+/**
+ * @brief find de max value in a list
+ */
+int		find_max(t_list *lst);
 
 /* ************************************************************************** */
 /* Operations Push                                                            */

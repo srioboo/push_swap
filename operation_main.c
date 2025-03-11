@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 09:09:52 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 22:55:41 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,42 @@ void tiny_short(t_list *lst)
 {
 	int nb_current;
 	int nb_next;
+	int	max;
 
 	nb_current = 0;
 	nb_next = 0;
+	max = find_max(lst);
+	while (lst)
+	{
+		if (ft_atoi(lst->content) == max)
+			lst = op_rotate(lst, OP_ROTATE_A);
+		if (lst->next)
+			nb_next = ft_atoi(lst->next->content);
+		if (nb_current > nb_next)
+			lst = op_swap(lst, OP_SWAP_A);
+		lst = lst->next;
+	}
+}
+
+int	find_max(t_list *lst)
+{
+	int nb_current;
+	int nb_next;
+	int max;
+
+	nb_current = 0;
+	nb_next = 0;
+	max = 0;
+
 	while (lst)
 	{
 		if (lst->content)
 			nb_current = ft_atoi(lst->content);
 		if (lst->next)
 			nb_next = ft_atoi(lst->next->content);
-
-		if (nb_current > nb_next)
-		{
-			lst = op_rotate(lst, OP_ROTATE_A);
-		}
+		if ((nb_current >= nb_next) && (nb_current > max))
+			max = nb_current;
 		lst = lst->next;
 	}
+	return (max);
 }

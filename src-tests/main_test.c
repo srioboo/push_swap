@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 09:18:48 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/11 15:08:40 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 
 void	show_lst_data(t_list *lstest)
 {
-	printf("\n\n" COLOR_YELLOW "==== lst content ===" COLOR_RESET " \n");
+	printf("\n\n" COLOR_YELLOW "==== list content ===" COLOR_RESET " \n");
+	printf("size: %d\nelements: ", ft_lstsize(lstest));
 	while (lstest)
 	{
 		if (lstest->content)
 			printf("%s\t", (char *)(lstest->content));
 		lstest = lstest->next;
 	}
-	printf("\n" COLOR_YELLOW "==== lst content end ===" COLOR_RESET "\n\n");
+	printf("\n" COLOR_YELLOW "==== list content end ===" COLOR_RESET "\n\n");
 }
 
 t_list *build_test_list(int active_log, int n_elem_lst, ...)
@@ -65,4 +66,6 @@ int	main(int argc, char **argv)
 	fun_group_start("SORT");
 	test_sort(1);
 	test_sort_three(1);
+	fun_group_start("FIND MAX");
+	test_find_max(0);
 }

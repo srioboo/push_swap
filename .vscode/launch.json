@@ -2,25 +2,46 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-		"name": "Launch",
-		"type": "cppdbg",
-		"request": "launch",
-		"program": "${fileDirname}/push_swap",
-		"args": ["1 4 3"],
-		"stopAtEntry": false,
-		"cwd": "${fileDirname}",
-		"environment": [],
-		"externalConsole": false,
-		"MIMode": "gdb",
-		"setupCommands": [
-			{
-			"description": "Enable pretty-printing for gdb",
-			"text": "-enable-pretty-printing",
-			"ignoreFailures": true
-			}
-		],
-		"preLaunchTask": "Build",
-		"miDebuggerArgs": "/bin/gdb"
+			"name": "Launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}/push_swap",
+			"args": ["1 4 3"],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+				"description": "Enable pretty-printing for gdb",
+				"text": "-enable-pretty-printing",
+				"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "Build",
+			"miDebuggerArgs": "/bin/gdb"
+		},
+		{
+			"name": "Test-Launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}/push_swap",
+			"args": ["1 4 3"],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+				"description": "Enable pretty-printing for gdb",
+				"text": "-enable-pretty-printing",
+				"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "Test-Build",
+			"miDebuggerArgs": "/bin/gdb"
 		}
 	]
 }

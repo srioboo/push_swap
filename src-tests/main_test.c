@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	test_rotate(0);
 	test_rev_rotate(0);
 	fun_group_start("SORT");
-	test_sort(1);
+	test_sort(0);
 	test_sort_three(1);
 	fun_group_start("FIND MAX");
 	test_find_max(0);

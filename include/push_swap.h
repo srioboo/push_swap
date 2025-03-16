@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "operations.h"
-# include "../libft/src/libft.h"
+# include "libft.h"
 
 // TODO - delete - for testing only
 # include <stdio.h>

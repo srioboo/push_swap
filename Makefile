@@ -22,10 +22,15 @@ RM = @rm -f
 
 # directories
 INCLUDE = -Iinclude
-LIB_FLAG = -Llibft -l:libft.a
 
 # source files
 SRCS = push_swap.c \
+		ft_strlen.c \
+		ft_isalpha.c \
+		ft_atoi.c \
+		ft_split.c \
+		ft_substr.c \
+		ft_strdup.c \
 		push_swap_utils.c \
 		push_swap_validate.c \
 		operation_rev_rotate.c \
@@ -45,7 +50,7 @@ all: $(NAME)
 
 $(NAME):
 	@make -C libft full
-	$(CC) $(INCLUDE) $(SRCS) $(LIB_FLAG) -o $(NAME)
+	$(CC) $(INCLUDE) $(SRCS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@

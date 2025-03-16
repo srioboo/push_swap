@@ -1,9 +1,6 @@
 # Library name
 LIB_TEST_NAME = libfuntest.a
 
-# Library to test, add here your libs to test
-LIB_TESTED = libft/libft.a
-
 # Compiler and flags for compilation
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
@@ -12,7 +9,7 @@ CFLAGS = -Wall -Werror -Wextra
 TEST_DIR = src-tests
 TEST_BIN = test.out
 # Directories
-INCLUDE = -I$(TEST_DIR)/include -Iinclude -Ilibft/src
+INCLUDE = -I$(TEST_DIR)/include -Iinclude
 LIB_FLAG = -L$(TEST_DIR)/lib -l:$(LIB_TEST_NAME)
 
 ## Library Test source and objects
@@ -21,6 +18,12 @@ TEST_OBJS = $(TEST_SRCS:.c=.o)
 
 # source files
 SRCS = push_swap_utils.c \
+		ft_strlen.c \
+		ft_isalpha.c \
+		ft_atoi.c \
+		ft_split.c \
+		ft_substr.c \
+		ft_strdup.c \
 		push_swap_validate.c \
 		operation_rev_rotate.c \
 		operation_main.c \
@@ -34,7 +37,7 @@ SRCS = push_swap_utils.c \
 
 # Test: generate test binary
 test:
-	$(CC) $(CFLAGS) $(INCLUDE) $(SRCS) $(TEST_SRCS) $(LIB_TESTED) $(LIB_FLAG) -o $(TEST_BIN)
+	$(CC) $(CFLAGS) $(INCLUDE) $(SRCS) $(TEST_SRCS) $(LIB_FLAG) -o $(TEST_BIN)
 	./$(TEST_BIN)
 
 # clean test directories

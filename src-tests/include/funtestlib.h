@@ -22,7 +22,7 @@
 # include <stdarg.h>
 // add libraries of the tested project
 # include "../../include/push_swap.h"
-# include "../../libft/src/libft.h"
+# include "../../include/libft.h"
 
 /** Constants **/
 # define COLOR_BLACK "\x1b[30m"

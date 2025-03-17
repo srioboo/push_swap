@@ -50,7 +50,6 @@ OBJECTS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	@make -C libft full
 	$(CC) $(INCLUDE) $(SRCS) -o $(NAME)
 
 %.o: %.c

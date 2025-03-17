@@ -6,33 +6,39 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 23:28:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/17 19:03:24 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_link_list *op_rev_rotate(t_link_list *lst, char *op)
+t_link_list	*op_rev_rotate(t_link_list *lst, char *op)
 {
-	int		counter;
-	t_link_list	*first;
+	int			counter;
+	int			last_pos;
+	t_link_list	*last;
+	t_link_list	*result;
 	t_link_list	*aux;
 
-	first = NULL;
-	aux = NULL;
+	last_pos = link_lstsize(lst) - 1;
+	last = NULL;
+	result = NULL;
 	counter = 0;
 	while (lst)
 	{
-		if (lst->content && counter == 0)
-			first = link_lstnew(lst->content);
-		else if (lst->content)
-			link_lstadd_back(&aux, link_lstnew(lst->content));
+		if (lst->content && (counter >= 0 && counter != last_pos))
+		{
+			aux = link_lstnew(lst->content);
+			link_lstadd_back(&result, link_lstnew(lst->content));
+		}
+		if (lst->content && (counter == last_pos))
+			last = link_lstnew(lst->content);
 		counter++;
 		lst = lst->next;
 	}
-	link_lstadd_back(&aux, first);
+	link_lstadd_front(&result, last);
 	show_op_msg(op);
-	return (aux);
+	return (result);
 }
 
 void	ft_rev_rotate_both(t_link_list *lsta, t_link_list *lstb)

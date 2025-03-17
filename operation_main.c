@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/17 17:09:38 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/17 17:16:49 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ t_link_list	*tiny_short(t_link_list *lst, t_link_list *aux)
 	{
 		if (count == 0 && (lst->content == max))
 			aux = op_rotate(lst, OP_ROTATE_A);
+		else if (count == 0 && (lst->content != max))
+		{
+			aux = op_swap(lst, OP_SWAP_A);
+			aux = op_rotate(aux, OP_ROTATE_A);
+		}
 		lst = lst->next;
 		count++;
 	}

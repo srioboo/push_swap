@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 23:31:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:43:45 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,25 @@ typedef struct s_link_list
 {
 	int					index;
 	int					index_last;
-	int 				content;
+	int					content;
 	struct s_link_list	*prev;
 	struct s_link_list	*next;
-} t_link_list;
+}	t_link_list;
 
 /* ************************************************************************** */
 /* link list                                                                  */
 /* ************************************************************************** */
 
-t_link_list *link_lstlast(t_link_list *lst);
+t_link_list	*link_lstlast(t_link_list *lst);
 void		link_lstadd_back(t_link_list **lst, t_link_list *new);
-t_link_list *link_lstnew(int value);
+t_link_list	*link_lstnew(int value);
 int			link_lstsize(t_link_list *lst);
 void		link_lstadd_front(t_link_list **lst, t_link_list *new);
 
 /**
  * @brief Retrieve parameters, test if valid and return list
  */
-t_link_list *process_parameters(int argc, char **argv);
+t_link_list	*process_parameters(int argc, char **argv);
 
 /* ************************************************************************** */
 /* Validate                                                                   */
@@ -53,12 +53,12 @@ t_link_list *process_parameters(int argc, char **argv);
 /**
  * @brief Test if a string is a number
  */
-int		validate_isnumber(char *s);
+int			validate_isnumber(char *s);
 
 /**
  * @brief Test if the number already exists
  */
-int		validate_isrepeated(char *s, t_link_list *lst);
+int			validate_isrepeated(char *s, t_link_list *lst);
 
 /* ************************************************************************** */
 /* Utils                                                                      */
@@ -67,12 +67,12 @@ int		validate_isrepeated(char *s, t_link_list *lst);
 /**
  * @brief Show error message
  */
-int		show_error_msg(void);
+int			show_error_msg(void);
 
 /**
  * @brief Show operation message in result
  */
-void	show_op_msg(char *op);
+void		show_op_msg(char *op);
 
 /* ************************************************************************** */
 /* Operations Main                                                            */
@@ -83,17 +83,17 @@ void	show_op_msg(char *op);
  * 
  * @param new_list list
  */
-void	op_sort(t_link_list *new_list, t_link_list *aux_list);
+t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list);
 
 /**
  * @brief do sorting of a list of 3 elements
  */
-void	tiny_short(t_link_list *lst, t_link_list *aux);
+t_link_list	*tiny_short(t_link_list *lst, t_link_list *aux);
 
 /**
  * @brief find de max value in a list
  */
-int		find_max(t_link_list *lst);
+int			find_max(t_link_list *lst);
 
 /* ************************************************************************** */
 /* Operations Push                                                            */
@@ -106,7 +106,7 @@ int		find_max(t_link_list *lst);
  * @param dest list
  * @return modify destination list
  */
-t_link_list *op_push(t_link_list *orig, t_link_list *dest, char *op);
+t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op);
 
 /* ************************************************************************** */
 /* Operations Rotate                                                          */
@@ -118,7 +118,7 @@ t_link_list *op_push(t_link_list *orig, t_link_list *dest, char *op);
  * @param lst to rotate
  * @return the result list
  */
-t_link_list *op_rotate(t_link_list *lst, char *op);
+t_link_list	*op_rotate(t_link_list *lst, char *op);
 
 /* ************************************************************************** */
 /* Operations Rev rotate                                                      */
@@ -130,7 +130,7 @@ t_link_list *op_rotate(t_link_list *lst, char *op);
  * @param lst to rotate
  * @return the result list
  */
-t_link_list *op_rev_rotate(t_link_list *lst, char *op);
+t_link_list	*op_rev_rotate(t_link_list *lst, char *op);
 
 /* ************************************************************************** */
 /* Operations Swap                                                            */
@@ -143,6 +143,6 @@ t_link_list *op_rev_rotate(t_link_list *lst, char *op);
  * @param op operation to realice OP_SWAP_A or OP_SWAP_B
  * @return the new list
  */
-t_link_list *op_swap(t_link_list *lst, char *op);
+t_link_list	*op_swap(t_link_list *lst, char *op);
 
 #endif

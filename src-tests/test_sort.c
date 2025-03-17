@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 23:16:45 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/17 17:08:10 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	test_sort(int active)
 {
-	t_link_list *lstest;
-	t_link_list *lstaux;
+	t_link_list	*lstest;
+	t_link_list	*lstaux;
 
 	lstest = NULL;
 	lstaux = NULL;
@@ -34,27 +34,26 @@ void	test_sort(int active)
 void	test_sort_three(int active)
 {
 	t_link_list	*lstest;
-	t_link_list *lstaux;
+	t_link_list	*lstaux;
 
 	lstest = NULL;
 	lstaux = NULL;
 	if (active > 0)
 	{
 		fun_group_start("SORT 3");
+		fun_test_header_label(2, "--- test_sort_three");
+		lstest = build_test_list(1, 3, 4, 1, 3);
+		lstaux = op_sort(lstest, lstaux);
+		show_lst_data(lstaux);
 		// fun_test_header_label(1, "--- test_sort_three");
 		// lstest = build_test_list(1, 3, 1, 4, 3);
 		// op_sort(lstest, lstaux);
-		// show_lst_data(lstest);
-		fun_test_header_label(2, "--- test_sort_three");
-		lstest = build_test_list(1, 3, 4, 1, 3);
-		op_sort(lstest, lstaux);
-		show_lst_data(lstest);
 	}
 }
 
 void	test_find_max(int active)
 {
-	t_link_list *lstest;
+	t_link_list	*lstest;
 
 	lstest = NULL;
 	if (active > 0)

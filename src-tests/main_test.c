@@ -16,7 +16,7 @@
 void	show_lst_data(t_link_list *lstest)
 {
 	printf("\n\n" COLOR_YELLOW "==== list content ===" COLOR_RESET " \n");
-	printf("size: %d\nelements: ", link_lstsize(lstest));
+	printf("size: %d\nelements: \n", link_lstsize(lstest));
 	while (lstest)
 	{
 		if (lstest->content)
@@ -35,6 +35,8 @@ t_link_list *build_test_list(int active_log, int n_elem_lst, ...)
 	va_start(args, n_elem_lst);
 	lstest = NULL;
 	aux = 0;
+	if (active_log > 0)
+		printf(COLOR_BLUE "size: %d\nelements: \n", link_lstsize(lstest));
 	while (n_elem_lst > 0)
 	{
 		aux = va_arg(args, int);
@@ -43,8 +45,7 @@ t_link_list *build_test_list(int active_log, int n_elem_lst, ...)
 		link_lstadd_back(&lstest, link_lstnew(aux));
 		n_elem_lst--;
 	}
-	if (active_log > 0)
-		printf("list size: %d\n\n", link_lstsize(lstest));
+	printf(COLOR_GREEN "\n\noperations:\n");
 	va_end(args);
 	return (lstest);
 }
@@ -61,7 +62,7 @@ int	main(int argc, char **argv)
 	fun_group_start("PUSH");
 	test_push(0);
 	fun_group_start("ROTATE");
-	test_rotate(0);
+	test_rotate(1);
 	test_rev_rotate(0);
 	fun_group_start("SORT");
 	test_sort(0);

@@ -14,18 +14,23 @@
 
 t_link_list	*op_rotate(t_link_list *lst, char *op)
 {
-	int		counter;
+	int			counter;
+	int			last_pos;
 	t_link_list	*last;
 	t_link_list	*aux;
 
+	last_pos = link_lstsize(lst) - 1;
 	last = NULL;
 	aux = NULL;
-	last = link_lstlast(lst);
-	link_lstadd_back(&aux, last);
+	link_lstadd_front(&aux, link_lstlast(lst));
 	counter = 0;
-	while (lst && counter < (link_lstsize(lst) - 1))
+	while (lst && (counter <= last_pos))
 	{
-		if (lst->content)
+		if (lst->content && (counter == 0))
+			last = link_lstnew(lst->content);
+		else if (lst->content && (counter == last_pos))
+			link_lstadd_back(&aux, last); 
+		else if (lst->content && (counter > 0 && counter != last_pos))
 			link_lstadd_back(&aux, link_lstnew(lst->content)); 
 		counter++;
 		lst = lst->next;

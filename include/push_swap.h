@@ -39,6 +39,7 @@ t_link_list *link_lstlast(t_link_list *lst);
 void		link_lstadd_back(t_link_list **lst, t_link_list *new);
 t_link_list *link_lstnew(int value);
 int			link_lstsize(t_link_list *lst);
+void		link_lstadd_front(t_link_list **lst, t_link_list *new);
 
 /**
  * @brief Retrieve parameters, test if valid and return list

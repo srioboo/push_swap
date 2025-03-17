@@ -25,7 +25,7 @@ void	test_sort(int active)
 		lstest = build_test_list(1, 3, 4, 7, 2);
 		show_lst_data(lstest);
 		op_sort(lstest, lstaux);
-		// lstest = op_swap(lstest, OP_SWAP_A);
+		lstest = op_swap(lstest, OP_SWAP_A);
 		show_lst_data(lstest);
 	}
 }
@@ -44,7 +44,8 @@ void	test_sort_three(int active)
 		show_lst_data(lstest);
 		op_sort(lstest, lstaux);
 		show_lst_data(lstest);
-		lstest = build_test_list(4, 1, 3);
+		fun_test_header_label(2, "--- test_sort_three");
+		lstest = build_test_list(1, 3, 4, 1, 3);
 		show_lst_data(lstest);
 		op_sort(lstest, lstaux);
 		show_lst_data(lstest);

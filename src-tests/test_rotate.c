@@ -23,6 +23,14 @@ void	test_rotate(int active)
 		lstest = build_test_list(1, 3, 1, 2, 3);
 		lstest = op_rotate(lstest, OP_ROTATE_A);
 		show_lst_data(lstest);
+		fun_test_header_label(2, "--- test_rotate");
+		lstest = build_test_list(1, 3, 4, 2, 8);
+		lstest = op_rotate(lstest, OP_ROTATE_A);
+		show_lst_data(lstest);
+		fun_test_header_label(3, "--- test_rotate");
+		lstest = build_test_list(1, 5, 10, 4, 2, 8, 9);
+		lstest = op_rotate(lstest, OP_ROTATE_A);
+		show_lst_data(lstest);
 	}
 }
 

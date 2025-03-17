@@ -41,6 +41,7 @@ SRCS = push_swap.c \
 		link_lstnew.c \
 		link_lstlast.c \
 		link_lstadd_back.c \
+		link_lstadd_front.c \
 		link_lstsize.c
 
 # objects

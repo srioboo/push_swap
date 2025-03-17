@@ -18,7 +18,6 @@ t_link_list	*op_rev_rotate(t_link_list *lst, char *op)
 	int			last_pos;
 	t_link_list	*last;
 	t_link_list	*result;
-	t_link_list	*aux;
 
 	last_pos = link_lstsize(lst) - 1;
 	last = NULL;
@@ -27,10 +26,7 @@ t_link_list	*op_rev_rotate(t_link_list *lst, char *op)
 	while (lst)
 	{
 		if (lst->content && (counter >= 0 && counter != last_pos))
-		{
-			aux = link_lstnew(lst->content);
 			link_lstadd_back(&result, link_lstnew(lst->content));
-		}
 		if (lst->content && (counter == last_pos))
 			last = link_lstnew(lst->content);
 		counter++;

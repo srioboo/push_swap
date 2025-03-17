@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 23:16:45 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/17 15:39:37 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	test_rotate(int active)
 		show_lst_data(lstest);
 		fun_test_header_label(2, "--- test_rotate");
 		lstest = build_test_list(1, 3, 4, 1, 3);
-		show_lst_data(lstest);
 		lstest = op_rotate(lstest, OP_ROTATE_A);
 		show_lst_data(lstest);
 		fun_test_header_label(3, "--- test_rotate");

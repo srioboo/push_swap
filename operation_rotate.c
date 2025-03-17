@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 23:32:49 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:24:09 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,17 @@ t_link_list	*op_rotate(t_link_list *lst, char *op)
 	last_pos = link_lstsize(lst) - 1;
 	last = NULL;
 	aux = NULL;
-	link_lstadd_front(&aux, link_lstlast(lst));
 	counter = 0;
 	while (lst && (counter <= last_pos))
 	{
 		if (lst->content && (counter == 0))
 			last = link_lstnew(lst->content);
-		else if (lst->content && (counter == last_pos))
-			link_lstadd_back(&aux, last); 
-		else if (lst->content && (counter > 0 && counter != last_pos))
-			link_lstadd_back(&aux, link_lstnew(lst->content)); 
+		else if (lst->content && (counter > 0))
+			link_lstadd_back(&aux, link_lstnew(lst->content));
 		counter++;
 		lst = lst->next;
 	}
+	link_lstadd_back(&aux, last);
 	show_op_msg(op);
 	return (aux);
 }

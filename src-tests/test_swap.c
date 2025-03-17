@@ -19,6 +19,7 @@ void	test_swap(int active)
 	lstest = NULL;
 	if (active > 0)
 	{
+		fun_group_start("GROUP SWAP");
 		fun_test_header_label(1, "--- test_swap");
 		lstest = build_test_list(1, 3, 1, 2, 3);
 		lstest = op_swap(lstest, OP_SWAP_A);

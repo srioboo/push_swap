@@ -21,6 +21,7 @@ void	test_sort(int active)
 	lstaux = NULL;
 	if (active > 0)
 	{
+		fun_group_start("SORT");
 		fun_test_header_label(1, "--- test_sort");
 		lstest = build_test_list(1, 3, 4, 7, 2);
 		show_lst_data(lstest);
@@ -39,14 +40,13 @@ void	test_sort_three(int active)
 	lstaux = NULL;
 	if (active > 0)
 	{
-		fun_test_header_label(1, "--- test_sort_three");
-		lstest = build_test_list(1, 3, 1, 4, 3);
-		show_lst_data(lstest);
-		op_sort(lstest, lstaux);
-		show_lst_data(lstest);
+		fun_group_start("SORT 3");
+		// fun_test_header_label(1, "--- test_sort_three");
+		// lstest = build_test_list(1, 3, 1, 4, 3);
+		// op_sort(lstest, lstaux);
+		// show_lst_data(lstest);
 		fun_test_header_label(2, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 4, 1, 3);
-		show_lst_data(lstest);
 		op_sort(lstest, lstaux);
 		show_lst_data(lstest);
 	}
@@ -59,11 +59,11 @@ void	test_find_max(int active)
 	lstest = NULL;
 	if (active > 0)
 	{
+		fun_group_start("FIND MAX");
 		fun_test_header_label(1, "--- test_find_max");
 		lstest = build_test_list(1, 3, 4, 2, 6);
 		printf("max: %d\n", find_max(lstest));
 		show_lst_data(lstest);
-
 		fun_test_header_label(2, "--- test_find_max");
 		lstest = build_test_list(1, 3, 1, 8, 3);
 		printf("max: %d\n", find_max(lstest));

@@ -19,12 +19,14 @@ void	test_rotate(int active)
 	lstest = NULL;
 	if (active > 0)
 	{
+		fun_group_start("ROTATE");
 		fun_test_header_label(1, "--- test_rotate");
 		lstest = build_test_list(1, 3, 1, 2, 3);
 		lstest = op_rotate(lstest, OP_ROTATE_A);
 		show_lst_data(lstest);
 		fun_test_header_label(2, "--- test_rotate");
-		lstest = build_test_list(1, 3, 4, 2, 8);
+		lstest = build_test_list(1, 3, 4, 1, 3);
+		show_lst_data(lstest);
 		lstest = op_rotate(lstest, OP_ROTATE_A);
 		show_lst_data(lstest);
 		fun_test_header_label(3, "--- test_rotate");
@@ -41,6 +43,7 @@ void	test_rev_rotate(int active)
 	lstest = NULL;
 	if (active > 0)
 	{
+		fun_group_start("REV ROTATE");
 		fun_test_header_label(1, "--- test_rotate");
 		lstest = build_test_list(1, 3, 1, 2, 3);
 		lstest = op_rev_rotate(lstest, OP_REV_ROTATE_A);

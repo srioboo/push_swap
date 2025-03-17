@@ -21,6 +21,7 @@ void	test_push(int active)
 	lstest_b = NULL;
 	if (active > 0)
 	{
+		fun_group_start("PUSH");
 		fun_test_header_label(1, "--- test_push");
 		lstest_a = build_test_list(1, 3, 1, 2, 3);
 		lstest_b = build_test_list(1, 3, 1, 2, 3);

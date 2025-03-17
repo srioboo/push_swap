@@ -88,7 +88,7 @@ void	op_sort(t_link_list *new_list, t_link_list *aux_list);
 /**
  * @brief do sorting of a list of 3 elements
  */
-void	tiny_short(t_link_list *lst);
+void	tiny_short(t_link_list *lst, t_link_list *aux);
 
 /**
  * @brief find de max value in a list

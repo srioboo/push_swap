@@ -50,3 +50,13 @@ Operations description and text write in the output once the operation is done
    - rra: reverse rotate, as rotate but in the other direction
    - rrb: reverse robate for b
    - rrr: reverse rotate all
+
+## Test with checker
+
+```shell
+# count operations result
+ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
+
+# check result
+ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+```

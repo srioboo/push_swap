@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Build",
+			"label": "Build-push_swap",
 			"command": "/bin/gcc",
 			"type": "cppbuild",
 			"args": [
@@ -24,7 +24,7 @@
 			"detail": "Task for build the program."
 		},
 		{
-			"label": "Test-Build",
+			"label": "Test-Build-push_swap",
 			"command": "/bin/gcc",
 			"type": "cppbuild",
 			"args": [

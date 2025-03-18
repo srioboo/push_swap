@@ -2,7 +2,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch",
+			"name": "Push_swap Launch",
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${fileDirname}/push_swap",
@@ -19,11 +19,11 @@
 				"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "Build",
+			"preLaunchTask": "Build-push_swap",
 			"miDebuggerArgs": "/bin/gdb"
 		},
 		{
-			"name": "Test-Launch",
+			"name": "Push_swap Test-Launch",
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${fileDirname}/push_swap",
@@ -40,7 +40,7 @@
 				"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "Test-Build",
+			"preLaunchTask": "Test-Build-push_swap",
 			"miDebuggerArgs": "/bin/gdb"
 		}
 	]

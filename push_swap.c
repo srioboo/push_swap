@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 23:52:42 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/19 10:28:47 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,33 @@
 
 t_link_list	*process_parameters(int argc, char **argv)
 {
-	int			i;
+	int			pos;
+	int			index;
 	t_link_list		*ls_num;
 
-	i = 1;
+	pos = 1;
+	index = 0;
 	ls_num = NULL;
 	if (argc >= 2)
 	{
 		if (argc == 2)
 		{
 			argv = ft_split(argv[1], ' ');
-			i = 0;
+			pos = 0;
 		}
-		while (argv[i] != NULL)
+		while (argv[pos] != NULL)
 		{
-			if (validate_isnumber(argv[i]) == FALSE
-				|| validate_isrepeated(argv[i], ls_num) == TRUE)
+			if (validate_isnumber(argv[pos]) == FALSE
+				|| validate_isrepeated(argv[pos], ls_num) == TRUE)
 			{
 				// ft_lstclear(&ls_num); // TODO - clear list
 				return (NULL);
 			}
 			else
-				link_lstadd_back(&ls_num, link_lstnew(ft_atoi(argv[i])));
-			i++;
+			{
+				link_lstadd_back(&ls_num, link_lstnew(ft_atoi(argv[pos])));
+			}
+			pos++;
 		}
 	}
 	else

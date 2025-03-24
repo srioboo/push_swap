@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/19 10:28:02 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/24 12:52:49 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list);
 /**
  * @brief do sorting of a list of 3 elements
  */
-t_link_list	*tiny_short(t_link_list *lst, t_link_list *aux);
+t_link_list	*tiny_sort(t_link_list *lst, t_link_list *aux);
 
 /**
  * @brief find de max value in a list

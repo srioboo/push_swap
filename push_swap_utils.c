@@ -6,11 +6,23 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/11 08:46:57 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/24 13:03:20 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// TODO - implement
+int	to_binary(int nb)
+{
+	int	result;
+
+	result = 0;
+	while (nb > 0)
+		result /= 2;
+
+	return (result);
+}
 
 void	show_op_msg(char *op)
 {

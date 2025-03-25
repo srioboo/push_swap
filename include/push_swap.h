@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:55:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:51:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 
 # include "operations.h"
 # include "libft.h"
+# include "ft_printf.h"
 
-// TODO - delete - for testing only
-# include <stdio.h>
-
-#define FALSE 0
-#define TRUE 1
+# define FALSE 0
+# define TRUE 1
 
 typedef struct s_link_list
 {

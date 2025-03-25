@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/17 17:17:56 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/25 11:39:14 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,32 @@ void	test_sort(int active)
 		op_sort(lstest, lstaux);
 		lstest = op_swap(lstest, OP_SWAP_A);
 		show_lst_data(lstest);
+	}
+}
+
+void	test_full_sort(int active)
+{
+	t_link_list	*lstest;
+	t_link_list	*lstaux;
+
+	lstest = NULL;
+	lstaux = NULL;
+	if (active > 0)
+	{
+		fun_group_start("SORT 3");
+		fun_test_header_label(1, "--- test_sort_three");
+		lstest = build_test_list(1, 5, 4, 1, 3, 20, 10);
+		lstaux = op_sort(lstest, lstaux);
+		show_lst_data_with_label(lstest, "list aux A");
+		show_lst_data_with_label(lstaux, "list aux B");
+		// fun_test_header_label(2, "--- test_sort_three");
+		// lstest = build_test_list(1, 5, 1, 4, 3,  20, 10);
+		// op_sort(lstest, lstaux);
+		// show_lst_data_with_label(lstaux, "list aux B");
+		// fun_test_header_label(3, "--- test_sort_three");
+		// lstest = build_test_list(1, 5, 3, 1, 4,  -20, 10);
+		// op_sort(lstest, lstaux);
+		// show_lst_data_with_label(lstaux, "list aux B");
 	}
 }
 

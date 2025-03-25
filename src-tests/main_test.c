@@ -6,17 +6,17 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/19 17:26:16 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/25 11:36:03 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 #include <stdarg.h>
 
-void	show_lst_data(t_link_list *lstest)
+void	show_lst_data_with_label(t_link_list *lstest, char *label)
 {
 	int	count;
-	printf("\n\n" COLOR_YELLOW "==== list content ===" COLOR_RESET " \n");
+	printf("\n\n" COLOR_YELLOW "==== list content %s ===" COLOR_RESET " \n", label);
 	printf("\nelements: \n");
 	count = 0;
 	while (lstest)
@@ -28,6 +28,11 @@ void	show_lst_data(t_link_list *lstest)
 	}
 	printf("\nsize: %d\n", count);
 	printf("\n" COLOR_YELLOW "==== list content end ===" COLOR_RESET "\n\n");
+}
+
+void	show_lst_data(t_link_list *lstest)
+{
+	show_lst_data_with_label(lstest, "");
 }
 
 t_link_list	*build_test_list(int active_log, int n_elem_lst, ...)
@@ -67,6 +72,7 @@ int	main(int argc, char **argv)
 	test_rotate(0);
 	test_rev_rotate(0);
 	test_sort(0);
-	test_sort_three(1);
+	test_sort_three(0);
 	test_find_max(0);
+	test_full_sort(1);
 }

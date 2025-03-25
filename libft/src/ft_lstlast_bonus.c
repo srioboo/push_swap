@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push.c                                   :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:54:27 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/19 00:17:39 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/19 00:19:06 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op)
+t_list	*ft_lstlast(t_list *lst)
 {
-	link_lstadd_back(&dest, link_lstnew(orig->content));
-	dest = op_rotate(dest, NULL);
-	show_op_msg(op);
-	return (dest);
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:31:43 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/08 19:46:28 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/25 10:57:54 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <limits.h>
 # include <stdarg.h>
 // add libraries of the tested project
-# include "../../include/push_swap.h"
-# include "../../include/libft.h"
+# include "push_swap.h"
+# include "libft.h"
 
 /** Constants **/
 # define COLOR_BLACK "\x1b[30m"

@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push.c                                   :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:54:27 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/04 09:19:25 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/15 16:42:36 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op)
+char	*ft_strrchr(const char *srt, int c)
 {
-	link_lstadd_back(&dest, link_lstnew(orig->content));
-	dest = op_rotate(dest, NULL);
-	show_op_msg(op);
-	return (dest);
+	char			*result;
+	int				count;
+	unsigned char	chr;
+
+	chr = c;
+	result = (char *)srt;
+	count = 0;
+	while (*srt != '\0')
+	{
+		if (srt[0] == chr)
+		{
+			result = (char *)srt;
+			if (count > 0)
+				result = (char *)srt;
+			count++;
+		}
+		srt++;
+	}
+	if (chr == '\0')
+		return ((char *)srt);
+	if (count == 0)
+		return (NULL);
+	return (result);
 }

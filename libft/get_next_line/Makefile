@@ -6,49 +6,32 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/03/25 10:56:33 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/03/01 00:17:23 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# library name
-NAME = push_swap
+BIN = main
 
 # compliler and compiler flags
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror
-
 # auxiliary commands
+AR = @ar rcs
 RM = @rm -f
 
-# directories
-INCLUDE = -Iinclude -Ilibft/src
-LIB_FLAG = -Llibft -l:libft.a
-
 # source files
-SRCS = push_swap.c \
-		push_swap_utils.c \
-		push_swap_validate.c \
-		operation_rev_rotate.c \
-		operation_main.c \
-		operation_push.c \
-		operation_rotate.c \
-		operation_swap.c \
-		link_lstnew.c \
-		link_lstlast.c \
-		link_lstadd_back.c \
-		link_lstadd_front.c \
-		link_lstsize.c
-
+SRCS = get_next_line.c \
+		get_next_line_utils.c
 # objects
 OBJECTS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): build-libft
-	$(CC) $(INCLUDE) $(SRCS) $(LIB_FLAG) -o $(NAME)
+$(NAME): $(OBJECTS)
+	$(AR) $(NAME) $(OBJECTS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJECTS)
@@ -58,24 +41,30 @@ fclean: clean
 
 re: fclean all
 
-build-libft:
-	@make -C ./libft full
-
-clean-libft:
-	@make -C ./libft fclean
-
 # TEST Section
-test: all
-	$(MAKE) -f src-tests/Makefile test
+test:
+	$(CC) $(CFLAGS) *.c -o test.out
+	./test.out
 
-tclean:
-	$(MAKE) -f src-tests/Makefile tclean
+tclean: fclean
+	$(RM) test.out
 
-# Memory leaks detection
+testm:
+	for number in 10 42 1 10000000 ; do \
+		cc $(CFLAGS) -D BUFFER_SIZE=$$number *.c -o test.out; ./test.out ; \
+	done
+
+# detect memory leaks
 sane:
-	$(MAKE) -f src-tests/Makefile sane
+	$(CC) $(CFLAGS) $(SRCS) -o $(BIN) -fsanitize=address,undefined -g
+	./$(BIN)
 
-val: 
-	$(MAKE) -f src-tests/Makefile val
+val:
+	$(CC) $(CFLAGS) $(SRCS) -o $(BIN)
+	valgrind --leak-check=full ./$(BIN)
 
-.PHONY: all clean fclean re build-libft clean-libft test tclean
+vall:
+	$(CC) $(CFLAGS) $(SRCS) -o $(BIN)
+	valgrind --leak-check=full --verbose --track-origins=yes --log-file=leaks.txt ./$(BIN)
+
+.PHONY: all clean fclean sane val test tclean

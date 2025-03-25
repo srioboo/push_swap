@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/24 12:52:49 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/25 10:55:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,11 @@ void		show_op_msg(char *op);
  * @param new_list list
  */
 t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list);
+
+/**
+ * @brief do full sorting
+ */
+t_link_list	*full_sort(t_link_list *lst, t_link_list *aux);
 
 /**
  * @brief do sorting of a list of 3 elements

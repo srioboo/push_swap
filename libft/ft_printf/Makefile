@@ -6,49 +6,38 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/03/25 10:56:33 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/02/28 12:29:29 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # library name
-NAME = push_swap
-
+NAME = libftprintf.a
 # compliler and compiler flags
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror
-
 # auxiliary commands
+AR = @ar rcs
 RM = @rm -f
 
-# directories
-INCLUDE = -Iinclude -Ilibft/src
-LIB_FLAG = -Llibft -l:libft.a
-
 # source files
-SRCS = push_swap.c \
-		push_swap_utils.c \
-		push_swap_validate.c \
-		operation_rev_rotate.c \
-		operation_main.c \
-		operation_push.c \
-		operation_rotate.c \
-		operation_swap.c \
-		link_lstnew.c \
-		link_lstlast.c \
-		link_lstadd_back.c \
-		link_lstadd_front.c \
-		link_lstsize.c
-
+SRCS = ft_printf.c \
+		ft_type.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_puthex.c \
+		ft_putnumber.c \
+		ft_putpointer.c \
+		ft_putpercent.c
 # objects
 OBJECTS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): build-libft
-	$(CC) $(INCLUDE) $(SRCS) $(LIB_FLAG) -o $(NAME)
+$(NAME): $(OBJECTS)
+	$(AR) $(NAME) $(OBJECTS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJECTS)
@@ -57,12 +46,6 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-build-libft:
-	@make -C ./libft full
-
-clean-libft:
-	@make -C ./libft fclean
 
 # TEST Section
 test: all
@@ -78,4 +61,4 @@ sane:
 val: 
 	$(MAKE) -f src-tests/Makefile val
 
-.PHONY: all clean fclean re build-libft clean-libft test tclean
+.PHONY: all clean fclean re test tclean

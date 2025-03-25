@@ -9,8 +9,8 @@ CFLAGS = -Wall -Werror -Wextra
 TEST_DIR = src-tests
 TEST_BIN = test.out
 # Directories
-INCLUDE = -I$(TEST_DIR)/include -Iinclude
-LIB_FLAG = -L$(TEST_DIR)/lib -l:$(LIB_TEST_NAME)
+INCLUDE = -I$(TEST_DIR)/include -Iinclude -Ilibft/src
+LIB_FLAG = -L$(TEST_DIR)/lib -l:$(LIB_TEST_NAME) -Llibft -l:libft.a
 
 ## Library Test source and objects
 TEST_SRCS = $(wildcard $(TEST_DIR)/*.c)
@@ -18,12 +18,6 @@ TEST_OBJS = $(TEST_SRCS:.c=.o)
 
 # source files
 SRCS = push_swap_utils.c \
-		ft_strlen.c \
-		ft_isalpha.c \
-		ft_atoi.c \
-		ft_split.c \
-		ft_substr.c \
-		ft_strdup.c \
 		push_swap_validate.c \
 		operation_rev_rotate.c \
 		operation_main.c \

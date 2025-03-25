@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push.c                                   :+:      :+:    :+:   */
+/*   ft_putpercent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:54:27 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/09 18:03:13 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/01/10 16:32:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op)
+size_t	ft_putpercent(char *str, char c)
 {
-	link_lstadd_back(&dest, link_lstnew(orig->content));
-	dest = op_rotate(dest, NULL);
-	show_op_msg(op);
-	return (dest);
+	write(1, &c, 1);
+	str++;
+	return (1);
 }

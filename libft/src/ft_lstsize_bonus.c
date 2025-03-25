@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:54:27 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/19 00:18:33 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/19 00:19:25 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op)
+int	ft_lstsize(t_list *lst)
 {
-	link_lstadd_back(&dest, link_lstnew(orig->content));
-	dest = op_rotate(dest, NULL);
-	show_op_msg(op);
-	return (dest);
+	int	lstsize;
+
+	lstsize = 1;
+	if (lst == NULL)
+		return (0);
+	while (lst->next)
+	{
+		lstsize++;
+		lst = lst->next;
+	}
+	return (lstsize);
 }

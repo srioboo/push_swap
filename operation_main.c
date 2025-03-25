@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/24 12:54:09 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/25 10:54:49 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list)
 	if (link_lstsize(new_list) == 3)
 		aux_list = tiny_sort(new_list, aux_list);
 	else
-		aux_list = sort(new_list, aux_list);// printf("%p", aux_list);
+		aux_list = full_sort(new_list, aux_list);// printf("%p", aux_list);
 
 	// printf("START SORTENING: list size %d %p", ft_lstsize(new_list), aux_list);
 	// TODO - do ordering
 	return (aux_list);
 }
 
-t_link_list	*sort(t_link_list *lst, t_link_list *aux)
+t_link_list	*full_sort(t_link_list *lst, t_link_list *aux)
 {
 	int	count;
 	int	max;

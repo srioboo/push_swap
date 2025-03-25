@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push.c                                   :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:54:27 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/04 09:18:01 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/14 09:13:27 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op)
+char	*ft_strchr(const char *s, int c)
 {
-	link_lstadd_back(&dest, link_lstnew(orig->content));
-	dest = op_rotate(dest, NULL);
-	show_op_msg(op);
-	return (dest);
+	unsigned char	chr;
+	int				count;
+
+	chr = c;
+	count = 0;
+	while (*s != '\0')
+	{
+		if (*s == chr)
+		{
+			count++;
+			return ((char *)s);
+		}
+		s++;
+	}
+	if (chr == '\0')
+		return ((char *)s);
+	if (count == 0)
+		return (NULL);
+	return ((char *)s);
 }

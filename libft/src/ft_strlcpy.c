@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push.c                                   :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:54:27 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/04 09:27:41 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/14 09:13:42 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	link_lstadd_back(&dest, link_lstnew(orig->content));
-	dest = op_rotate(dest, NULL);
-	show_op_msg(op);
-	return (dest);
+	size_t	src_size;
+	size_t	aux;
+
+	src_size = 0;
+	while (src[src_size] != '\0')
+		src_size++;
+	if (size == 0)
+		return (src_size);
+	aux = 0;
+	while (src[aux] != '\0' && aux < (size - 1))
+	{
+		dst[aux] = src[aux];
+		aux++;
+	}
+	dst[aux] = '\0';
+	return (src_size);
 }

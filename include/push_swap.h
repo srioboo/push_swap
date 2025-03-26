@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 00:01:20 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 00:03:45 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ void		op_push(t_link_list **orig, t_link_list *dest, char *op);
  * @param lst to rotate
  * @return the result list
  */
-t_link_list	*op_rotate(t_link_list *lst, char *op);
+void		op_rotate(t_link_list **lst, char *op);
 
 /* ************************************************************************** */
 /* Operations Rev rotate                                                      */

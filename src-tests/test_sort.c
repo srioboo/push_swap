@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 11:39:14 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/26 15:31:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	test_sort(int active)
 		lstest = build_test_list(1, 3, 4, 7, 2);
 		show_lst_data(lstest);
 		op_sort(lstest, lstaux);
-		lstest = op_swap(lstest, OP_SWAP_A);
+		op_swap(&lstest, OP_SWAP_A);
 		show_lst_data(lstest);
 	}
 }

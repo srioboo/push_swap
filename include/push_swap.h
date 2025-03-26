@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 00:00:33 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 00:01:20 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,9 +128,8 @@ int			find_max(t_link_list *lst);
  * 
  * @param orig list
  * @param dest list
- * @return modify destination list
  */
-t_link_list	*op_push(t_link_list *orig, t_link_list *dest, char *op);
+void		op_push(t_link_list **orig, t_link_list *dest, char *op);
 
 /* ************************************************************************** */
 /* Operations Rotate                                                          */

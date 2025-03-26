@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:31:27 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 11:36:59 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/26 14:59:55 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_link_list	*build_test_list(int active_log, int n_elem_lst, ...);
 void		test_push(int active);
 void		test_rotate(int active);
 void		test_rev_rotate(int active);
+void		test_rotate_both(int active);
 void		test_swap(int active);
 void		test_sort(int active);
 void		test_sort_three(int active);

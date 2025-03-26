@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 00:03:45 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 00:04:35 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,9 +139,13 @@ void		op_push(t_link_list **orig, t_link_list *dest, char *op);
  * @brief swift elements one position, first element become last.
  * 
  * @param lst to rotate
- * @return the result list
  */
 void		op_rotate(t_link_list **lst, char *op);
+
+/**
+ * @brief swift elements one position, first element become last, in both list
+ */
+void		op_rotate_both(t_link_list **lsta, t_link_list **lstb);
 
 /* ************************************************************************** */
 /* Operations Rev rotate                                                      */
@@ -151,9 +155,8 @@ void		op_rotate(t_link_list **lst, char *op);
  * @brief swift elements one position, last element become first.
  * 
  * @param lst to rotate
- * @return the result list
  */
-t_link_list	*op_rev_rotate(t_link_list *lst, char *op);
+void		op_rev_rotate(t_link_list **lst, char *op);
 
 /* ************************************************************************** */
 /* Operations Swap                                                            */

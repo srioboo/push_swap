@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/26 10:24:50 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/03/26 15:03:11 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	op_rotate(t_link_list **lst, char *op)
 	last = NULL;
 	aux = NULL;
 	counter = 0;
-	while (lst && (counter <= last_pos))
+	while (*lst && (counter <= last_pos))
 	{
 		if ((*lst)->content && (counter == 0))
 			last = link_lstnew((*lst)->content);
@@ -37,9 +37,9 @@ void	op_rotate(t_link_list **lst, char *op)
 	show_op_msg(op);
 }
 
-void	op_rotate_both(t_link_list *lsta, t_link_list *lstb)
+void	op_rotate_both(t_link_list **lsta, t_link_list **lstb)
 {
-	op_rotate(&lsta, OP_ROTATE_A);
-	op_rotate(&lstb, OP_ROTATE_B);
+	op_rotate(lsta, OP_ROTATE_A);
+	op_rotate(lstb, OP_ROTATE_B);
 	show_op_msg(OP_ROTATE_BOTH);
 }

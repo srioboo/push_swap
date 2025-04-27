@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   link_lstadd_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 00:14:31 by srioboo-          #+#    #+#             */
-/*   Updated: 2024/12/22 17:43:19 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/27 18:47:30 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	link_lstadd_front(t_link_list **lst, t_link_list *new)
+void	link_lstadd_front(t_link_list **lst, t_link_list *new_list)
 {
-	new->next = *lst;
-	*lst = new;
+	new_list->next = *lst;
+	*lst = new_list;
 }

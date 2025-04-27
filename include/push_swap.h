@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 10:55:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/27 18:49:10 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@
 # include "operations.h"
 # include "libft.h"
 
-// TODO - delete - for testing only
-# include <stdio.h>
-
-#define FALSE 0
-#define TRUE 1
+# define FALSE 0
+# define TRUE 1
 
 typedef struct s_link_list
 {
@@ -43,12 +40,12 @@ t_link_list	*link_lstlast(t_link_list *lst);
 /**
  * @brief add new element to linked list back
  */
-void		link_lstadd_back(t_link_list **lst, t_link_list *new);
+void		link_lstadd_back(t_link_list **lst, t_link_list *new_list);
 
 /**
  * @brief add new element to linked list front
  */
-void		link_lstadd_front(t_link_list **lst, t_link_list *new);
+void		link_lstadd_front(t_link_list **lst, t_link_list *new_list);
 
 /**
  * @brief create new linked list from value

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 00:09:24 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:18:08 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "operations.h"
 # include "libft.h"
+# include "ft_printf.h"
 
 # define FALSE 0
 # define TRUE 1
@@ -26,6 +27,8 @@ typedef struct s_link_list
 	int					content;
 	struct s_link_list	*prev;
 	struct s_link_list	*next;
+	int					max_val;
+	int					min_val;
 }	t_link_list;
 
 /* ************************************************************************** */
@@ -93,6 +96,16 @@ int			show_error_msg(void);
  */
 void		show_op_msg(char *op);
 
+/**
+ * @brief find de max value in a list
+ */
+int			find_max(t_link_list *lst);
+
+/**
+ * @brief find max value
+ */
+int			set_max(int nb1, int nb2);
+
 /* ************************************************************************** */
 /* Operations Main                                                            */
 /* ************************************************************************** */
@@ -113,11 +126,6 @@ t_link_list	*full_sort(t_link_list *lst, t_link_list *aux);
  * @brief do sorting of a list of 3 elements
  */
 t_link_list	*tiny_sort(t_link_list *lst, t_link_list *aux);
-
-/**
- * @brief find de max value in a list
- */
-int			find_max(t_link_list *lst);
 
 /* ************************************************************************** */
 /* Operations Push                                                            */

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/24 13:03:20 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 09:29:01 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,38 @@ int	show_error_msg(void)
 {
 	write(1, "Error\n", 7);
 	return (0);
+}
+
+int	find_max(t_link_list *lst)
+{
+	int	nb_current;
+	int	nb_next;
+	int	max;
+
+	nb_current = 0;
+	nb_next = 0;
+	max = 0;
+
+	while (lst)
+	{
+		if (lst->content)
+			nb_current = lst->content;
+		if (lst->next)
+			nb_next = lst->next->content;
+		if ((nb_current >= nb_next) && (nb_current > max))
+			max = nb_current;
+		lst = lst->next;
+	}
+	return (max);
+}
+
+int	set_max(int nb1, int nb2)
+{
+	int	max;
+
+	if (nb1 > nb2)
+		max = nb1;
+	else
+		max = nb2;
+	return (max);
 }

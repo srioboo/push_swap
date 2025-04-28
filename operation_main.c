@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 00:05:01 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 09:23:39 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,15 @@ t_link_list	*full_sort(t_link_list *lst, t_link_list *aux)
 t_link_list	*tiny_sort(t_link_list *lst, t_link_list *aux)
 {
 	int	count;
-	int	max;
+	// int	max;
 
-	max = find_max(lst);
+	// max = find_max(lst);
 	count = 0;
 	while (lst)
 	{
-		if (count == 0 && (lst->content == max))
+		if (count == 0 && (lst->content == lst->max_val))
 			op_rotate(&lst, OP_ROTATE_A);
-		else if (count == 0 && (lst->content != max))
+		else if (count == 0 && (lst->content != lst->max_val))
 		{
 			op_swap(&lst, OP_SWAP_A);
 			op_rotate(&aux, OP_ROTATE_A);
@@ -69,27 +69,4 @@ t_link_list	*tiny_sort(t_link_list *lst, t_link_list *aux)
 		count++;
 	}
 	return (aux);
-}
-
-int	find_max(t_link_list *lst)
-{
-	int	nb_current;
-	int	nb_next;
-	int	max;
-
-	nb_current = 0;
-	nb_next = 0;
-	max = 0;
-
-	while (lst)
-	{
-		if (lst->content)
-			nb_current = lst->content;
-		if (lst->next)
-			nb_next = lst->next->content;
-		if ((nb_current >= nb_next) && (nb_current > max))
-			max = nb_current;
-		lst = lst->next;
-	}
-	return (max);
 }

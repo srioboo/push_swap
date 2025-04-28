@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/26 15:23:54 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:09:13 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	show_lst_data_with_label(t_link_list *lstest, char *label)
 {
 	int	count;
 	printf("\n\n" COLOR_YELLOW "==== list content %s ===" COLOR_RESET " \n", label);
-	printf("\nelements: \n");
+	printf("\nelements: \tmax: %d\n", lstest->max_val);
 	count = 0;
 	while (lstest)
 	{

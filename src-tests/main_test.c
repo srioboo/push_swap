@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 10:09:13 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/04 13:28:21 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	show_lst_data_with_label(t_link_list *lstest, char *label)
 {
 	int	count;
 	printf("\n\n" COLOR_YELLOW "==== list content %s ===" COLOR_RESET " \n", label);
-	printf("\nelements: \tmax: %d\n", lstest->max_val);
+	if (lstest)
+		printf("\nelements: \tmax: %d\n", lstest->max_val);
+	else
+		printf("\n" COLOR_RED "Error lstest null or empty: %p" COLOR_RESET "\n", lstest);
 	count = 0;
 	while (lstest)
 	{
@@ -54,7 +57,7 @@ t_link_list	*build_test_list(int active_log, int n_elem_lst, ...)
 		n_elem_lst--;
 	}
 	if (active_log > 0)
-			printf(COLOR_BLUE "\nsize: %d\n", link_lstsize(lstest));
+			printf(COLOR_BLUE "\nsize: %d max: %d\n", link_lstsize(lstest), lstest->max_val);
 	printf(COLOR_GREEN "\n\noperations:\n");
 	va_end(args);
 	return (lstest);
@@ -67,13 +70,13 @@ int	main(int argc, char **argv)
 	if (!argv)
 		printf("%s", argv[0]);
 	test_ft_dummy(0);
-	test_swap(1);
+	test_swap(0);
 	test_push(0);
 	test_rotate(0);
 	test_rev_rotate(0);
 	test_rotate_both(0);
 	test_sort(0);
-	test_sort_three(0);
+	test_sort_three(1);
 	test_find_max(0);
 	test_full_sort(0);
 }

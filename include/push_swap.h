@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 10:18:08 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/04 16:03:58 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,11 @@ int			find_max(t_link_list *lst);
  * @brief find max value
  */
 int			set_max(int nb1, int nb2);
+
+/**
+ * @brief compare two numbers by binary
+ */
+int			binary_compare(int nb1, int nb2);
 
 /* ************************************************************************** */
 /* Operations Main                                                            */

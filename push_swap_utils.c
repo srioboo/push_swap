@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 09:29:01 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/04 16:03:39 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ int	to_binary(int nb)
 	while (nb > 0)
 		result /= 2;
 
+	return (result);
+}
+
+int	binary_compare(int nb1, int nb2)
+{
+	int	result;
+
+	result = nb1 & nb2;
 	return (result);
 }
 
@@ -69,9 +77,9 @@ int	set_max(int nb1, int nb2)
 {
 	int	max;
 
-	if (nb1 > nb2)
+	if (nb1 >= nb2)
 		max = nb1;
-	else
+	else if (nb1 < nb2)
 		max = nb2;
 	return (max);
 }

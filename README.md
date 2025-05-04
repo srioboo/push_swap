@@ -60,3 +60,87 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
 # check result
 ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
 ```
+
+## RADIX MSD
+
+### Radix Sort MSD
+
+Cuando trabajas con números enteros de longitud variable, el algoritmo Radix Sort MSD puede ser implementado de la siguiente manera:
+
+1. **Identificación del Dígito Más Significativo:**
+   - Determina el número máximo en la lista para saber cuántos dígitos tiene el número más largo. Esto te ayudará a saber cuántas iteraciones realizar.
+2. **Uso de Dos Listas (o Stacks):**
+   - Utiliza dos listas (o stacks) para distribuir los números según el dígito actual que estás procesando. Sin embargo, en el caso de números enteros, normalmente necesitarás 10 listas (una para cada dígito del 0 al 9) para manejar todos los posibles valores de dígitos.
+3. **Distribución de Números:**
+   - Para cada dígito, desde el más significativo hasta el menos significativo:- Recorre la lista de números y coloca cada número en la lista correspondiente según el dígito actual.
+     - Por ejemplo, si estás en el primer dígito (más significativo), coloca los números en la lista correspondiente al valor de ese dígito.
+4. **Recursividad:**
+   - Después de distribuir los números en las listas, vacía la lista principal y luego aplica el mismo proceso recursivamente a cada lista, pasando al siguiente dígito menos significativo.
+5. **Concatenación:**
+   - Una vez que todos los dígitos han sido procesados, concatena las listas para obtener la lista ordenada final.
+
+### Ejemplo de Implementación
+
+Supongamos que tienes los siguientes números de longitud variable: 
+```
+[170, 45, 75, 90, 802, 24, 2, 66]
+```
+
+Paso a Paso;
+1. **Determinar el número máximo:** El número más largo es 
+   ```
+   802
+   ```
+
+   , que tiene 3 dígitos.
+2. **Iterar sobre los dígitos (de izquierda a derecha):**
+   - **Dígito más significativo (hundreds):**
+   - Distribuir en listas:
+
+1. - - :- 0: \[802\]
+       - 1: \[170\]
+       - 2: \[2, 24\]
+       - 4: \[45\]
+       - 6: \[66\]
+       - 7: \[75\]
+       - 9: \[90\]
+   - **Vaciar la lista principal y concatenar:**
+   - Lista después de la primera pasada: ```
+       [802, 170, 2, 24, 45, 66, 75, 90]
+       ```
+2. **Dígito del medio (tens):**
+   - Distribuir en listas:
+   - 0: \[2, 24\]
+     - 1: \[170\]
+     - 2: \[\]
+     - 4: \[45\]
+     - 6: \[66\]
+     - 7: \[75\]
+     - 8: \[802\]
+     - 9: \[90\]
+   - **Vaciar la lista principal y concatenar:**
+   - Lista después de la segunda pasada: ```
+       [2, 24, 45, 66, 75, 90, 170, 802]
+       ```
+3. **Dígito menos significativo (units):**
+   - Distribuir en listas:
+   - 0: \[170\]
+     - 2: \[2\]
+     - 4: \[24\]
+     - 5: \[75\]
+     - 6: \[66\]
+     - 7: \[\]
+     - 8: \[802\]
+     - 9: \[90\]
+   - **Vaciar la lista principal y concatenar:**
+   - Lista final ordenada: ```
+       [2, 24, 45, 66, 75, 90, 170, 802]
+       ```
+
+### Resumen
+
+- **Radix Sort MSD** es un algoritmo eficiente para ordenar números enteros de longitud variable.
+- Utiliza listas para distribuir los números según los dígitos, comenzando desde el más significativo.
+- La recursividad y la concatenación de listas permiten obtener la lista ordenada final.
+
+Si necesitas un ejemplo de código en un lenguaje específico o más detalles sobre la implementación, no dudes en decírmelo.

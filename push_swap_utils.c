@@ -6,13 +6,34 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/04 16:03:39 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/05 09:28:08 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// TODO - implement
+// TODO - is necesary?
+int	ft_intlen(int i)
+{
+	unsigned int	n_aux;
+	int				j;
+
+	j = 0;
+	n_aux = i;
+	if (i <= 0)
+	{
+		n_aux = -i;
+		j = 1;
+	}
+	while (n_aux > 0)
+	{
+		n_aux /= 10;
+		j++;
+	}
+	return (j);
+}
+
+// TODO - is necesary?
 int	to_binary(int nb)
 {
 	int	result;
@@ -24,6 +45,7 @@ int	to_binary(int nb)
 	return (result);
 }
 
+// TODO - Refactor with full_sort functionality
 int	binary_compare(int nb1, int nb2)
 {
 	int	result;
@@ -50,7 +72,7 @@ int	show_error_msg(void)
 	return (0);
 }
 
-int	find_max(t_link_list *lst)
+/*int	find_max(t_link_list *lst)
 {
 	int	nb_current;
 	int	nb_next;
@@ -71,15 +93,11 @@ int	find_max(t_link_list *lst)
 		lst = lst->next;
 	}
 	return (max);
-}
+}*/
 
 int	set_max(int nb1, int nb2)
 {
-	int	max;
-
 	if (nb1 >= nb2)
-		max = nb1;
-	else if (nb1 < nb2)
-		max = nb2;
-	return (max);
+		return (nb1);
+	return (nb2);
 }

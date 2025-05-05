@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/04 22:58:16 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/05 09:35:26 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,15 @@ void	test_full_sort(int active)
 	{
 		fun_group_start("SORT FULL SORT");
 		fun_test_header_label(1, "--- test_sort_three");
-		lstest = build_test_list(0, 5, 4, 1, 3, 20, 10);
+		lstest = build_test_list(1, 5, 4, 1, 3, 20, 10);
 		lstaux = op_sort(lstest, lstaux);
 		show_lst_data_with_label(lstest, "list aux A");
 		show_lst_data_with_label(lstaux, "list aux B");
-		// fun_test_header_label(2, "--- test_sort_three");
-		// lstest = build_test_list(1, 5, 1, 4, 3,  20, 10);
-		// op_sort(lstest, lstaux);
-		// show_lst_data_with_label(lstaux, "list aux B");
+		fun_test_header_label(2, "--- test_sort_three");
+		lstest = build_test_list(1, 5, 1, 4, 3,  20, 10);
+		op_sort(lstest, lstaux);
+		show_lst_data_with_label(lstest, "list aux a");
+		show_lst_data_with_label(lstaux, "list aux B");
 		// fun_test_header_label(3, "--- test_sort_three");
 		// lstest = build_test_list(1, 5, 3, 1, 4,  -20, 10);
 		// op_sort(lstest, lstaux);

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/05 09:35:26 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 00:28:23 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	test_sort(int active)
 		fun_test_header_label(1, "--- test_sort");
 		lstest = build_test_list(1, 3, 4, 7, 2);
 		show_lst_data(lstest);
-		op_sort(lstest, lstaux);
+		op_sort(&lstest, &lstaux);
 		op_swap(&lstest, OP_SWAP_A);
 		show_lst_data(lstest);
 	}
@@ -43,12 +43,12 @@ void	test_full_sort(int active)
 		fun_group_start("SORT FULL SORT");
 		fun_test_header_label(1, "--- test_sort_three");
 		lstest = build_test_list(1, 5, 4, 1, 3, 20, 10);
-		lstaux = op_sort(lstest, lstaux);
+		op_sort(&lstest, &lstaux);
 		show_lst_data_with_label(lstest, "list aux A");
 		show_lst_data_with_label(lstaux, "list aux B");
 		fun_test_header_label(2, "--- test_sort_three");
 		lstest = build_test_list(1, 5, 1, 4, 3,  20, 10);
-		op_sort(lstest, lstaux);
+		op_sort(&lstest, &lstaux);
 		show_lst_data_with_label(lstest, "list aux a");
 		show_lst_data_with_label(lstaux, "list aux B");
 		// fun_test_header_label(3, "--- test_sort_three");
@@ -70,19 +70,19 @@ void	test_sort_three(int active)
 		fun_group_start("SORT TINY SHORT (3 elements)");
 		fun_test_header_label(1, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 4, 1, 3);
-		lstest = op_sort(lstest, lstaux);
+		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 		fun_test_header_label(2, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 1, 4, 3);
-		lstest = op_sort(lstest, lstaux);
+		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 		fun_test_header_label(3, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 3, 1, 4);
-		lstest = op_sort(lstest, lstaux);
+		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 		fun_test_header_label(4, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 13, 1, 40);
-		lstest = op_sort(lstest, lstaux);
+		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 	}
 }

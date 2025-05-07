@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/24 12:51:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 00:22:24 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	{
 		ls_num = process_parameters(argc, argv);
 		if (ls_num != NULL)
-			op_sort(ls_num, ls_aux);
+			op_sort(&ls_num, &ls_aux);
 		else
 			return (show_error_msg());
 	}

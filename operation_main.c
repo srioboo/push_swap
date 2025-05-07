@@ -6,22 +6,22 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/05 11:37:09 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 00:23:57 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_link_list	*op_sort(t_link_list *list_a, t_link_list *list_b)
+void	op_sort(t_link_list **list_a, t_link_list **list_b)
 {
 	// ft_printf("START SORTENING: list size %d %p", ft_lstsize(list_a), list_b);
-	if (link_lstsize(list_a) == 3)
-		tiny_sort(&list_a); // list_b = tiny_sort(list_a, list_b);
+	if (link_lstsize(*list_a) == 3)
+		tiny_sort(list_a); // list_b = tiny_sort(list_a, list_b);
 	else
-		full_sort(&list_a, &list_b);// list_b = full_sort(list_a, list_b);
+		full_sort(list_a, list_b);// list_b = full_sort(list_a, list_b);
 
 	// TODO - do ordering
-	return (list_a);
+	// return (list_a);
 }
 
 static void	full_sort_aux(t_link_list **list_a,

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/04 23:03:50 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/05/07 00:20:31 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,8 @@ int			binary_compare(int nb1, int nb2);
  * 
  * @param new_list list
  */
-t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list);
+// t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list);
+void	op_sort(t_link_list **new_list, t_link_list **aux_list);
 
 /**
  * @brief do full sorting

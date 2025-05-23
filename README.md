@@ -149,4 +149,6 @@ Si necesitas un ejemplo de código en un lenguaje específico o más detalles so
 ### Resources
 
 - https://push-swap42-visualizer.vercel.app/
+- gmartin tester push_swap
+- https://pinetools.com/es/generador-numeros-aleatorios
 

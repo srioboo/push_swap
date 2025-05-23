@@ -144,3 +144,9 @@ Paso a Paso;
 - La recursividad y la concatenación de listas permiten obtener la lista ordenada final.
 
 Si necesitas un ejemplo de código en un lenguaje específico o más detalles sobre la implementación, no dudes en decírmelo.
+
+
+### Resources
+
+- https://push-swap42-visualizer.vercel.app/
+

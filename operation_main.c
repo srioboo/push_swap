@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/03 12:34:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/03 15:19:33 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ void	tiny_sort(t_link_list **list_a)
 {
 	int			count;
 	t_link_list	*list_b;
-	// t_link_list *first;
 
 	list_b = *list_a;
 	count = 0;
@@ -135,21 +134,16 @@ void	tiny_sort(t_link_list **list_a)
 	{
 		if (count == 0 && (list_b->content == list_b->max_val))
 		{
-			//ft_printf("test 1 %d == %d\n", list_b->content, list_b->max_val);
 			op_rotate(list_a, OP_ROTATE_A);
 			tiny_sort(list_a);
 		}
 		else if ((count == 0 && (list_b->content != list_b->max_val)) && (list_b->content < list_b->next->content))
 		{
-			//ft_printf("test 2 %d == %d\n", list_b->content, list_b->max_val);
 			op_swap(list_a, OP_SWAP_A);
 			tiny_sort(list_a);
 		}
 		else if (count == 0 && (list_b->content > list_b->next->content))
-		{
-			//ft_printf("PREV (%d) %d %d\n", count, list_b->prev->content, list_b->content);
 			op_swap(list_a, OP_SWAP_A);
-		}
 		list_b = list_b->next;
 		count++;
 

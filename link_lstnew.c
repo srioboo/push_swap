@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 00:18:16 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/04/28 10:17:47 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/03 09:49:28 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_link_list	*link_lstnew(int value)
 	if (!newlst)
 		return (NULL);
 	newlst->content = value;
+	newlst->prev = newlst;
 	newlst->next = NULL;
 	newlst->index = 0;
 	newlst->max_val = value;

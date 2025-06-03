@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/03 11:54:19 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/03 12:33:12 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,37 +62,38 @@ void	test_sort_three(int active)
 {
 	t_link_list	*lstest;
 	t_link_list	*lstaux;
+	int			count;
 
+	count = 0;
 	lstest = NULL;
 	lstaux = NULL;
 	if (active > 0)
 	{
 		fun_group_start("SORT TINY SHORT (3 elements)");
-		fun_test_header_label(1, "--- test_sort_three");
+		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 4, 1, 3);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
-		fun_test_header_label(2, "--- test_sort_three");
+		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 1, 4, 3);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 		
-		// TODO - thid fail
-		fun_test_header_label(3, "--- test_sort_three");
+		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 3, 1, 4);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
-		fun_test_header_label(4, "--- test_sort_three");
+		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 13, 1, 40);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 
-		fun_test_header_label(4, "--- test_sort_three");
+		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 4, 67, 3);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 
-		fun_test_header_label(4, "--- test_sort_three");
+		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 3, 67, 4);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);

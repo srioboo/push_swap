@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/05 09:31:52 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/03 11:46:31 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,22 @@
 void	show_lst_data_with_label(t_link_list *lstest, char *label)
 {
 	int	count;
-	printf("\n\n" COLOR_YELLOW "==== list content %s ===" COLOR_RESET " \n", label);
+	printf("" COLOR_YELLOW "%s" COLOR_RESET "", label);
 	if (lstest)
-		printf("\nelements: \tmax: %d\n", lstest->max_val);
+		printf("elements(%d): \t", lstest->max_val);
 	else
 		printf("\n" COLOR_RED "Error lstest null or empty: %p" COLOR_RESET "\n", lstest);
 	count = 0;
 	while (lstest)
 	{
 		if (lstest->content)
-			printf("[%d] %d\t", lstest->index, lstest->content);
+			printf("%d\t", lstest->content); //printf("[%d] %d\t", lstest->index, lstest->content);
 		lstest = lstest->next;
 		count++;
 	}
-	printf("\nsize: %d\n", count);
-	printf("\n" COLOR_YELLOW "==== list content end ===" COLOR_RESET "\n\n");
+	// printf("\nsize: %d\n", count);
+	printf("\n\n");
+	// printf("\n" COLOR_YELLOW "==== list content end ===" COLOR_RESET "\n\n");
 }
 
 void	show_lst_data(t_link_list *lstest)
@@ -47,7 +48,7 @@ t_link_list	*build_test_list(int active_log, int n_elem_lst, ...)
 	va_start(args, n_elem_lst);
 	lstest = NULL;
 	aux = 0;
-	printf(COLOR_BLUE "\nelements: \n");
+	printf(COLOR_BLUE "\nelements: \t");
 	while (n_elem_lst > 0)
 	{
 		aux = va_arg(args, int);
@@ -56,9 +57,10 @@ t_link_list	*build_test_list(int active_log, int n_elem_lst, ...)
 		link_lstadd_back(&lstest, link_lstnew(aux));
 		n_elem_lst--;
 	}
-	if (active_log > 0)
-			printf(COLOR_BLUE "\nsize: %d max: %d\n", link_lstsize(lstest), lstest->max_val);
-	printf(COLOR_GREEN "\n\noperations:\n");
+	//if (active_log > 0)
+	//		printf(COLOR_BLUE "\nsize: %d max: %d\n", link_lstsize(lstest), lstest->max_val);
+	//printf(COLOR_GREEN "\n\noperations:\t");
+	printf(COLOR_GREEN "\n");
 	va_end(args);
 	return (lstest);
 }
@@ -76,6 +78,6 @@ int	main(int argc, char **argv)
 	test_rev_rotate(0);
 	test_rotate_both(0);
 	test_sort(0);
-	test_sort_three(0);
-	test_full_sort(1);
+	test_sort_three(1);
+	test_full_sort(0);
 }

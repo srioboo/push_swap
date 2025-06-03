@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/07 00:23:57 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/03 11:35:18 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ static void	full_sort_aux(t_link_list **list_a,
 		bit_b = (nb2 >> bits) & 1;
 		if ((bit_a != bit_b) && (bit_a > bit_b))
 		{
-			ft_printf("a: %d es mayor que %d\n", nb1, nb2);
+			// ft_printf("a: %d es mayor que %d\n", nb1, nb2);
 			op_push(list_a, *list_b, OP_PUSH_B);
 			return ;
 		}
 		if ((bit_a != bit_b) && (bit_a < bit_b))
 		{
-			ft_printf("b: %d es menor que %d\n", nb1, nb2);
+			// 	ft_printf("b: %d es menor que %d\n", nb1, nb2);
 			op_rotate(list_a, OP_ROTATE_A);
 			return ;
 		}
@@ -55,12 +55,12 @@ static void	full_sort_aux(t_link_list **list_a,
 void	full_sort(t_link_list **list_a, t_link_list **list_b)
 {
 	int	count;
-	int	max;
+	// int	max;
 	int	prev_nb;
 
 	prev_nb = 0;
-	max = (*list_a)->max_val;
-	ft_printf("TS MAX: %d \n", max);
+// 	max = (*list_a)->max_val;
+	// ft_printf("TS MAX: %d \n", max);
 
 	count = 0;
 	while (*list_a)
@@ -102,24 +102,57 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 	return (aux);
 }*/
 
+
+
+/*static t_link_list	*link_lstdup(t_link_list *lstest)
+{
+	int	count;
+	t_link_list **aux;
+
+	aux = link_lstnew(0);
+	count = 0;
+	while (lstest)
+	{
+		if (lstest->content)
+			link_lstadd_back(&lstest, &aux);
+		lstest = lstest->next;
+		count++;
+	}
+
+	return (aux);
+}*/
+
+
 void	tiny_sort(t_link_list **list_a)
 {
 	int			count;
 	t_link_list	*list_b;
+	// t_link_list *first;
 
 	list_b = *list_a;
 	count = 0;
 	while (list_b)
 	{
 		if (count == 0 && (list_b->content == list_b->max_val))
-			op_rotate(list_a, OP_ROTATE_A);
-		else if (count == 0 && (list_b->content != list_b->max_val))
 		{
-			ft_printf("TODO - Swap not implemented correctly?");
-			op_swap(&list_b, OP_SWAP_A);
-			// op_rotate(&list_b, OP_ROTATE_A);
+			// ft_printf("test 1 %d == %d\n", list_b->content, list_b->max_val);
+			op_rotate(list_a, OP_ROTATE_A);
 		}
+		else if ((count == 0 && (list_b->content != list_b->max_val)) && (list_b->content < list_b->next->content))
+		{
+			// ft_printf("test 2 %d == %d\n", list_b->content, list_b->max_val);
+			op_swap(list_a, OP_SWAP_A);
+			tiny_sort(list_a);
+		}
+		else if (count == 0 && (list_b->content > list_b->next->content))
+		{
+			ft_printf("PREV (%d) %d %d\n", count, list_b->prev->content, list_b->content);
+			op_swap(list_a, OP_SWAP_A);
+		}
+		//	op_swap(list_a, OP_SWAP_A);
 		list_b = list_b->next;
 		count++;
+
 	}
 }
+

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/07 00:20:31 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/02 11:22:42 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,5 +183,10 @@ void		op_rev_rotate(t_link_list **lst, char *op);
  * @param op operation to realice OP_SWAP_A or OP_SWAP_B
  */
 void		op_swap(t_link_list **lst, char *op);
+
+
+
+// TODO - LOgs
+void	log_lst_data(t_link_list *lstest, char *label);
 
 #endif

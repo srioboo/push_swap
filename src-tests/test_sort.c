@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/03 12:33:12 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 08:27:59 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	test_sort(int active)
 		lstest = build_test_list(1, 3, 4, 7, 2);
 		show_lst_data(lstest);
 		op_sort(&lstest, &lstaux);
-		op_swap(&lstest, OP_SWAP_A);
+		swap_a(&lstest);
 		show_lst_data(lstest);
 	}
 }
@@ -78,7 +78,6 @@ void	test_sort_three(int active)
 		lstest = build_test_list(1, 3, 1, 4, 3);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
-		
 		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 3, 1, 4);
 		op_sort(&lstest, &lstaux);
@@ -87,12 +86,10 @@ void	test_sort_three(int active)
 		lstest = build_test_list(1, 3, 13, 1, 40);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
-
 		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 4, 67, 3);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
-
 		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, 3, 67, 4);
 		op_sort(&lstest, &lstaux);

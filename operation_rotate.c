@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/26 15:03:11 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 08:32:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,17 @@ void	op_rotate(t_link_list **lst, char *op)
 	show_op_msg(op);
 }
 
-void	op_rotate_both(t_link_list **lsta, t_link_list **lstb)
+void	rotate_a(t_link_list **lst)
+{
+	op_rotate(lst, OP_ROTATE_A);
+}
+
+void	rotate_b(t_link_list **lst)
+{
+	op_rotate(lst, OP_ROTATE_B);
+}
+
+void	rotate_both(t_link_list **lsta, t_link_list **lstb)
 {
 	op_rotate(lsta, OP_ROTATE_A);
 	op_rotate(lstb, OP_ROTATE_B);

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/02 11:22:42 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 08:32:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int			binary_compare(int nb1, int nb2);
  * @param new_list list
  */
 // t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list);
-void	op_sort(t_link_list **new_list, t_link_list **aux_list);
+void		op_sort(t_link_list **new_list, t_link_list **aux_list);
 
 /**
  * @brief do full sorting
@@ -138,12 +138,20 @@ void		tiny_sort(t_link_list **list_a);
 /* ************************************************************************** */
 
 /**
+ * @brief takes the first element on top on list b and puts in on list a
+ * 
+ * @param orig list
+ * @param dest list
+ */
+void		push_a(t_link_list **orig, t_link_list *dest);
+
+/**
  * @brief takes the first element on top on list a and puts in on list b
  * 
  * @param orig list
  * @param dest list
  */
-void		op_push(t_link_list **orig, t_link_list *dest, char *op);
+void		push_b(t_link_list **orig, t_link_list *dest);
 
 /* ************************************************************************** */
 /* Operations Rotate                                                          */
@@ -156,10 +164,13 @@ void		op_push(t_link_list **orig, t_link_list *dest, char *op);
  */
 void		op_rotate(t_link_list **lst, char *op);
 
+void		rotate_a(t_link_list **lst);
+void		rotate_b(t_link_list **lst);
+
 /**
  * @brief swift elements one position, first element become last, in both list
  */
-void		op_rotate_both(t_link_list **lsta, t_link_list **lstb);
+void		rotate_both(t_link_list **lsta, t_link_list **lstb);
 
 /* ************************************************************************** */
 /* Operations Rev rotate                                                      */
@@ -172,21 +183,29 @@ void		op_rotate_both(t_link_list **lsta, t_link_list **lstb);
  */
 void		op_rev_rotate(t_link_list **lst, char *op);
 
+void		rev_rotate_a(t_link_list **lst);
+void		rev_rotate_b(t_link_list **lst);
+
 /* ************************************************************************** */
 /* Operations Swap                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief swap the first 2 elements at the top of the stack
+ * @brief swap the first 2 elements at the top of the stack a
  * 
  * @param lst to apply the change
- * @param op operation to realice OP_SWAP_A or OP_SWAP_B
  */
-void		op_swap(t_link_list **lst, char *op);
+void		swap_a(t_link_list **lst);
 
+/**
+ * @brief swap the first 2 elements at the top of the stack b
+ * 
+ * @param lst to apply the change
+ */
+void		swap_b(t_link_list **lst);
 
 
 // TODO - LOgs
-void	log_lst_data(t_link_list *lstest, char *label);
+void		log_lst_data(t_link_list *lstest, char *label);
 
 #endif

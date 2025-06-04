@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/26 15:07:02 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 08:32:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,19 @@ void	test_rotate_both(int active)
 		fun_test_header_label(1, "--- test_rotate both");
 		lst_a = build_test_list(1, 3, 1, 2, 3);
 		lst_b = build_test_list(1, 3, 5, 6, 7);
-		op_rotate_both(&lst_a, &lst_b);
+		rotate_both(&lst_a, &lst_b);
 		show_lst_data(lst_a);
 		show_lst_data(lst_b);
 		fun_test_header_label(2, "--- test_rotate both");
 		lst_a = build_test_list(1, 3, 4, 1, 3);
 		lst_b = build_test_list(1, 3, 5, 7, 6);
-		op_rotate_both(&lst_a, &lst_b);
+		rotate_both(&lst_a, &lst_b);
 		show_lst_data(lst_a);
 		show_lst_data(lst_b);
 		fun_test_header_label(3, "--- test_rotate both");
 		lst_a = build_test_list(1, 5, 10, 4, 2, 8, 9);
 		lst_b = build_test_list(1, 5, 10, 40, 12, 98, 19);
-		op_rotate_both(&lst_a, &lst_b);
+		rotate_both(&lst_a, &lst_b);
 		show_lst_data(lst_a);
 		show_lst_data(lst_b);
 	}

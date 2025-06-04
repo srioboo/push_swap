@@ -6,13 +6,13 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/26 15:31:50 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 08:26:55 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_swap(t_link_list **lst, char *op)
+static void	op_swap(t_link_list **lst, char *op)
 {
 	t_link_list	*aux;
 	int			temp;
@@ -38,4 +38,14 @@ void	op_swap(t_link_list **lst, char *op)
 	}
 	*lst = aux;
 	show_op_msg(op);
+}
+
+void	swap_a(t_link_list **lst)
+{
+	op_swap(lst, OP_SWAP_A);
+}
+
+void	swap_b(t_link_list **lst)
+{
+	op_swap(lst, OP_SWAP_B);
 }

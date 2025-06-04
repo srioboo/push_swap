@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/26 10:06:39 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 00:08:32 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	test_push(int active)
 		fun_test_header_label(1, "--- test_push");
 		lstest_a = build_test_list(1, 3, 1, 2, 3);
 		lstest_b = build_test_list(1, 3, 1, 2, 3);
-		op_push(&lstest_a, lstest_b, OP_PUSH_A);
+		push_a(&lstest_a, lstest_b);
 		printf("result size: %d\n", link_lstsize(lstest_a));
 		show_lst_data(lstest_b);
 	}

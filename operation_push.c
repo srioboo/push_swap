@@ -6,15 +6,25 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/26 10:13:25 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 00:08:53 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_push(t_link_list **orig, t_link_list *dest, char *op)
+static void	op_push(t_link_list **orig, t_link_list *dest, char *op)
 {
 	link_lstadd_back(&dest, link_lstnew((*orig)->content));
 	op_rotate(&dest, NULL);
 	show_op_msg(op);
+}
+
+void	push_a(t_link_list **orig, t_link_list *dest)
+{
+	op_push(orig, dest, OP_PUSH_A);
+}
+
+void	push_b(t_link_list **orig, t_link_list *dest)
+{
+	op_push(orig, dest, OP_PUSH_B);
 }

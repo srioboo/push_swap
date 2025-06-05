@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/05 11:56:48 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 12:06:29 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ int	main(int argc, char **argv)
 	test_ft_dummy(0);
 	test_swap(1);
 	test_push(1);
-	test_rotate(0);
-	test_rev_rotate(0);
-	test_rotate_both(0);
+	test_rotate(1);
+	test_rev_rotate(1);
+	test_rotate_both(1);
 	test_sort(0);
 	test_sort_three(0);
 	test_full_sort(0);

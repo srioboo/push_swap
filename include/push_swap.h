@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/04 08:32:15 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/04 08:53:19 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ void		tiny_sort(t_link_list **list_a);
  * @param orig list
  * @param dest list
  */
-void		push_a(t_link_list **orig, t_link_list *dest);
+void		push_a(t_link_list **orig, t_link_list **dest);
 
 /**
  * @brief takes the first element on top on list a and puts in on list b
@@ -151,7 +151,7 @@ void		push_a(t_link_list **orig, t_link_list *dest);
  * @param orig list
  * @param dest list
  */
-void		push_b(t_link_list **orig, t_link_list *dest);
+void		push_b(t_link_list **orig, t_link_list **dest);
 
 /* ************************************************************************** */
 /* Operations Rotate                                                          */

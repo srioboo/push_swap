@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/04 08:53:19 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 13:05:01 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,6 @@ int			ft_intlen(int i);
  */
 int			set_max(int nb1, int nb2);
 
-/**
- * @brief compare two numbers by binary
- */
-int			binary_compare(int nb1, int nb2);
-
 /* ************************************************************************** */
 /* Operations Main                                                            */
 /* ************************************************************************** */
@@ -203,9 +198,5 @@ void		swap_a(t_link_list **lst);
  * @param lst to apply the change
  */
 void		swap_b(t_link_list **lst);
-
-
-// TODO - LOgs
-void		log_lst_data(t_link_list *lstest, char *label);
 
 #endif

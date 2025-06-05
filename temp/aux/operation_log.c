@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/04 22:36:16 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 12:44:06 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ void	log_lst_data(t_link_list *lstest, char *label)
 	}
 	ft_printf("size(%d)\n", count);
 }
-

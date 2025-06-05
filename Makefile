@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/06/02 09:16:42 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/06/05 13:06:56 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,7 @@ SRCS = push_swap.c \
 		link_lstlast.c \
 		link_lstadd_back.c \
 		link_lstadd_front.c \
-		link_lstsize.c \
-		operation_log.c
+		link_lstsize.c
 
 # objects
 OBJECTS = $(SRCS:.c=.o)

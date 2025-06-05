@@ -50,6 +50,6 @@ other_examples ()
 
 }
 
-# short_examples
-long_examples
-# other_examples
+short_examples
+#long_examples
+#other_examples

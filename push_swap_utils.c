@@ -6,13 +6,12 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/05/05 09:28:08 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 12:47:56 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// TODO - is necesary?
 int	ft_intlen(int i)
 {
 	unsigned int	n_aux;
@@ -33,27 +32,6 @@ int	ft_intlen(int i)
 	return (j);
 }
 
-// TODO - is necesary?
-int	to_binary(int nb)
-{
-	int	result;
-
-	result = 0;
-	while (nb > 0)
-		result /= 2;
-
-	return (result);
-}
-
-// TODO - Refactor with full_sort functionality
-int	binary_compare(int nb1, int nb2)
-{
-	int	result;
-
-	result = nb1 & nb2;
-	return (result);
-}
-
 void	show_op_msg(char *op)
 {
 	int	len;
@@ -71,29 +49,6 @@ int	show_error_msg(void)
 	write(1, "Error\n", 7);
 	return (0);
 }
-
-/*int	find_max(t_link_list *lst)
-{
-	int	nb_current;
-	int	nb_next;
-	int	max;
-
-	nb_current = 0;
-	nb_next = 0;
-	max = 0;
-
-	while (lst)
-	{
-		if (lst->content)
-			nb_current = lst->content;
-		if (lst->next)
-			nb_next = lst->next->content;
-		if ((nb_current >= nb_next) && (nb_current > max))
-			max = nb_current;
-		lst = lst->next;
-	}
-	return (max);
-}*/
 
 int	set_max(int nb1, int nb2)
 {

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/03 18:53:17 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 10:25:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,65 +15,92 @@
 void	op_sort(t_link_list **list_a, t_link_list **list_b)
 {
 	// ft_printf("START SORTENING: list size %d %p", ft_lstsize(list_a), list_b);
+	// log_lst_data(*list_a, "LIST_A: ");
 	if (link_lstsize(*list_a) == 3)
 		tiny_sort(list_a); // list_b = tiny_sort(list_a, list_b);
 	else
 		full_sort(list_a, list_b);// list_b = full_sort(list_a, list_b);
 
+
+	// ft_printf("\n");
+	// log_lst_data(*list_a, "LIST_A: ");
+	// log_lst_data(*list_b, "LIST_B: ");
+	// ft_printf("\n");
+
 	// TODO - do ordering
 	// return (list_a);
 }
 
-static void	full_sort_aux(t_link_list **list_a,
-			t_link_list **list_b, int nb1, int nb2)
+/*static void	full_sort_aux(t_link_list **list_a,
+				t_link_list **list_b, int nb2)
 {
 	int	bits;
-	int	bit_a;
-	int	bit_b;
+	int bit;
+	// int	bit_a;
+	//int	bit_b;
+	// ft_printf("nb1 %d\n", nb1);
 
 	bits = (sizeof(int) * 8) - 1;
 	while (bits >= 0)
 	{
-		bit_a = (nb1 >> bits) & 1;
-		bit_b = (nb2 >> bits) & 1;
-		if ((bit_a != bit_b) && (bit_a > bit_b))
+		//bit_a = (nb1 >> bits) & 1;
+		bit = (nb2 >> bits); 
+
+		ft_printf("a:%d %d\n", bit, (bit & 1));
+
+		if (bit & 0)
 		{
-			// ft_printf("a: %d es mayor que %d\n", nb1, nb2);
-			op_push(list_a, *list_b, OP_PUSH_B);
+			push_b(list_a, list_b);
 			return ;
 		}
-		if ((bit_a != bit_b) && (bit_a < bit_b))
+		if (bit & 1)
 		{
-			// 	ft_printf("b: %d es menor que %d\n", nb1, nb2);
-			op_rotate(list_a, OP_ROTATE_A);
+			rotate_a(list_a);
 			return ;
 		}
 		bits--;
 	}
-}
+
+}*/
 
 void	full_sort(t_link_list **list_a, t_link_list **list_b)
 {
-	int	count;
-	// int	max;
-	int	prev_nb;
+	int	i;
+	int	max_bits;
+	int	size;
+	int	j;
+	int	max_val;
 
-	prev_nb = 0;
-// 	max = (*list_a)->max_val;
-	// ft_printf("TS MAX: %d \n", max);
-
-	count = 0;
-	while (*list_a)
+	max_val = (*list_a)->max_val;
+	max_bits = 0;
+	while ((max_val >> max_bits) != 0)
+		max_bits++;
+	ft_printf("max bits %d\n", max_bits);
+	i = 0;
+	while (i < max_bits)
 	{
-		if (count == 0)
-			prev_nb = (*list_a)->content;
-		else
+		size = link_lstsize(*list_a);
+		j = 0;
+		while (j < size)
 		{
-			full_sort_aux(list_a, list_b, prev_nb, (*list_a)->content);
-			prev_nb = (*list_a)->content;
+			// current = *list_a;
+			int num = (*list_a)->content;
+			ft_printf("i: %d, size: %d, j: %d, num: %d %d\n", i, size, j, num, (num >> i) & 1);
+			if (((num >> i) & 1) == 0)
+				push_b(list_a, list_b);
+			else
+				rotate_a(list_a);
+			//if (size == link_lstsize(*list_a))
+			//*list_a = (*list_a)->next;
+			j++;
 		}
-		(*list_a) = (*list_a)->next;
-		count++;
+		//size = link_lstsize(*list_b);
+		//*list_a = (*list_a)->next;
+		//j = 0;
+		//while(*list_b)
+		//	push_a(list_b, list_a);
+		//	j++;
+		i++;
 	}
 }
 
@@ -99,26 +126,6 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 		lst = lst->next;
 		count++;
 	}
-	return (aux);
-}*/
-
-
-
-/*static t_link_list	*link_lstdup(t_link_list *lstest)
-{
-	int	count;
-	t_link_list **aux;
-
-	aux = link_lstnew(0);
-	count = 0;
-	while (lstest)
-	{
-		if (lstest->content)
-			link_lstadd_back(&lstest, &aux);
-		lstest = lstest->next;
-		count++;
-	}
-
 	return (aux);
 }*/
 
@@ -148,16 +155,16 @@ void	tiny_sort(t_link_list **list_a)
 			op_rotate(list_a, OP_ROTATE_A);
 			tiny_sort(list_a);
 		}
-		else if ((count == 0 && (list_b->content != list_b->max_val)) && (list_b->content < list_b->next->content))
+		else if ((count == 0 && (list_b->content != list_b->max_val))
+			&& (list_b->content < list_b->next->content))
 		{
-			op_swap(list_a, OP_SWAP_A);
+			swap_a(list_a);
 			tiny_sort(list_a);
 		}
 		else if (count == 0 && (list_b->content > list_b->next->content))
-			op_swap(list_a, OP_SWAP_A);
+			swap_a(list_a);
 		list_b = list_b->next;
 		count++;
 
 	}
 }
-

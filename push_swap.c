@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/05 12:44:53 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 23:29:56 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,10 @@ t_link_list	*process_parameters(int argc, char **argv)
 				|| validate_isrepeated(argv[pos], ls_num) == TRUE)
 				return (NULL);
 			else
-			{
 				link_lstadd_back(&ls_num, link_lstnew(ft_atoi(argv[pos])));
-			}
 			pos++;
 		}
 	}
-	else
-		return (NULL);
 	return (ls_num);
 }
 

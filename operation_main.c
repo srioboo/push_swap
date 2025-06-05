@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/05 13:07:57 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 23:15:59 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,45 +55,17 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 			push_a(list_b, list_a);
 		i++;
 	}
-
 }
-
-
-// void	tiny_sort(t_link_list **list_a)
-// {
-// 	if ((*list_a)->content == (*list_a)->max_val)
-// 		op_rotate(list_a, OP_ROTATE_A);
-// 	if ((*list_a)->next->content == (*list_a)->max_val)
-// 		op_rev_rotate(list_a, OP_ROTATE_A);
-// 	if (((*list_a)->content > (*list_a)->next->content))
-// 		swap_a(list_a);
-// }
-
 
 void	tiny_sort(t_link_list **list_a)
 {
-	int			count;
-	t_link_list	*list_b;
+	int	max_val;
 
-	list_b = *list_a;
-	count = 0;
-	while (list_b)
-	{
-		if (count == 0 && (list_b->content == list_b->max_val))
-		{
-			op_rotate(list_a, OP_ROTATE_A);
-			tiny_sort(list_a);
-		}
-		else if ((count == 0 && (list_b->content != list_b->max_val))
-			&& (list_b->content < list_b->next->content))
-		{
-			swap_a(list_a);
-			tiny_sort(list_a);
-		}
-		else if (count == 0 && (list_b->content > list_b->next->content))
-			swap_a(list_a);
-		list_b = list_b->next;
-		count++;
-
-	}
+	max_val = (*list_a)->max_val;
+	if ((*list_a)->content == max_val)
+		rotate_a(list_a);
+	if ((*list_a)->next->content == max_val)
+		rev_rotate_a(list_a);
+	if (((*list_a)->content > (*list_a)->next->content))
+		swap_a(list_a);
 }

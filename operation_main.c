@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/05 10:25:15 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 12:32:27 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 	max_bits = 0;
 	while ((max_val >> max_bits) != 0)
 		max_bits++;
-	ft_printf("max bits %d\n", max_bits);
+	// ft_printf("max bits %d\n", max_bits);
 	i = 0;
 	while (i < max_bits)
 	{
@@ -85,23 +85,28 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 		{
 			// current = *list_a;
 			int num = (*list_a)->content;
-			ft_printf("i: %d, size: %d, j: %d, num: %d %d\n", i, size, j, num, (num >> i) & 1);
+			// ft_printf("i: %d, size: %d, j: %d, num: %d %d\n", i, size, j, num, (num >> i) & 1);
 			if (((num >> i) & 1) == 0)
 				push_b(list_a, list_b);
 			else
 				rotate_a(list_a);
 			//if (size == link_lstsize(*list_a))
-			//*list_a = (*list_a)->next;
+			//	*list_a = (*list_a)->next;
 			j++;
 		}
 		//size = link_lstsize(*list_b);
-		//*list_a = (*list_a)->next;
-		//j = 0;
-		//while(*list_b)
-		//	push_a(list_b, list_a);
-		//	j++;
+		// ft_printf("size b %d\n", link_lstsize(*list_b));
+		int s = link_lstsize(*list_b);
+		int p = 0;
+		while(p < s)
+		{
+			// ft_printf("test");
+			push_a(list_b, list_a);
+			p++;
+		}
 		i++;
 	}
+
 }
 
 /*t_link_list	*full_sort(t_link_list *lst, t_link_list *aux)

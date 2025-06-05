@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/04 22:34:38 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/05 11:56:48 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	show_lst_data_with_label(t_link_list *lstest, char *label)
 	count = 0;
 	while (lstest)
 	{
-		if (lstest->content)
-			printf("%d\t", lstest->content); //printf("[%d] %d\t", lstest->index, lstest->content);
+		printf("%d\t", lstest->content); //printf("[%d] %d\t", lstest->index, lstest->content);
 		lstest = lstest->next;
 		count++;
 	}
@@ -72,12 +71,12 @@ int	main(int argc, char **argv)
 	if (!argv)
 		printf("%s", argv[0]);
 	test_ft_dummy(0);
-	test_swap(0);
-	test_push(0);
+	test_swap(1);
+	test_push(1);
 	test_rotate(0);
 	test_rev_rotate(0);
 	test_rotate_both(0);
 	test_sort(0);
 	test_sort_three(0);
-	test_full_sort(1);
+	test_full_sort(0);
 }

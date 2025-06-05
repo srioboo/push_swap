@@ -59,6 +59,9 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
 
 # check result
 ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+
+# check result with shuf
+ARG=$(shuf -i 1-1000 -n 500); ./push_swap $ARG | ./checker_OS $ARG
 ```
 
 ## RADIX MSD

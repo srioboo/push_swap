@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:31:43 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/03/25 15:47:40 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/06 09:34:02 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@
 /**
  * @brief grout message start
  */
-void fun_group_start(const char *method_message);
+void	fun_group_start(const char *method_message);
 
 /**
  * @brief print message at the start of the method
@@ -72,7 +72,7 @@ void	fun_test_header_label(int num, char *str);
 char	*fun_color_red(void);
 char	*fun_color_green(void);
 char	*fun_color_white(void);
-void 	fun_color_show(void);
+void	fun_color_show(void);
 
 /** Utils functions */
 
@@ -129,7 +129,7 @@ void	fun_show_orig_new(int (*f1)(const char *),
  * @param orig int origin
  * @param new int to test agais origin
  */
-void fun_assert_int(int orig_num, int new_num);
+void	fun_assert_int(int orig_num, int new_num);
 
 /**
  * @brief assert that two numbers are equals, but using functions from the lib

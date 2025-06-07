@@ -9,7 +9,7 @@ CFLAGS = -Wall -Werror -Wextra
 TEST_DIR = src-tests
 TEST_BIN = test.out
 # Directories
-INCLUDE = -I$(TEST_DIR)/include -Iinclude -Ilibft/src -Ilibft/ft_printf
+INCLUDE = -I$(TEST_DIR)/include -I. -Ilibft/src -Ilibft/ft_printf
 LIB_FLAG = -L$(TEST_DIR)/lib -l:$(LIB_TEST_NAME) -Llibft -l:libft.a
 
 ## Library Test source and objects

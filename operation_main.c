@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/05 23:15:59 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/07 21:56:21 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,13 @@ static int	calculate_max_bits(int max_val)
 
 void	op_sort(t_link_list **list_a, t_link_list **list_b)
 {
-	if (link_lstsize(*list_a) == 3)
+	int	list_size;
+
+	list_size = link_lstsize(*list_a);
+	if (list_size == 3)
 		tiny_sort(list_a);
+	if (list_size == 5)
+		medium_sort(list_a, list_b);
 	else
 		full_sort(list_a, list_b);
 }
@@ -46,13 +51,13 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 		while (j < size)
 		{
 			if ((((*list_a)->content >> i) & 1) == 0)
-				push_b(list_a, list_b);
+				push_to_b(list_a, list_b);
 			else
 				rotate_a(list_a);
 			j++;
 		}
 		while (*list_b)
-			push_a(list_b, list_a);
+			push_to_a(list_b, list_a);
 		i++;
 	}
 }
@@ -68,4 +73,28 @@ void	tiny_sort(t_link_list **list_a)
 		rev_rotate_a(list_a);
 	if (((*list_a)->content > (*list_a)->next->content))
 		swap_a(list_a);
+}
+
+void	medium_sort(t_link_list **list_a, t_link_list **list_b)
+{
+	int	minor;
+	//int second_minor;
+
+	minor = (*list_a)->min_val;
+	ft_printf("test %d %d\n", minor, (*list_a)->min_val );
+
+	// second_minor = minor;
+
+	if ((*list_a)->content != minor)
+	{
+		rotate_a(list_a);
+		// medium_sort(list_a, list_b);
+	}
+	else
+		push_to_b(list_a, list_b);
+
+	tiny_sort(list_a);
+	ft_printf("test %d %d\n", minor, (*list_a)->min_val );
+	// push_to_a(list_b, list_a);
+
 }

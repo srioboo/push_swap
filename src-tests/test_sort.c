@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/07 11:42:34 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/07 20:12:52 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,29 @@ void	test_sort_three(int active)
 		show_lst_data(lstest);
 		fun_test_header_label(++count, "--- test_sort_three");
 		lstest = build_test_list(1, 3, -3, -7, 4);
+		op_sort(&lstest, &lstaux);
+		show_lst_data(lstest);
+	}
+}
+
+void	test_sort_five(int active)
+{
+	t_link_list	*lstest;
+	t_link_list	*lstaux;
+	int			count;
+
+	count = 0;
+	lstest = NULL;
+	lstaux = NULL;
+	if (active > 0)
+	{
+		fun_group_start("SORT MEDIUM SHORT (5 elements)");
+		fun_test_header_label(++count, "--- test_sort_five");
+		lstest = build_test_list(1, 5, 4, 1, 3, 8, 2);
+		op_sort(&lstest, &lstaux);
+		show_lst_data(lstest);
+		fun_test_header_label(++count, "--- test_sort_five");
+		lstest = build_test_list(1, 5, 1, 4, 3, 1, 9);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
 	}

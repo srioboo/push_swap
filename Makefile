@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/06/05 13:06:56 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/06/07 20:07:42 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = @rm -f
 
 # directories
-INCLUDE = -Iinclude -Ilibft/src -Ilibft/ft_printf
+INCLUDE = -Ilibft/src -Ilibft/ft_printf
 LIB_FLAG = -Llibft -l:libft.a
 
 # source files

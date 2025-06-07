@@ -3,70 +3,36 @@
 clear
 make re
 
-short_examples ()
+check_base ()
 {
-	# set arguments
-	ARG="4 67 3";
 	# main
-	# echo -e "Launching './push_swap $ARG'"
-	# ./push_swap $ARG
-	# test
-	echo -e "\nLaunching './push_swap $ARG | wc -l'"
-	./push_swap $ARG | wc -l
+	echo -e "  \nCheking 'push_swap with $2 values'"
+	echo -e " [ $ARG]'"
+	MOVES=$(./push_swap $ARG | wc -l)
+	CHECK=$(./push_swap $ARG | ./checker_linux $ARG)
 	# check result
-	echo -e "\nLaunching './push_swap $ARG | ./checker_linux $ARG'"
-	./push_swap $ARG | ./checker_linux $ARG
+	echo -e "Checker: $CHECK, moves: $MOVES"
 }
 
-long_examples ()
+check ()
 {
-	# set arguments
-	ARG="4 67 3 87 23";
-	# main
-	# echo -e "Launching './push_swap $ARG'"
-	# ./push_swap $ARG
-	# test
-	echo -e "\nLaunching './push_swap $ARG | wc -l'"
-	./push_swap $ARG | wc -l
-	# check result
-	echo -e "\nLaunching './push_swap $ARG | ./checker_linux $ARG'"
-	./push_swap $ARG | ./checker_linux $ARG
 
-}
-
-other_examples ()
-{
 	# set arguments
 	ARG=$(shuf -i 1-$1 -n $2 | tr '\n' ' ');
-	# main
-	# echo -e "Launching './push_swap $ARG'"
-	# ./push_swap $ARG
-	# test
-	echo -e "\nLaunching './push_swap $ARG | wc -l'"
-	./push_swap $ARG | wc -l
-	# check result
-	echo -e "\nLaunching './push_swap $ARG | ./checker_linux $ARG'"
-	./push_swap $ARG | ./checker_linux $ARG
+	check_base
+
 }
 
-other_examples_with_neg ()
+check_with_neg ()
 {
 	# set arguments
 	ARG=$(seq -$1 $1| shuf -n $2 | tr '\n' ' ');
-	# main
-	# echo -e "Launching './push_swap $ARG'"
-	# ./push_swap $ARG
-	# test
-	echo -e "\nLaunching './push_swap $ARG | wc -l'"
-	./push_swap $ARG | wc -l
-	# check result
-	echo -e "\nLaunching './push_swap $ARG | ./checker_linux $ARG'"
-	./push_swap $ARG | ./checker_linux $ARG
-
+	check_base
 }
 
-# short_examples
-# long_examples
-other_examples 10 100
-other_examples 1000 100
-other_examples_with_neg 30 10
+check_with_neg 100 3
+check_with_neg 10 5
+# check 100 3
+# check 100 5
+# check 100 100
+# check 1000 500

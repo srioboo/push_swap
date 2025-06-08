@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/08 18:23:24 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/08 20:02:28 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,43 +77,29 @@ void	tiny_sort(t_link_list **list_a)
 
 void	medium_sort(t_link_list **list_a, t_link_list **list_b)
 {
-	int	minor;
-	int	max;
-	t_link_list *aux;
+	int			minor;
+	int			max;
+	t_link_list	*aux;
 
-	aux = *list_a;
 	minor = (*list_a)->min_val;
 	max = (*list_a)->max_val;
-
 	while ((*list_a)->content != minor)
 		rotate_a(list_a);
 	push_to_b(list_a, list_b);
-
 	aux = *list_a;
+	minor = aux->content;
 	while (aux->next)
 	{
 		aux->min_val = set_min(minor, aux->content);
-		minor = aux->content;
+		minor = aux->min_val;
 		aux = aux->next;
 	}
 	(*list_a)->max_val = max;
-	(*list_a)->min_val = minor;
-
 	while ((*list_a)->content != minor)
 		rotate_a(list_a);
 	push_to_b(list_a, list_b);
-
-	log_lst_data(*list_a, "test ps-> list_a");
-	log_lst_data(*list_b, "test ps-> list_b");
-
 	tiny_sort(list_a);
-	//log_lst_data(*list_a, "test ps tiny -> list_a");
-
-	push_to_a(list_b, list_a);
 	rotate_a(list_a);
 	push_to_a(list_b, list_a);
-	rotate_a(list_a);
-
-	// log_lst_data(*list_a, "test ps push -> list_a");
-
+	push_to_a(list_b, list_a);
 }

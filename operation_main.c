@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/08 15:47:53 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/08 18:23:24 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,58 +68,52 @@ void	tiny_sort(t_link_list **list_a)
 
 	max_val = (*list_a)->max_val;
 	if ((*list_a)->content == max_val)
-		rotate_a(list_a);	
+		rotate_a(list_a);
 	if ((*list_a)->next->content == max_val)
 		rev_rotate_a(list_a);
-	if ((((*list_a)->content > (*list_a)->next->content))
-		&& ((*list_a)->content != max_val))
-			swap_a(list_a);
+	if (((*list_a)->content > (*list_a)->next->content))
+		swap_a(list_a);
 }
 
 void	medium_sort(t_link_list **list_a, t_link_list **list_b)
 {
 	int	minor;
-	//int second_minor;
-	int min_pos;
+	int	max;
+	t_link_list *aux;
 
-	min_pos = 0;
+	aux = *list_a;
 	minor = (*list_a)->min_val;
-	ft_printf("test1 %d %d\n", minor, (*list_a)->min_val );
-
-	// second_minor = minor;
-
-	// while (*list_a)
-	// {
-	// 	if ((*list_a)->content != minor)
-	// 		min_pos++;
-	// 	*list_a = (*list_a)->next;
-	// }
-
-	//log_lst_data(*list_a, "test bf-> list_a");
+	max = (*list_a)->max_val;
 
 	while ((*list_a)->content != minor)
-	{
-		ft_printf("ENTRAAA");
 		rotate_a(list_a);
-		//set_max()
-	}
-	//log_lst_data(*list_a, "test af-> list_a");
+	push_to_b(list_a, list_b);
 
-	//if ((*list_a)->content == minor)
-	//{
-	//	rotate_a(list_a);
-		// medium_sort(list_a, list_b);
-	//}
-	//else
-	if ((*list_a)->content == minor)
-		push_to_b(list_a, list_b);
-	//log_lst_data(*list_a, "test ps-> list_a");
-	//log_lst_data(*list_b, "test ps-> list_b");
+	aux = *list_a;
+	while (aux->next)
+	{
+		aux->min_val = set_min(minor, aux->content);
+		minor = aux->content;
+		aux = aux->next;
+	}
+	(*list_a)->max_val = max;
+	(*list_a)->min_val = minor;
+
+	while ((*list_a)->content != minor)
+		rotate_a(list_a);
+	push_to_b(list_a, list_b);
+
+	log_lst_data(*list_a, "test ps-> list_a");
+	log_lst_data(*list_b, "test ps-> list_b");
 
 	tiny_sort(list_a);
-	ft_printf("test %d %d %d\n", minor, (*list_a)->min_val, min_pos );
-	// log_lst_data(*list_a, "test-> list_a");
-	// log_lst_data(*list_b, "test-> list_b");
-	// push_to_a(list_b, list_a);
+	//log_lst_data(*list_a, "test ps tiny -> list_a");
+
+	push_to_a(list_b, list_a);
+	rotate_a(list_a);
+	push_to_a(list_b, list_a);
+	rotate_a(list_a);
+
+	// log_lst_data(*list_a, "test ps push -> list_a");
 
 }

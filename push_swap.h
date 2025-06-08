@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/08 15:25:12 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/08 15:56:00 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,6 +220,9 @@ void		swap_a(t_link_list **lst);
  */
 void		swap_b(t_link_list **lst);
 
-//void	log_lst_data(t_link_list *lstest, char *label);
+
+
+
+void	log_lst_data(t_link_list *lstest, char *label);
 
 #endif

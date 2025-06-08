@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   link_lstnew.c                                      :+:      :+:    :+:   */
+/*   operation_log.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 00:18:16 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/08 16:00:23 by srioboo-         ###   ########.fr       */
+/*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/06/08 09:59:21 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_link_list	*link_lstnew(int value)
+void	log_lst_data(t_link_list *lstest, char *label)
 {
-	t_link_list	*newlst;
+	int	count;
 
-	newlst = (t_link_list *)malloc(sizeof(t_link_list));
-	if (!newlst)
-		return (NULL);
-	newlst->content = value;
-	newlst->prev = newlst;
-	newlst->next = NULL;
-	newlst->index = 0;
-	newlst->max_val = value;
-	newlst->min_val = value;
-	return (newlst);
+	ft_printf("\n%s ", label);
+	if (lstest)
+		ft_printf("elements(%d, %d): \t", lstest->min_val, lstest->max_val);
+	count = 0;
+	while (lstest)
+	{
+		if (lstest->content)
+			ft_printf("%d\t", lstest->content);
+		lstest = lstest->next;
+		count++;
+	}
+	ft_printf("size(%d)\n", count);
 }

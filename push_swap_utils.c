@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/05 12:47:56 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/08 09:38:42 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ int	show_error_msg(void)
 int	set_max(int nb1, int nb2)
 {
 	if (nb1 >= nb2)
+		return (nb1);
+	return (nb2);
+}
+
+int	set_min(int nb1, int nb2)
+{
+	if (nb1 <= nb2)
 		return (nb1);
 	return (nb2);
 }

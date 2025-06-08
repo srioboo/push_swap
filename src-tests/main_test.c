@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/07 20:13:27 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/08 15:29:20 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	show_lst_data_with_label(t_link_list *lstest, char *label)
 
 	printf("" COLOR_YELLOW "%s" COLOR_RESET "", label);
 	if (lstest)
-		printf("\nelements(%d): \t", lstest->max_val);
+		printf("\nelements(%d, %d): \t", lstest->min_val, lstest->max_val);
 	else
 		printf("\n" COLOR_RED "Error lstest null or empty: %p" COLOR_RESET "\n",
 			lstest);
@@ -72,13 +72,13 @@ int	main(int argc, char **argv)
 	if (!argv)
 		printf("%s", argv[0]);
 	test_ft_dummy(0);
-	test_swap(0);
-	test_push(0);
-	test_rotate(0);
-	test_rev_rotate(0);
-	test_rotate_both(0);
+	test_swap(1);
+	test_push(1);
+	test_rotate(1);
+	test_rev_rotate(1);
+	test_rotate_both(1);
 	test_sort(0);
 	test_sort_three(0);
-	test_sort_five(1);
+	test_sort_five(0);
 	test_full_sort(0);
 }

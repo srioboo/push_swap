@@ -30,9 +30,9 @@ check_with_neg ()
 	check_base
 }
 
-check_with_neg 100 3
-check_with_neg 10 5
-# check 100 3
+#check_with_neg 100 3
+#check_with_neg 10 5
+check 100 3
 # check 100 5
-# check 100 100
+check 100 100
 # check 1000 500

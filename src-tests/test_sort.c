@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/08 23:30:33 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:29:31 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,19 +150,66 @@ void	test_sort_five(int active)
 	if (active > 0)
 	{
 		fun_group_start("SORT MEDIUM SHORT (5 elements)");
+		// fun_test_header_label(++count, "--- test_sort_five");
+		// lstest = build_test_list(1, 5, 4, 1, 3, 8, 2);
+		// op_sort(&lstest, &lstaux);
+		// show_lst_data(lstest);
+		// lstaux = NULL;
+		// fun_test_header_label(++count, "--- test_sort_five");
+		// lstest = build_test_list(1, 5, 1, 4, 3, 7, 9);
+		// op_sort(&lstest, &lstaux);
+		// show_lst_data(lstest);
+		// lstaux = NULL;
+		// fun_test_header_label(++count, "--- test_sort_five");
+		// lstest = build_test_list(1, 5, 2, 5, 12, 7, 9);
+		// op_sort(&lstest, &lstaux);
+		// show_lst_data(lstest);
+
+		// // 14 36 100 3 18 - 39 52 22 80 36 
+		// lstaux = NULL;
+		// fun_test_header_label(++count, "--- test_sort_five");
+		// lstest = build_test_list(1, 5, 14, 36, 100, 3, 18);
+		// op_sort(&lstest, &lstaux);
+		// show_lst_data(lstest);
+
+
+	    // check_string "12 98 46 71 16"
+				lstaux = NULL;
 		fun_test_header_label(++count, "--- test_sort_five");
-		lstest = build_test_list(1, 5, 4, 1, 3, 8, 2);
+		lstest = build_test_list(1, 5, 12, 98, 46, 71, 16);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
+        
+		// check_string "7 1 5 87 28"
 		lstaux = NULL;
 		fun_test_header_label(++count, "--- test_sort_five");
-		lstest = build_test_list(1, 5, 1, 4, 3, 7, 9);
+		lstest = build_test_list(1, 5, 7, 1, 5, 87, 28);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
+
+
+		// check_string "6 59 98 33 22"
+				lstaux = NULL;
+		fun_test_header_label(++count, "--- test_sort_five");
+		lstest = build_test_list(1, 5, 6, 59, 98, 33, 22);
+		op_sort(&lstest, &lstaux);
+		show_lst_data(lstest);
+
+//		check_string "69 19 70 17 1"
 		lstaux = NULL;
 		fun_test_header_label(++count, "--- test_sort_five");
-		lstest = build_test_list(1, 5, 2, 5, 12, 7, 9);
+		lstest = build_test_list(1, 5, 69, 19, 70, 17, 1);
 		op_sort(&lstest, &lstaux);
-		show_lst_data(lstest);	
+		show_lst_data(lstest);
+
+		lstaux = NULL;
+		fun_test_header_label(++count, "--- test_sort_five");
+		lstest = build_test_list(1, 3, 69, 19, 70);
+		op_sort(&lstest, &lstaux);
+		show_lst_data(lstest);
+
+		// 45 49 14 1 20
+
+
 	}
 }

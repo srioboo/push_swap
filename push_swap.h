@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/08 15:56:00 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/09 23:11:31 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ void		full_sort(t_link_list **list_a, t_link_list **list_b);
 /**
  * @brief do sorting of a list of 3 elements
  */
-void		tiny_sort(t_link_list **list_a);
+void		tiny_sort(t_link_list **list_a, int list_size);
 
 /**
  * @brief do sorting of a list of 5 elements

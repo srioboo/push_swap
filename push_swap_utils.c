@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/08 20:03:03 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/10 23:03:49 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	show_op_msg(char *op)
 
 int	show_error_msg(void)
 {
-	write(1, "Error\n", 7);
-	return (0);
+	ft_printf("Error\n");
+	return (EXIT_FAILURE);
 }
 
 int	set_max(int nb1, int nb2)

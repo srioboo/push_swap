@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/14 18:53:13 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 20:07:43 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ t_link_list	*process_parameters(int argc, char **argv)
 	pos = 1;
 	index = 0;
 	ls_num = NULL;
-	if (argc < 3)
-		return (NULL);
-	if (argc >= 2)
+	//if (argc < 3)
+	//	return (NULL);
+	if (argc > 3)
 	{
-		if (argc == 2)
-		{
-			argv = ft_split(argv[1], ' ');
-			pos = 0;
-		}
+		// if (argc == 2)
+		// {
+		// 	argv = ft_split(argv[1], ' ');
+		// 	pos = 0;
+		// }
 		while (argv[pos] != NULL)
 		{
 			if (validate_isnumber(argv[pos]) == FALSE

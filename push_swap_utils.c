@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/13 23:34:52 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:37:14 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	show_op_msg(char *op)
 
 int	show_error_msg(void)
 {
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	return (EXIT_FAILURE);
 }
 

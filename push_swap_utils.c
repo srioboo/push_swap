@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/10 23:03:49 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/13 23:34:52 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	set_max(int nb1, int nb2)
 
 int	set_min(int nb1, int nb2)
 {
-	if (nb1 <= nb2)
+	if (nb1 < nb2)
 		return (nb1);
 	return (nb2);
 }

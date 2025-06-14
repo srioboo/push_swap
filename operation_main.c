@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/12 22:28:05 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 10:33:07 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,61 +68,41 @@ void	tiny_sort(t_link_list **list_a, int list_size)
 {
 	int	max_val;
 
-    // ft_printf("%d", list_size);
 	max_val = (*list_a)->max_val;
 	if (((*list_a)->content == max_val) && list_size == 3)
-	{
-		//ft_printf("1");
 		rotate_a(list_a);
-	}
 	if (((*list_a)->next->content == max_val) && list_size == 3)
-	{
-		//ft_printf("2");
 		rev_rotate_a(list_a);
-	}
 	if (((*list_a)->content > (*list_a)->next->content))
 		swap_a(list_a);
 }
 
 void	medium_sort(t_link_list **list_a, t_link_list **list_b)
 {
-	// int			minor;
+	int			min;
 	int			max;
 	t_link_list	*aux;
 
-	// TODO - pass list parameter and do 4 and 5
-	// TODO - extract methods
-	// minor = (*list_a)->min_val;
+	min = (*list_a)->min_val;
 	max = (*list_a)->max_val;
-	while ((*list_a)->content != (*list_a)->min_val)
+	while ((*list_a)->content != min)
 		rotate_a(list_a);
+	// TODO - correccion de max y min debe ser en el push_to_X
 	push_to_b(list_a, list_b);
+	min = (*list_a)->min_val;
 	aux = *list_a;
-	// minor = aux->content;
-	while (aux->next) // TODO this is not correct
+	while (aux->next != NULL)
 	{
-		(*list_a)->min_val = set_min((*list_a)->min_val, aux->content);
-		// minor = aux->min_val;
+		min = set_min(min, aux->next->content);
 		aux = aux->next;
 	}
-	//ft_printf("%d %d %d\n", aux->min_val, max, (*list_a)->max_val);
-	while ((*list_a)->content != (*list_a)->min_val)
+	(*list_a)->min_val = min;
+	while ((*list_a)->content != min)
 		rotate_a(list_a);
-	//ft_printf("%d %d %d\n", aux->min_val, max, (*list_a)->max_val);
-
+	// TODO - correccion de max y min debe ser en el push_to_X
 	push_to_b(list_a, list_b);
 	(*list_a)->max_val = max;
-	(*list_a)->min_val = aux->min_val;
-
-	//ft_printf("%d %d %d\n", aux->min_val, max, (*list_a)->max_val);
-
-	//log_lst_data(*list_a, "a");
-	//log_lst_data(*list_b, "b");
 	tiny_sort(list_a, 3);
-	//log_lst_data(*list_a, "a");
-	//log_lst_data(*list_b, "b");
 	push_to_a(list_b, list_a);
 	push_to_a(list_b, list_a);
-	//log_lst_data(*list_a, "a");
-	//log_lst_data(*list_b, "b");
 }

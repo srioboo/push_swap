@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/11 23:25:57 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 10:40:16 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ int	main(int argc, char **argv)
 	test_sort_three(0);
 	test_sort_four(0);
 	test_sort_five(1);
+	test_sort_five_1(1);
+	test_sort_five_2(1);
 	test_full_sort(0);
 }

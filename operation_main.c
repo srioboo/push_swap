@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/14 10:33:07 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 15:52:50 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	op_sort(t_link_list **list_a, t_link_list **list_b)
 	list_size = link_lstsize(*list_a);
 	if (list_size < 4)
 		tiny_sort(list_a, list_size);
-	//else if (list_size == 4)
-	//	full_sort(list_a, list_b); // medium_sort(list_a, list_b);
+	else if (list_size == 4)
+		medium_sort(list_a, list_b);
 	else if (list_size == 5)
 		medium_sort(list_a, list_b);
 	else
@@ -79,30 +79,25 @@ void	tiny_sort(t_link_list **list_a, int list_size)
 
 void	medium_sort(t_link_list **list_a, t_link_list **list_b)
 {
-	int			min;
-	int			max;
-	t_link_list	*aux;
+	int	base;
+	int	size;
+	int	rep;
 
-	min = (*list_a)->min_val;
-	max = (*list_a)->max_val;
-	while ((*list_a)->content != min)
-		rotate_a(list_a);
-	// TODO - correccion de max y min debe ser en el push_to_X
-	push_to_b(list_a, list_b);
-	min = (*list_a)->min_val;
-	aux = *list_a;
-	while (aux->next != NULL)
+	base = 3;
+	size = link_lstsize(*list_a);
+	rep = (size - base);
+	while (rep > 0)
 	{
-		min = set_min(min, aux->next->content);
-		aux = aux->next;
+		while ((*list_a)->content != (*list_a)->min_val)
+			rotate_a(list_a);
+		push_to_b(list_a, list_b);
+		rep--;
 	}
-	(*list_a)->min_val = min;
-	while ((*list_a)->content != min)
-		rotate_a(list_a);
-	// TODO - correccion de max y min debe ser en el push_to_X
-	push_to_b(list_a, list_b);
-	(*list_a)->max_val = max;
-	tiny_sort(list_a, 3);
-	push_to_a(list_b, list_a);
-	push_to_a(list_b, list_a);
+	tiny_sort(list_a, base);
+	rep = (size - base);
+	while (rep > 0)
+	{
+		push_to_a(list_b, list_a);
+		rep--;
+	}
 }

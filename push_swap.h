@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/09 23:11:31 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 10:50:18 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,6 @@ int			set_max(int nb1, int nb2);
  */
 int			set_min(int nb1, int nb2);
 
-
 /* ************************************************************************** */
 /* Operations Main                                                            */
 /* ************************************************************************** */
@@ -219,10 +218,5 @@ void		swap_a(t_link_list **lst);
  * @param lst to apply the change
  */
 void		swap_b(t_link_list **lst);
-
-
-
-
-void	log_lst_data(t_link_list *lstest, char *label);
 
 #endif

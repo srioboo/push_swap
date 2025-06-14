@@ -12,7 +12,7 @@ check_base ()
 	CHECK=$(./push_swap $ARG | ./checker_linux $ARG)
 	# check result
 	echo -e "Checker: $CHECK, moves: $MOVES\n"
-	./push_swap $ARG > /dev/null 2> errors.txt
+	./push_swap $ARG  
 }
 
 check ()

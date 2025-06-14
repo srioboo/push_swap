@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/14 10:50:18 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 18:32:13 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ t_link_list	*link_lstnew(int value);
  * @return list size
 */
 int			link_lstsize(t_link_list *lst);
+
+/**
+ * @brief free memory from size
+ */
+void		link_lstclear(t_link_list **lst);
 
 /**
  * @brief Retrieve parameters, test if valid and return list

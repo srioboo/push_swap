@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/14 10:39:20 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 10:47:49 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,11 +134,11 @@ void	test_sort_four(int active)
 		fun_test_header_label(++count, "--- test_sort_four");
 		lstest = build_test_list(1, 4, 5, 12, 7, 9);
 		op_sort(&lstest, &lstaux);
-		show_lst_data(lstest);	
+		show_lst_data(lstest);
 	}
 }
 
-void	test_sort_five(int active)
+static void	test_sort_five_0(int active)
 {
 	t_link_list	*lstest;
 	t_link_list	*lstaux;
@@ -167,7 +167,7 @@ void	test_sort_five(int active)
 	}
 }
 
-void	test_sort_five_1(int active)
+static void	test_sort_five_1(int active)
 {
 	t_link_list	*lstest;
 	t_link_list	*lstaux;
@@ -196,7 +196,7 @@ void	test_sort_five_1(int active)
 	}
 }
 
-void	test_sort_five_2(int active)
+static void	test_sort_five_2(int active)
 {
 	t_link_list	*lstest;
 	t_link_list	*lstaux;
@@ -208,7 +208,6 @@ void	test_sort_five_2(int active)
 	if (active > 0)
 	{
 		fun_group_start("SORT MEDIUM SHORT (5 elements)");
-		lstaux = NULL;
 		fun_test_header_label(++count, "--- test_sort_five");
 		lstest = build_test_list(1, 5, 6, 59, 98, 33, 22);
 		op_sort(&lstest, &lstaux);
@@ -223,7 +222,21 @@ void	test_sort_five_2(int active)
 		lstest = build_test_list(1, 5, 45, 49, 14, 1, 20);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
-		lstaux = NULL;
+	}
+}
+
+void	test_sort_five(int active)
+{
+	t_link_list	*lstest;
+	t_link_list	*lstaux;
+	int			count;
+
+	count = 0;
+	lstest = NULL;
+	lstaux = NULL;
+	if (active > 0)
+	{
+		fun_group_start("SORT MEDIUM SHORT (5 elements)");
 		fun_test_header_label(++count, "--- test_sort_five");
 		lstest = build_test_list(1, 5, 26, 38, 13, 6, 31);
 		op_sort(&lstest, &lstaux);
@@ -233,5 +246,8 @@ void	test_sort_five_2(int active)
 		lstest = build_test_list(1, 5, 69, 19, 70, 17, 1);
 		op_sort(&lstest, &lstaux);
 		show_lst_data(lstest);
+		test_sort_five_0(active);
+		test_sort_five_1(active);
+		test_sort_five_2(active);
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/07 19:59:18 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/14 10:44:00 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-void	test_push(int active)
+static void	test_push_1(int active)
 {
 	t_link_list	*lstest_a;
 	t_link_list	*lstest_b;
@@ -34,6 +34,19 @@ void	test_push(int active)
 		push_to_b(&lstest_b, &lstest_a);
 		show_lst_data(lstest_a);
 		show_lst_data(lstest_b);
+	}
+}
+
+static void	test_push_2(int active)
+{
+	t_link_list	*lstest_a;
+	t_link_list	*lstest_b;
+
+	lstest_a = NULL;
+	lstest_b = NULL;
+	if (active > 0)
+	{
+		fun_group_start("PUSH");
 		fun_test_header_label(3, "--- test_push");
 		lstest_a = build_test_list(1, 3, 1, 3, 4);
 		lstest_b = build_test_list(1, 2, 5, 9);
@@ -47,4 +60,10 @@ void	test_push(int active)
 		show_lst_data(lstest_a);
 		show_lst_data(lstest_b);
 	}
+}
+
+void	test_push(int active)
+{
+	test_push_1(active);
+	test_push_2(active);
 }

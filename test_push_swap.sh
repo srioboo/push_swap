@@ -37,16 +37,17 @@ check_string ()
 }
 
 #check_with_neg 100 3
-#check_with_neg 10 5
+check_with_neg 10 5
+check_with_neg 108 15
 # check 100 2
 # check 100 3
 # check 100 4 # pasa por 5 y no debería
-check 100 5
-check_string "12 98 46 71 16"
-check_string "7 1 5 87 28"
-check_string "6 59 98 33 22"
-check_string "69 19 70 17 1"
-check_string "69 19 70"
+# check 100 5
+# check_string "12 98 46 71 16"
+# check_string "7 1 5 87 28"
+# check_string "6 59 98 33 22"
+# check_string "69 19 70 17 1"
+# check_string "69 19 70"
 # check 100 100
 # check_string "3 4 6 7"
 # check_string "3 4 6 7"

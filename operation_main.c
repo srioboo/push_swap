@@ -6,21 +6,11 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/14 15:52:50 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/15 18:34:29 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	calculate_max_bits(int max_val)
-{
-	int	max_bits;
-
-	max_bits = 0;
-	while ((max_val >> max_bits) != 0)
-		max_bits++;
-	return (max_bits);
-}
 
 void	op_sort(t_link_list **list_a, t_link_list **list_b)
 {
@@ -39,20 +29,22 @@ void	op_sort(t_link_list **list_a, t_link_list **list_b)
 
 void	full_sort(t_link_list **list_a, t_link_list **list_b)
 {
-	int	i;
-	int	max_bits;
-	int	size;
-	int	j;
+	unsigned int	binary_content;
+	int				i;
+	int				max_bits;
+	int				size;
+	int				j;
 
+	max_bits = 32;
 	i = 0;
-	max_bits = calculate_max_bits((*list_a)->max_val);
 	while (i < max_bits)
 	{
 		size = link_lstsize(*list_a);
 		j = 0;
 		while (j < size)
 		{
-			if ((((*list_a)->content >> i) & 1) == 0)
+			binary_content = (((unsigned int)(*list_a)->content) ^ 0x80000000);
+			if (((binary_content >> i) & 1) == 0)
 				push_to_b(list_a, list_b);
 			else
 				rotate_a(list_a);

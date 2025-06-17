@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/05 12:46:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/17 23:27:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	validate_isnumber(char *s)
 	i = 0;
 	while (s[i] != 0)
 	{
-		if (ft_isalpha((int)s[i]) == 1)
+		if (ft_isdigit((int)s[i]) == 0)
 			return (FALSE);
 		i++;
 	}

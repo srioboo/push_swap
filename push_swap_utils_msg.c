@@ -1,47 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_msg_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/21 11:44:39 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/21 11:43:54 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_intlen(int i)
+void	show_op_msg(char *op)
 {
-	unsigned int	n_aux;
-	int				j;
+	int	len;
 
-	j = 0;
-	n_aux = i;
-	if (i <= 0)
+	if (op != NULL)
 	{
-		n_aux = -i;
-		j = 1;
+		len = ft_strlen(op);
+		write(1, op, len);
+		write(1, "\n", 1);
 	}
-	while (n_aux > 0)
-	{
-		n_aux /= 10;
-		j++;
-	}
-	return (j);
 }
 
-int	set_max(int nb1, int nb2)
+int	show_error_msg(void)
 {
-	if (nb1 >= nb2)
-		return (nb1);
-	return (nb2);
-}
-
-int	set_min(int nb1, int nb2)
-{
-	if (nb1 < nb2)
-		return (nb1);
-	return (nb2);
+	write(2, "Error\n", 6);
+	return (EXIT_FAILURE);
 }

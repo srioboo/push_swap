@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/06/14 18:28:14 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/06/21 11:44:24 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ LIB_FLAG = -Llibft -l:libft.a
 # source files
 SRCS = push_swap.c \
 		push_swap_utils.c \
+		push_swap_utils_msg.c \
 		push_swap_validate.c \
 		operation_rev_rotate.c \
 		operation_main.c \

@@ -164,4 +164,20 @@ Si necesitas un ejemplo de código en un lenguaje específico o más detalles so
 - gmartin tester push_swap https://github.com/gemartin99/Push-Swap-Tester?tab=readme-ov-file
 - https://github.com/ailopez-o/42Barcelona-PushSwap-ProChecker (visualizer)
 - https://pinetools.com/es/generador-numeros-aleatorios
+- https://github.com/hu8813/push_swap/tree/main
 
+
+### 
+
+Quick interpretation question. THe push_swap subject changed, and there's this on the mandatory part:
+For maximum project validation (100%) and eligibility for bonuses, you must:
+◦ Sort 100 random numbers in fewer than 700 operations.
+◦ Sort 500 random numbers in no more than 5500 operations.
+• For minimal project validation (which implies a minimum grade of 80%), you
+can succeed with different averages:
+◦ 100 numbers in under 1100 operations and 500 numbers in under
+8500 operations
+◦ 100 numbers in under 700 operations and 500 numbers in under
+11500 operations
+◦ 100 numbers in under 1300 operations and 500 numbers in under
+5500 operations

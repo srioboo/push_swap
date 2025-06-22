@@ -38,8 +38,19 @@ check_base ()
 	CHECK=$(./push_swap $ARG | ./checker_linux $ARG)
 	# check result
 
+	if [[ $1 -eq 100 ]]; then
+		if [[ $MOVES -lt 1100 ]]; then
+			$TEST="OK"
+		fi
+	else if 
+		[[ $1 -eq 500 ]]; then
+		if [[ $MOVES -lt 8500 ]]; then
+			$TEST="OK"
+		fi
+	fi
+
 	if [[ $CHECK == "OK" ]]; then
-		printf "${GREEN}$1. Checker: ${CHECK}, moves: ${MOVES}, output: $? ${DEF_COLOR}\n" # | grep OK;
+		printf "${GREEN}$1. Checker: ${CHECK}, moves: ${MOVES}, output: $? ${DEF_COLOR} -- $TEST\n" # | grep OK;
 	else
 		printf "${RED}$1. Checker: ${CHECK}, moves: ${MOVES}, output: $? ${DEF_COLOR}\n" # | grep OK;
 	# break

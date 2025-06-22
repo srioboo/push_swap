@@ -31,6 +31,15 @@ Error
 $>
 ```
 
+## Sorting results and points
+
+| Input Size | Average Operations | Maximum Operations allowed | Points |
+|------------|--------------------|----------------------------|--------|
+| 3          | 1-2                |                            | 3      |
+| 5          | 5-10               |                            | 12     |
+| 100        | 855-857            | <1300                      | 4/5    |
+| 500        | 5739-5741          | <10000                     | 4/5    |
+
 ## Operations
 
 Operations description and text write in the output once the operation is done

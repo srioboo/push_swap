@@ -18,6 +18,7 @@ TEST_OBJS = $(TEST_SRCS:.c=.o)
 
 # source files
 SRCS = push_swap_utils.c \
+		push_swap_utils_msg.c \
 		push_swap_validate.c \
 		operation_rev_rotate.c \
 		operation_main.c \
@@ -29,6 +30,7 @@ SRCS = push_swap_utils.c \
 		link_lstadd_back.c \
 		link_lstadd_front.c \
 		link_lstsize.c \
+		link_lstclear.c \
 		log/operation_log.c
 
 # Test: generate test binary

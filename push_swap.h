@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/14 18:32:13 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/21 11:50:13 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,16 @@ int			set_max(int nb1, int nb2);
  */
 int			set_min(int nb1, int nb2);
 
+/**
+ * @brief ascii to long
+ */
+long		ft_atol(const char *cton);
+
+/**
+ * @brief array size
+ */
+int			ft_arrsize(char **arr);
+
 /* ************************************************************************** */
 /* Operations Main                                                            */
 /* ************************************************************************** */
@@ -223,5 +233,10 @@ void		swap_a(t_link_list **lst);
  * @param lst to apply the change
  */
 void		swap_b(t_link_list **lst);
+
+/* ************************************************************************** */
+/* Logs                                                                       */
+/* ************************************************************************** */
+void		log_lst_data(t_link_list *lstest, char *label);
 
 #endif

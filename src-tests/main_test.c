@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/15 15:21:35 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/22 12:08:29 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	show_lst_data_with_label(t_link_list *lstest, char *label)
 	count = 0;
 	while (lstest)
 	{
-		printf("%d\t", lstest->content);
+		printf("%d, ", lstest->content);
 		lstest = lstest->next;
 		count++;
 	}
@@ -48,12 +48,13 @@ t_link_list	*build_test_list(int active_log, int n_elem_lst, ...)
 	va_start(args, n_elem_lst);
 	lstest = NULL;
 	aux = 0;
+	// printf("%d, ", n_elem_lst);
 	printf(COLOR_BLUE "\nelements: \t");
 	while (n_elem_lst > 0)
 	{
 		aux = va_arg(args, int);
 		if (active_log > 0)
-			printf("%d\t", aux);
+			printf("%d, ", aux);
 		link_lstadd_back(&lstest, link_lstnew(aux));
 		n_elem_lst--;
 	}
@@ -80,6 +81,6 @@ int	main(int argc, char **argv)
 	test_sort(0);
 	test_sort_three(0);
 	test_sort_four(0);
-	test_sort_five(0);
+	test_sort_five(1);
 	test_full_sort(1);
 }

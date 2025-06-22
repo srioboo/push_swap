@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/17 23:27:04 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/22 11:12:36 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	validate_isnumber(char *s)
 	int	i;
 
 	i = 0;
-	while (s[i] != 0)
+	if (s[i] == '-')
+		i++;
+	while (s[i] != 0 && s[i] != '\n')
 	{
 		if (ft_isdigit((int)s[i]) == 0)
 			return (FALSE);
@@ -30,7 +32,7 @@ int	validate_isrepeated(char *s, t_link_list *lst)
 {
 	int	num_a;
 
-	num_a = ft_atoi(s);
+	num_a = ft_atol(s);
 	if (lst != NULL)
 	{
 		while (lst)

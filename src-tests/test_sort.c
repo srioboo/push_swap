@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/25 21:36:49 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:37:42 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,11 +155,15 @@ static void	test_sort_five_2(int active)
 	{
 		fun_group_start("SORT MEDIUM SHORT (5 elements)");
 		do_sort_work("--- test_sort_five", ++count, 
-			build_test_list(1, 5, 6, 59, 98, 33, 22), NULL);
+			build_test_list(1, 5, 3, 5, 4, 1, 2), NULL);
 		do_sort_work("--- test_sort_five", ++count, 
-			build_test_list(1, 5, 69, 19, 70, 17, 1), NULL);
+			build_test_list(1, 5, 4, 5, 3, 1, 2), NULL);
 		do_sort_work("--- test_sort_five", ++count, 
-			build_test_list(1, 5, 45, 49, 14, 1, 20), NULL);
+			build_test_list(1, 5, 5, 3, 1, 2, 4), NULL);
+		do_sort_work("--- test_sort_five", ++count, 
+			build_test_list(1, 5, 5, 3, 2, 1, 4), NULL);
+		do_sort_work("--- test_sort_five", ++count, 
+			build_test_list(1, 5, 5, 4, 3, 1, 2), NULL);
 	}
 }
 
@@ -177,6 +181,6 @@ void	test_sort_five(int active)
 			build_test_list(1, 5, 69, 19, 0, 17, 1), NULL);
 		test_sort_five_0(0);
 		test_sort_five_1(0);
-		test_sort_five_2(0);
+		test_sort_five_2(1);
 	}
 }

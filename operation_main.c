@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/25 22:30:17 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:40:10 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ int	is_list_sorted(t_link_list **ls)
 	return (1);
 }
 
-void	op_sort(t_link_list **list_a, t_link_list **list_b)
+void	op_sort(t_link_list **a, t_link_list **b)
 {
 	int	list_size;
 
-	list_size = link_lstsize(*list_a);
+	list_size = link_lstsize(*a);
 	if (list_size < 4)
-		tiny_sort(list_a, list_size);
+		tiny_sort(a, list_size);
 	else if (list_size == 4 || list_size == 5)
-		medium_sort(list_a, list_b);
+		medium_sort(a, b);
 	else
-		full_sort(list_a, list_b);
+		full_sort(a, b);
 }
 
 // static void	radix_sort_stack_b(t_link_list **a, t_link_list **b, int b_size, int bit_size, int j)
@@ -76,28 +76,28 @@ void	op_sort(t_link_list **list_a, t_link_list **list_b)
 // 			push_to_b(b, a);
 // }
 
-void	full_sort(t_link_list **list_a, t_link_list **list_b)
+void	full_sort(t_link_list **a, t_link_list **b)
 {
 	unsigned int	binary_content;
 	int				i;
 	int				bit_size;
 	int				size;
 
-	bit_size = calculate_max_bits((*list_a)->max_val, (*list_a)->min_val);
+	bit_size = calculate_max_bits((*a)->max_val, (*a)->min_val);
 	i = -1;
 	while (++i < bit_size)
 	{
-		size = link_lstsize(*list_a);
-		while (size--) // && !is_list_sorted(list_a))
+		size = link_lstsize(*a);
+		while (size--) // && !is_list_sorted(a))
 		{
-			binary_content = (((unsigned int)(*list_a)->content) ^ 0x80000000);
+			binary_content = (((unsigned int)(*a)->content) ^ 0x80000000);
 			if (((binary_content >> i) & 1) == 0)
-				push_to_b(list_a, list_b);
+				push_to_b(a, b);
 			else
-				rotate_a(list_a);
+				rotate_a(a);
 		}
-		while (*list_b)
-			push_to_a(list_b, list_a);
+		while (*b)
+			push_to_a(b, a);
 
 	}
 
@@ -124,21 +124,21 @@ void	tiny_sort(t_link_list **a, int list_size)
 	}
 }
 
-void	medium_sort(t_link_list **list_a, t_link_list **list_b)
+void	medium_sort(t_link_list **a, t_link_list **b)
 {
 	int	rep;
 
 	rep = 2;
 	while (rep-- > 0)
 	{
-		if (link_lstlast(*list_a)->content == (*list_a)->min_val)
-			rev_rotate_a(list_a);
-		while ((*list_a)->content != (*list_a)->min_val)
-			rotate_a(list_a);
-		push_to_b(list_a, list_b);
+		if (link_lstlast(*a)->content == (*a)->min_val)
+			rev_rotate_a(a);
+		while ((*a)->content != (*a)->min_val)
+			rotate_a(a);
+		push_to_b(a, b);
 	}
-	tiny_sort(list_a, 3);
-	while ((*list_b))
-		push_to_a(list_b, list_a);
+	tiny_sort(a, 3);
+	while ((*b))
+		push_to_a(b, a);
 
 }

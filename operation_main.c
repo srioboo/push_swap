@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/22 23:23:53 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:30:17 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	calculate_max_bits(int max_val, int min_val)
 	return (bits);
 }
 
-int	is_array_sorted(t_link_list **ls)
+int	is_list_sorted(t_link_list **ls)
 {
 	t_link_list	*lst;
 
@@ -64,14 +64,14 @@ void	op_sort(t_link_list **list_a, t_link_list **list_b)
 
 // static void	radix_sort_stack_b(t_link_list **a, t_link_list **b, int b_size, int bit_size, int j)
 // {
-// 	while (b_size-- && j <= bit_size && !is_array_sorted(a))
+// 	while (b_size-- && j <= bit_size && !is_list_sorted(a))
 // 	{
 // 		if ((((*b)->content >> j) & 1) == 0)
 // 			rev_rotate_b(b); 
 // 		else
 // 			push_to_b(b, a);
 // 	}
-// 	if (is_array_sorted(a))
+// 	if (is_list_sorted(a))
 // 		while (*b)
 // 			push_to_b(b, a);
 // }
@@ -88,7 +88,7 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 	while (++i < bit_size)
 	{
 		size = link_lstsize(*list_a);
-		while (size--) // && !is_array_sorted(list_a))
+		while (size--) // && !is_list_sorted(list_a))
 		{
 			binary_content = (((unsigned int)(*list_a)->content) ^ 0x80000000);
 			if (((binary_content >> i) & 1) == 0)
@@ -103,17 +103,25 @@ void	full_sort(t_link_list **list_a, t_link_list **list_b)
 
 }
 
-void	tiny_sort(t_link_list **list_a, int list_size)
+void	tiny_sort(t_link_list **a, int list_size)
 {
 	int	max_val;
 
-	max_val = (*list_a)->max_val;
-	if (((*list_a)->content == max_val) && list_size == 3)
-		rotate_a(list_a);
-	if (((*list_a)->next->content == max_val) && list_size == 3)
-		rev_rotate_a(list_a);
-	if (((*list_a)->content > (*list_a)->next->content))
-		swap_a(list_a);
+	max_val = (*a)->max_val;
+	while (is_list_sorted(a) == 0)
+	{
+		if (list_size == 2)
+			swap_a(a);
+		else if ((*a)->content == max_val)
+			rotate_a(a);
+		else if (((*a)->next->content) == max_val)
+		{
+			swap_a(a);
+			rotate_a(a);
+		}
+		else if (((*a)->content) > ((*a)->next->content))
+			swap_a(a);
+	}
 }
 
 void	medium_sort(t_link_list **list_a, t_link_list **list_b)

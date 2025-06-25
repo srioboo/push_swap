@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/24 19:59:29 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/25 21:36:49 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ void	test_sort_three(int active)
 		do_sort_work("--- test_sort_three", ++count,
 			build_test_list(1, 3, 4, 67, 3), NULL);
 		do_sort_work("--- test_sort_three", ++count,
-			build_test_list(1, 3, 3, 67, 4), NULL);
+			build_test_list(1, 3, 0, -2, 4), NULL);
 		do_sort_work("--- test_sort_three", ++count,
-			build_test_list(1, 3, -3, -7, 4), NULL);
+			build_test_list(1, 3, -3, 4, 0), NULL);
 	}
 }
 

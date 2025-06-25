@@ -36,7 +36,7 @@ SRCS = push_swap_utils.c \
 # Test: generate test binary
 test:
 	$(CC) $(CFLAGS) $(INCLUDE) $(SRCS) $(TEST_SRCS) $(LIB_FLAG) -o $(TEST_BIN)
-	./$(TEST_BIN)
+	./$(TEST_BIN) $(p)
 
 # clean test directories
 tclean:

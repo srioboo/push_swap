@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/21 11:57:56 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/27 21:43:10 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,43 @@ int	ft_intlen(int i)
 	return (j);
 }
 
-int	set_max(int nb1, int nb2)
+int	find_min_pos(t_link_list *a, int min_val)
 {
-	if (nb1 >= nb2)
-		return (nb1);
-	return (nb2);
+	int pos = 0;
+	while (a && a->content != min_val)
+	{
+		pos++;
+		a = a->next;
+	}
+	return pos;
 }
 
-int	set_min(int nb1, int nb2)
+void	update_min_max(t_link_list *lst)
 {
-	if (nb1 < nb2)
-		return (nb1);
-	return (nb2);
+	int	min;
+	int	max;
+	t_link_list *tmp;
+
+	if (!lst)
+		return;
+	min = lst->content;
+	max = lst->content;
+	tmp = lst;
+	while (tmp)
+	{
+		if (tmp->content < min)
+			min = tmp->content;
+		if (tmp->content > max)
+			max = tmp->content;
+		tmp = tmp->next;
+	}
+	tmp = lst;
+	while (tmp)
+	{
+		tmp->min_val = min;
+		tmp->max_val = max;
+		tmp = tmp->next;
+	}
 }
 
 long	ft_atol(const char *cton)

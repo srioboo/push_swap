@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/21 11:50:13 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/27 21:44:22 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,14 +117,9 @@ void		show_op_msg(char *op);
 int			ft_intlen(int i);
 
 /**
- * @brief find max value
+ * @brief update min and max
  */
-int			set_max(int nb1, int nb2);
-
-/**
- * @brief find min value
- */
-int			set_min(int nb1, int nb2);
+void	update_min_max(t_link_list *lst);
 
 /**
  * @brief ascii to long
@@ -162,6 +157,11 @@ void		tiny_sort(t_link_list **list_a, int list_size);
  * @brief do sorting of a list of 5 elements
  */
 void		medium_sort(t_link_list **list_a, t_link_list **list_b);
+
+/**
+ * @brief find the min position
+ */
+int			find_min_pos(t_link_list *a, int min_val);
 
 /* ************************************************************************** */
 /* Operations Push                                                            */

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/25 22:40:10 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/27 21:46:52 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,9 @@ void	tiny_sort(t_link_list **a, int list_size)
 {
 	int	max_val;
 
+	update_min_max(*a);
 	max_val = (*a)->max_val;
+	// ft_printf("%d", max_val);
 	while (is_list_sorted(a) == 0)
 	{
 		if (list_size == 2)
@@ -124,21 +126,53 @@ void	tiny_sort(t_link_list **a, int list_size)
 	}
 }
 
+
+
+// void	medium_sort(t_link_list **a, t_link_list **b)
+// {
+// 	int	rep;
+
+// 	rep = 2;
+// 	while (rep-- > 0)
+// 	{
+// 		if (link_lstlast(*a)->content == (*a)->min_val)
+// 			rev_rotate_a(a);
+// 		while ((*a)->content != (*a)->min_val)
+// 		{
+// 			// ft_printf("t");
+// 			rotate_a(a);
+// 			//ft_printf("t");
+// 		}
+// 		push_to_b(a, b);
+// 		// ft_printf("min: %d\n", (*a)->min_val);
+// 	}
+// 	tiny_sort(a, 3);
+// 	if (link_lstsize(*b) == 2)
+// 		tiny_sort(a, 2);
+// 	while ((*b))
+// 		push_to_a(b, a);
+
+// }
+
+
+
 void	medium_sort(t_link_list **a, t_link_list **b)
 {
-	int	rep;
+	int		min_pos;
 
-	rep = 2;
-	while (rep-- > 0)
+	while (link_lstsize(*a) > 3)
 	{
-		if (link_lstlast(*a)->content == (*a)->min_val)
-			rev_rotate_a(a);
-		while ((*a)->content != (*a)->min_val)
-			rotate_a(a);
+		update_min_max(*a);
+		min_pos = find_min_pos(*a, (*a)->min_val);
+		if (min_pos <= link_lstsize(*a) / 2)
+			while ((*a)->content != (*a)->min_val)
+				rotate_a(a);
+		else
+			while ((*a)->content != (*a)->min_val)
+				rev_rotate_a(a);
 		push_to_b(a, b);
 	}
 	tiny_sort(a, 3);
-	while ((*b))
+	while (*b)
 		push_to_a(b, a);
-
 }

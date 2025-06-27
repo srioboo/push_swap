@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/25 22:31:47 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:46:54 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	main(int argc, char **argv)
 	test_rev_rotate(0);
 	test_rotate_both(0);
 	test_sort(0);
+	if (strcmp(argv[1], "2") == 0)
+		test_sort_two(1);
 	if (strcmp(argv[1], "3") == 0)
 		test_sort_three(1);
 	if (strcmp(argv[1], "4") == 0)

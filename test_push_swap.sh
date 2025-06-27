@@ -53,7 +53,6 @@ check_base ()
 		printf "${GREEN}$1. Checker: ${CHECK}, moves: ${MOVES}, output: $? ${DEF_COLOR} -- $TEST\n" # | grep OK;
 	else
 		printf "${RED}$1. Checker: ${CHECK}, moves: ${MOVES}, output: $? ${DEF_COLOR}\n" # | grep OK;
-	# break
 	fi
 	# ./push_swap $ARG
 }

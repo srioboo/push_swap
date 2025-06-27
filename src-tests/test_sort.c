@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:30:23 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/25 22:37:42 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:45:03 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,25 @@ void	test_full_sort(int active)
 		// 		-19, -75, -74, -8, 107, -13, 31, -42, -103), NULL);
 	// 	do_sort_work("--- TEST WRONG", ++count,
 	// 			build_test_list(1, 100, 47, 11, 16, 90, 24, 20, 96, 77, 99, 60, 15, 73, 82, 53, 71, 26, 34, 61, 66, 56, 81, 58, 64, 55, 89, 63, 38, 10, 27, 67, 7, 83, 68, 69, 17, 57, 13, 32, 88, 80, 23, 1, 62, 65, 45, 49, 85, 78, 19, 46, 51, 70, 91, 75, 87, 52, 4, 29, 6, 41, 50, 37, 12, 39, 94, 33, 59, 72, 84, 92, 25, 9, 44, 0, 93, 97, 31, 35, 95, 22, 42, 86, 74, 36, 18, 40, 76, 14, 5, 8, 28, 54, 48, 3, 98, 30, 79, 43, 21, 2), NULL);
+	}
+}
+
+void	test_sort_two(int active)
+{
+	int			count;
+
+	count = 0;
+	if (active > 0)
+	{
+		fun_group_start("SORT TINY SHORT (3 elements)");
+		do_sort_work("--- test_sort_two", ++count,
+			build_test_list(1, 2, 4, 1), NULL);
+		do_sort_work("--- test_sort_two", ++count,
+			build_test_list(1, 2, 1, 0), NULL);
+		do_sort_work("--- test_sort_two", ++count,
+			build_test_list(1, 2, 3, 1), NULL);
+		do_sort_work("--- test_sort_two", ++count,
+			build_test_list(1, 2, 3, 0), NULL);
 	}
 }
 

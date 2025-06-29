@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/27 21:43:10 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/29 12:42:44 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,25 @@ int	ft_intlen(int i)
 
 int	find_min_pos(t_link_list *a, int min_val)
 {
-	int pos = 0;
+	int	pos;
+
+	pos = 0;
 	while (a && a->content != min_val)
 	{
 		pos++;
 		a = a->next;
 	}
-	return pos;
+	return (pos);
 }
 
 void	update_min_max(t_link_list *lst)
 {
-	int	min;
-	int	max;
-	t_link_list *tmp;
+	int			min;
+	int			max;
+	t_link_list	*tmp;
 
 	if (!lst)
-		return;
+		return ;
 	min = lst->content;
 	max = lst->content;
 	tmp = lst;

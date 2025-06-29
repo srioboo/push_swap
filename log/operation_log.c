@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/15 18:34:12 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:33:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	log_lst_data(t_link_list *lstest, char *label)
 
 	ft_printf("\n%s ", label);
 	if (lstest)
-		ft_printf("elements(%d, %d): \t", lstest->min_val, lstest->max_val);
+		ft_printf("elements(min:%d, max:%d): \t", lstest->min_val, lstest->max_val);
 	count = 0;
 	while (lstest)
 	{
 		if (lstest->content)
-			ft_printf("%d\t", lstest->content);
+			ft_printf("%d:%d\t", lstest->content, lstest->index);
 		lstest = lstest->next;
 		count++;
 	}

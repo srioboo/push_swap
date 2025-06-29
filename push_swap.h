@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/28 18:22:14 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/01 19:58:52 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 typedef struct s_link_list
 {
 	int					size;
+	int					index;
 	int					index_last;
 	int					content;
 	struct s_link_list	*next;
@@ -237,5 +238,14 @@ void		swap_b(t_link_list **lst);
 /* Logs                                                                       */
 /* ************************************************************************** */
 void		log_lst_data(t_link_list *lstest, char *label);
+
+
+
+/**
+ * Push operations for radix sort (without updating min_max)
+ */
+void		radix_push_to_a(t_link_list **orig, t_link_list **dest);
+void		radix_push_to_b(t_link_list **orig, t_link_list **dest);
+
 
 #endif

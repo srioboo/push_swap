@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 00:18:16 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/28 18:39:43 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:29:24 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_link_list	*link_lstnew(int value)
 	newlst->size = 1;
 	newlst->max_val = value;
 	newlst->min_val = value;
+	newlst->index = 0;
 	return (newlst);
 }

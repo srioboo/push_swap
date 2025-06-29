@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/22 11:14:21 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/29 12:43:36 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,14 @@ t_link_list	*prepare_list(int pos, char **argv, t_link_list	**ls_num)
 {
 	while (argv[pos])
 	{
-		//ft_printf("test %d\n", pos);
-		// ft_printf("test %s\n", argv[pos]);
 		if (validate_isnumber(argv[pos]) == FALSE
 			|| validate_isrepeated(argv[pos], *ls_num) == TRUE)
 		{
-			// ft_printf("TEST ERROR %d: '%s'", pos, argv[pos]);
 			link_lstclear(ls_num);
 			return (NULL);
 		}
 		else
-		{
-			// ft_printf("fillllll\n");
 			link_lstadd_back(ls_num, link_lstnew(ft_atol(argv[pos])));
-		}
 		pos++;
 	}
 	// log_lst_data(*ls_num, "--- lsnum");
@@ -46,7 +40,6 @@ t_link_list	*process_parameters(int argc, char **argv)
 	index = 0;
 	ls_num = NULL;
 
-	// ft_printf("argc %d\n", argc);
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');

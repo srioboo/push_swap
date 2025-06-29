@@ -22,6 +22,7 @@
 	"files.associations": {
 		"*.test": "makefile",
 		".editorconfig": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"random": "c"
 	}
 }

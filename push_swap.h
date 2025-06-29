@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/27 21:44:22 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/28 18:22:14 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@
 
 typedef struct s_link_list
 {
-	int					index;
+	int					size;
 	int					index_last;
 	int					content;
-	struct s_link_list	*prev;
 	struct s_link_list	*next;
 	int					max_val;
 	int					min_val;
@@ -119,7 +118,7 @@ int			ft_intlen(int i);
 /**
  * @brief update min and max
  */
-void	update_min_max(t_link_list *lst);
+void		update_min_max(t_link_list *lst);
 
 /**
  * @brief ascii to long

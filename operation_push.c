@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/29 09:14:21 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/29 12:41:46 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,10 @@ void	push_to_a(t_link_list **orig, t_link_list **dest)
 {
 	op_push(orig, dest, OP_PUSH_A);
 	update_min_max(*orig);
-	// ft_printf("min/max %d/%d\n", (*orig)->min_val, (*orig)->max_val);
 }
 
 void	push_to_b(t_link_list **orig, t_link_list **dest)
 {
 	op_push(orig, dest, OP_PUSH_B);
 	update_min_max(*orig);
-	// ft_printf("min/max %d/%d\n", (*orig)->min_val, (*orig)->max_val);
 }

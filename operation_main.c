@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/29 10:36:29 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/06/29 12:47:24 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,6 @@ void	tiny_sort(t_link_list **a, int list_size)
 
 	update_min_max(*a);
 	max_val = (*a)->max_val;
-	// ft_printf("%d", max_val);
 	while (is_list_sorted(a) == 0)
 	{
 		if (list_size == 2)
@@ -180,7 +179,6 @@ void	medium_sort(t_link_list **a, t_link_list **b)
 	{
 		update_min_max(*a);
 		min_pos = find_min_pos(*a, (*a)->min_val);
-		// ft_printf("size: %d\n", (*a)->size);
 		if (min_pos <= link_lstsize(*a) / 2)
 			while ((*a)->content != (*a)->min_val)
 				rotate_a(a);

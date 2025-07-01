@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/29 23:33:15 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/01 21:49:16 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,32 @@ void	print_binary_32(unsigned int number)
 		i--;
 	}
 	ft_printf("\n");
+}
+
+void	verify_normalization(t_link_list *lst)
+{
+	t_link_list *tmp = lst;
+	ft_printf("=== Normalization Verification ===\n");
+	while (tmp)
+	{
+		ft_printf("content: %d, index: %d, binary: ", tmp->content, tmp->index);
+		for (int j = 2; j >= 0; j--)  // Solo 3 bits para ver mejor
+			ft_printf("%d", (tmp->index >> j) & 1);
+		ft_printf("\n");
+		tmp = tmp->next;
+	}
+	ft_printf("==================================\n");
+}
+
+void	debug_print_list(t_link_list *lst, char *name)
+{
+	t_link_list	*tmp = lst;
+
+	ft_printf("=== %s ===\n", name);
+	while (tmp)
+	{
+		ft_printf("content: %d, index: %d\n", tmp->content, tmp->index);
+		tmp = tmp->next;
+	}
+	ft_printf("==========\n");
 }

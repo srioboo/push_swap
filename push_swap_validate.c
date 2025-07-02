@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/22 11:12:36 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/02 21:41:08 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,18 @@ int	validate_isrepeated(char *s, t_link_list *lst)
 		}
 	}
 	return (FALSE);
+}
+
+int	is_list_sorted(t_link_list **ls)
+{
+	t_link_list	*lst;
+
+	lst = *ls;
+	while (lst && lst->next)
+	{
+		if (lst->content > lst->next->content)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
 }

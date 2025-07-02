@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/01 22:00:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/02 21:40:58 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,6 @@ void	normalize_list(t_link_list *a)
 		tmp = tmp->next;
 	}
 	free(values);
-}
-
-int	is_list_sorted(t_link_list **ls)
-{
-	t_link_list	*lst;
-
-	lst = *ls;
-	while (lst && lst->next)
-	{
-		if (lst->content > lst->next->content)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
 }
 
 void	op_sort(t_link_list **a, t_link_list **b)

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/01 22:03:33 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/02 21:48:37 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,17 @@ int	main(int argc, char **argv)
 	t_link_list	*ls_num;
 	t_link_list	*ls_aux;
 
-	if (argc <= 1)
+	if (argc == 1 || argv[1] == "")
+		return (0);
+	if (argc < 1)
 		return (show_error_msg());
 	else
 	{
 		ls_num = process_parameters(argc, argv);
 		if (ls_num != NULL)
 		{
+			if (is_list_sorted(&ls_num) == TRUE)
+				return (0);
 			op_sort(&ls_num, &ls_aux);
 			link_lstclear(&ls_num);
 		}

@@ -75,11 +75,11 @@ check ()
 }
 
 printf "${CYAN}\n====== TEST: short (less 13) ======= ${DEF_COLOR}\n";
-check 001
+# check 001
 printf "${CYAN}\n====== TEST: 100 (1084 OK / 5884 OK) ======= ${DEF_COLOR}\n";
-check 100
-# printf "${CYAN}\n====== TEST: 500 (5985)  ======= ${DEF_COLOR}\n";
-# check 500
+# check 100
+printf "${CYAN}\n====== TEST: 500 (5985)  ======= ${DEF_COLOR}\n";
+check 500
 # printf "${CYAN}\n ====== TEST: all  ======= ${DEF_COLOR}\n";
 # check all
 printf "${CYAN}\n ====== TEST: errors  ======= ${DEF_COLOR}\n";

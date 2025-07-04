@@ -6,68 +6,11 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/04 15:47:35 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/04 19:45:39 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	normalize_list(t_link_list *a)
-{
-	int			size;
-	int			*values;
-	t_link_list	*tmp;
-	int			i;
-	int			j;
-	int			temp;
-
-	size = link_lstsize(a);
-	values = malloc(sizeof(int) * size);
-	if (!values)
-		return ;
-	// Copia los valores content (no index) a un array
-	tmp = a;
-	i = 0;
-	while (tmp)
-	{
-		values[i++] = tmp->content;
-		tmp = tmp->next;
-	}
-	// Ordena el array usando bubble sort
-	i = 0;
-	while (i < size - 1)
-	{
-		j = 0;
-		while (j < size - 1 - i)
-		{
-			if (values[j] > values[j + 1])
-			{
-				temp = values[j];
-				values[j] = values[j + 1];
-				values[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-	// Asigna el índice normalizado a cada nodo
-	tmp = a;
-	while (tmp)
-	{
-		i = 0;
-		while (i < size)
-		{
-			if (tmp->content == values[i])
-			{
-				tmp->index = i;  // Asigna la posición en el array ordenado
-				break;
-			}
-			i++;
-		}
-		tmp = tmp->next;
-	}
-	free(values);
-}
 
 void	op_sort(t_link_list **a, t_link_list **b)
 {
@@ -99,7 +42,7 @@ void	full_sort(t_link_list **a, t_link_list **b)
 	while (i < bit_size)
 	{
 		size = link_lstsize(*a);
-		while (size-- > 0)
+		while (size-- > 0) // && is_list_sorted(a) == FALSE)
 		{
 			if ((((*a)->index >> i) & 1) == 0)
 				push_to_b(a, b);

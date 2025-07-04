@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/04 16:55:37 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/07/04 19:26:30 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS = push_swap.c \
 		push_swap_utils.c \
 		push_swap_utils_msg.c \
 		push_swap_validate.c \
+		push_swap_normalize.c \
 		operation_rev_rotate.c \
 		operation_main.c \
 		operation_push.c \

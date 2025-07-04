@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:11:35 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:47:35 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,12 +102,12 @@ void	full_sort(t_link_list **a, t_link_list **b)
 		while (size-- > 0)
 		{
 			if ((((*a)->index >> i) & 1) == 0)
-				push_to_b(a, b); //radix_push_to_b(a, b);
+				push_to_b(a, b);
 			else
 				rotate_a(a);
 		}
 		while ((*b)->next)
-			push_to_a(b, a); //radix_push_to_a(b, a);
+			push_to_a(b, a);
 		i++;
 	}
 }

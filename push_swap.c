@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/03 19:10:36 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:18:35 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_link_list	*process_parameters(int argc, char **argv)
 {
 	int			pos;
 	int			index;
+	int			arr_size;
 	t_link_list	*ls_num;
 
 	pos = 1;
@@ -41,7 +42,8 @@ t_link_list	*process_parameters(int argc, char **argv)
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
-		if (ft_arrsize(argv) <= 1)
+		arr_size = ft_arrsize(argv);
+		if (arr_size < 1)
 			return (NULL);
 		pos = 0;
 		ls_num = prepare_list(pos, argv, &ls_num);
@@ -57,10 +59,7 @@ int	main(int argc, char **argv)
 	t_link_list	*ls_aux;
 
 	if (argc == 1 || ft_strncmp(argv[1], "", 2) == 0)
-		return (show_error_msg());
-	// TODO - revisar el ORDER NUMS hay dos errores
-	// if (argc == 2 && validate_isnumber(argv[1]))
-	// 	return (0);
+		return (0);
 	if (argc < 1)
 		return (show_error_msg());
 	else
@@ -69,6 +68,9 @@ int	main(int argc, char **argv)
 		if (ls_num != NULL)
 		{
 			if (is_list_sorted(&ls_num) == TRUE)
+				return (0);
+			else if (link_lstsize(ls_num) == 1
+				&& ft_isdigit(ls_num->content) == TRUE)
 				return (0);
 			op_sort(&ls_num, &ls_aux);
 			link_lstclear(&ls_num);

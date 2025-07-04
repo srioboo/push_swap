@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/04 19:45:39 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/04 19:48:48 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void	full_sort(t_link_list **a, t_link_list **b)
 	while (i < bit_size)
 	{
 		size = link_lstsize(*a);
-		while (size-- > 0) // && is_list_sorted(a) == FALSE)
+		while ((size-- > 0) && is_list_sorted(a) == FALSE)
 		{
 			if ((((*a)->index >> i) & 1) == 0)
 				push_to_b(a, b);
 			else
 				rotate_a(a);
 		}
-		while ((*b)->next)
+		while ((*b))
 			push_to_a(b, a);
 		i++;
 	}
@@ -94,6 +94,6 @@ void	medium_sort(t_link_list **a, t_link_list **b)
 		push_to_b(a, b);
 	}
 	tiny_sort(a, 3);
-	while ((*b)->next)
+	while ((*b)) // change to (*b)-> next in 42
 		push_to_a(b, a);
 }

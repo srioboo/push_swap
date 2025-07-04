@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/04 19:46:02 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/04 22:39:13 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,10 @@ t_link_list	*process_parameters(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 		arr_size = ft_arrsize(argv);
 		if (arr_size < 1)
-		{
-			// ft_free(argv);
 			return (NULL);
-		}
 		pos = 0;
 		ls_num = prepare_list(pos, argv, &ls_num);
+		ft_free(argv);
 	}
 	if (argc > 2)
 		ls_num = prepare_list(pos, argv, &ls_num);
@@ -78,6 +76,7 @@ int	main(int argc, char **argv)
 	t_link_list	*ls_num;
 	t_link_list	*ls_aux;
 
+	ls_aux = NULL;
 	if (argc == 1 || ft_strncmp(argv[1], "", 2) == 0)
 		return (0);
 	if (argc < 1)

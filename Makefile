@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/05 17:15:16 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/07/05 22:31:37 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ all: $(NAME)
 
 $(NAME): build-libft $(OBJECTS)
 	@$(CC) $(OBJECTS) $(INCLUDE) $(LIB_FLAG) -o $(NAME)
-	@echo "$(COLOUR_GREEN)\npush_swap compiled!\n$(COLOUR_END)"
+	@echo "$(COLOUR_GREEN)\n$(NAME) compiled!\n$(COLOUR_END)"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@

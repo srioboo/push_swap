@@ -6,26 +6,17 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:24:03 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/04 19:25:16 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/05 09:51:10 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	normalize_list(t_link_list *a)
+static void	copy_values_to_array(t_link_list *a, int *values)
 {
-	int			size;
-	int			*values;
 	t_link_list	*tmp;
 	int			i;
-	int			j;
-	int			temp;
 
-	size = link_lstsize(a);
-	values = malloc(sizeof(int) * size);
-	if (!values)
-		return ;
-	// Copia los valores content (no index) a un array
 	tmp = a;
 	i = 0;
 	while (tmp)
@@ -33,10 +24,14 @@ void	normalize_list(t_link_list *a)
 		values[i++] = tmp->content;
 		tmp = tmp->next;
 	}
+}
 
-	
-	
-	// Ordena el array usando bubble sort
+static void	bubble_sort_array(int *values, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
 	i = 0;
 	while (i < size - 1)
 	{
@@ -53,7 +48,13 @@ void	normalize_list(t_link_list *a)
 		}
 		i++;
 	}
-	// Asigna el índice normalizado a cada nodo
+}
+
+static void	assign_normalized_indexes(t_link_list *a, int *values, int size)
+{
+	t_link_list	*tmp;
+	int			i;
+
 	tmp = a;
 	while (tmp)
 	{
@@ -62,12 +63,26 @@ void	normalize_list(t_link_list *a)
 		{
 			if (tmp->content == values[i])
 			{
-				tmp->index = i;  // Asigna la posición en el array ordenado
-				break;
+				tmp->index = i;
+				break ;
 			}
 			i++;
 		}
 		tmp = tmp->next;
 	}
+}
+
+void	normalize_list(t_link_list *a)
+{
+	int	size;
+	int	*values;
+
+	size = link_lstsize(a);
+	values = malloc(sizeof(int) * size);
+	if (!values)
+		return ;
+	copy_values_to_array(a, values);
+	bubble_sort_array(values, size);
+	assign_normalized_indexes(a, values, size);
 	free(values);
 }

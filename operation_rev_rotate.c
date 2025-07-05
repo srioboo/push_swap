@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/06/29 12:44:25 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/05 10:46:05 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,28 @@
 
 void	op_rev_rotate(t_link_list **lst, char *op)
 {
-	int			counter;
-	int			last_pos;
+	t_link_list	*prev;
 	t_link_list	*last;
-	t_link_list	*result;
 
-	last_pos = link_lstsize((*lst)) - 1;
-	last = NULL;
-	result = NULL;
-	counter = 0;
-	while (*lst)
+	if (!lst || !*lst || !(*lst)->next)
+		return ;
+	prev = NULL;
+	last = *lst;
+	while (last->next)
 	{
-		if (counter >= 0 && counter != last_pos)
-			link_lstadd_back(&result, link_lstnew((*lst)->content));
-		if (counter == last_pos)
-			last = link_lstnew((*lst)->content);
-		counter++;
-		(*lst) = (*lst)->next;
+		prev = last;
+		last = last->next;
 	}
-	link_lstadd_front(&result, last);
-	*lst = result;
+	prev->next = NULL;
+	last->next = *lst;
+	*lst = last;
 	update_min_max(*lst);
 	show_op_msg(op);
 }
 
 void	rev_rotate_a(t_link_list **lst)
 {
-	op_rev_rotate(lst, OP_REV_ROTATE_A);
+	op_rev_rotate(lst, OP_REV_ROTATE_A); 
 }
 
 void	rev_rotate_b(t_link_list **lst)

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/05 11:58:00 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/05 20:41:22 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,9 @@ t_link_list	*prepare_list(int pos, char **argv, t_link_list	**ls_num)
 t_link_list	*process_parameters(int argc, char **argv)
 {
 	int			pos;
-	int			index;
 	t_link_list	*ls_num;
 
 	pos = 1;
-	index = 0;
 	ls_num = NULL;
 	if (argc == 2)
 	{

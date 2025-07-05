@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/05 10:49:25 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/05 10:57:57 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,10 @@ t_link_list	*prepare_list(int pos, char **argv, t_link_list	**ls_num)
 			|| validate_isrepeated(argv[pos], *ls_num) == TRUE)
 		{
 			link_lstclear(ls_num);
-			// ft_free(argv);
 			return (NULL);
 		}
 		else
-		{
-			// t_link_list *new = link_lstnew(ft_atol(argv[pos]));
-			// link_lstadd_back(ls_num, new);
 			link_lstadd_back(ls_num, link_lstnew(ft_atol(argv[pos])));
-		}
 		pos++;
 	}
 	// ft_free(argv);
@@ -78,7 +73,6 @@ int	main(int argc, char **argv)
 {
 	t_link_list	*ls_num;
 	t_link_list	*ls_aux;
-	t_link_list	*ls_num_head;
 
 	ls_aux = NULL;
 	if (argc == 1 || ft_strncmp(argv[1], "", 2) == 0)
@@ -88,7 +82,6 @@ int	main(int argc, char **argv)
 	else
 	{
 		ls_num = process_parameters(argc, argv);
-		ls_num_head = ls_num;
 		if (ls_num != NULL)
 		{
 			if (is_list_sorted(&ls_num) == TRUE)
@@ -103,7 +96,7 @@ int	main(int argc, char **argv)
 				return (0);
 			}
 			op_sort(&ls_num, &ls_aux);
-			link_lstclear(&ls_num_head);
+			link_lstclear(&ls_num);
 			link_lstclear(&ls_aux);
 		}
 		else

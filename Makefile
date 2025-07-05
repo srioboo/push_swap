@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/31 09:18:47 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/05 16:44:01 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/07/05 17:15:16 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 
-re: fclean all
+re: clean-libft fclean all
 
 build-libft:
 	@$(MAKE) -C ./libft full

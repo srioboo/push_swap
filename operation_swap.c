@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/05 09:45:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/05 16:23:40 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ static void	op_swap(t_link_list **lst, char *op)
 {
 	t_link_list	*first;	
 	t_link_list	*second;
-	int			temp;
-	int			i;
 
 	if (!lst || !*lst || !((*lst)->next))
 		return ;

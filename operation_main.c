@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/04 19:48:48 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/05 17:33:35 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ void	medium_sort(t_link_list **a, t_link_list **b)
 		push_to_b(a, b);
 	}
 	tiny_sort(a, 3);
-	while ((*b)) // change to (*b)-> next in 42
+	while ((*b))
 		push_to_a(b, a);
 }

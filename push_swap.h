@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/04 19:24:34 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/05 20:45:00 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,6 @@ int			ft_arrsize(char **arr);
  * 
  * @param new_list list
  */
-// t_link_list	*op_sort(t_link_list *new_list, t_link_list *aux_list);
 void		op_sort(t_link_list **new_list, t_link_list **aux_list);
 
 /**
@@ -245,7 +244,7 @@ void		swap_b(t_link_list **lst);
 void		log_lst_data(t_link_list *lstest, char *label);
 
 /* ************************************************************************** */
-/* Normalice                                                                  */
+/* Normalize                                                                  */
 /* ************************************************************************** */
 void		normalize_list(t_link_list *a);
 

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 10:25:29 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/05 17:33:35 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/06 17:06:25 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,23 @@ void	op_sort(t_link_list **a, t_link_list **b)
 	}
 }
 
+static void	full_sort_b(t_link_list **a, t_link_list **b, int bit_size, int i)
+{
+	int	b_size;
+
+	b_size = link_lstsize(*b);
+	while (b_size-- && i <= bit_size && is_list_sorted(a) == FALSE)
+	{
+		if ((((*b)->index >> i) & 1) == 0)
+			rotate_b(b);
+		else
+			push_to_a(b, a);
+	}
+	if (is_list_sorted(a))
+		while ((*b))
+			push_to_a(b, a);
+}
+
 void	full_sort(t_link_list **a, t_link_list **b)
 {
 	int	i;
@@ -38,8 +55,8 @@ void	full_sort(t_link_list **a, t_link_list **b)
 	size = link_lstsize(*a);
 	while ((1 << bit_size) < size)
 		bit_size++;
-	i = 0;
-	while (i < bit_size)
+	i = -1;
+	while (++i < bit_size)
 	{
 		size = link_lstsize(*a);
 		while ((size-- > 0) && is_list_sorted(a) == FALSE)
@@ -49,10 +66,10 @@ void	full_sort(t_link_list **a, t_link_list **b)
 			else
 				rotate_a(a);
 		}
-		while ((*b))
-			push_to_a(b, a);
-		i++;
+		full_sort_b(a, b, bit_size, i + 1);
 	}
+	while ((*b))
+		push_to_a(b, a);
 }
 
 void	tiny_sort(t_link_list **a, int list_size)

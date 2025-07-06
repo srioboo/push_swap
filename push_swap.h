@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:13 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/05 20:45:00 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/06 20:04:39 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,11 @@ int			validate_isnumber(char *s);
  * @brief Test if the number already exists
  */
 int			validate_isrepeated(char *s, t_link_list *lst);
+
+/**
+ * @brief Validate integer limit
+ */
+int			validate_is_integer(char *s);
 
 /**
  * @brief validate if is ordered

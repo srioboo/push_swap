@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 11:23:19 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/05 20:41:22 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/06 20:03:40 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ t_link_list	*prepare_list(int pos, char **argv, t_link_list	**ls_num)
 	while (argv[pos])
 	{
 		if (validate_isnumber(argv[pos]) == FALSE
-			|| validate_isrepeated(argv[pos], *ls_num) == TRUE)
+			|| validate_isrepeated(argv[pos], *ls_num) == TRUE
+			|| validate_is_integer(argv[pos]) == FALSE)
 		{
 			link_lstclear(ls_num);
 			return (NULL);
